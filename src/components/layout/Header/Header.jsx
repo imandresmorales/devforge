@@ -11,6 +11,7 @@
  */
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import UserWidget from '../../../components/ui/UserWidget/UserWidget.jsx'
 import './Header.css'
 
 /**
@@ -80,6 +81,9 @@ function Header({ theme, onToggleTheme }) {
 
           {/* ── Acciones ── */}
           <div className="header__actions">
+            {/* Widget de sesión (Context API — Mejora 8) */}
+            <UserWidget />
+
             {/* Toggle de tema — la lógica viene de useTheme (Mejora 5) */}
             <button
               className="header__theme-btn"

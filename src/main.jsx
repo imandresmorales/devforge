@@ -17,6 +17,7 @@ import './styles/utilities.css'
 import './styles/pages.css'
 
 import App from './App.jsx'
+import { UserProvider } from './context'
 
 const rootElement = document.getElementById('root')
 
@@ -29,6 +30,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
   </StrictMode>
 )
