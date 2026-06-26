@@ -189,17 +189,35 @@ body {
   background-color: var(--color-bg-primary);
 }
 
-/* ─── Placeholder para Dark Mode (se implementa en Mejora 5) ── */
-/* 
-  [data-theme="dark"] {
-    --color-bg-primary:   var(--color-neutral-950);
-    --color-bg-secondary: var(--color-neutral-900);
-    --color-bg-tertiary:  var(--color-neutral-850);
-    --color-bg-glass:     hsla(222, 47%, 9%, 0.85);
-    --color-text-primary:   var(--color-neutral-50);
-    --color-text-secondary: var(--color-neutral-400);
-    --color-text-muted:     var(--color-neutral-500);
-    --color-border:        var(--color-neutral-800);
-    --color-border-strong: var(--color-neutral-700);
-  }
-*/
+/* ─── Dark Mode (Mejora 5) — activado por useTheme hook ────────
+   El hook aplica [data-theme="dark"] en <html>.
+   Todos los componentes que usan variables semánticas (--color-bg-*,
+   --color-text-*, etc.) cambian automáticamente sin tocar su CSS.
+   ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  /* Fondos */
+  --color-bg-primary:   var(--color-neutral-950);
+  --color-bg-secondary: var(--color-neutral-900);
+  --color-bg-tertiary:  var(--color-neutral-850);
+  --color-bg-glass:     hsla(222, 47%, 9%, 0.85);
+
+  /* Texto */
+  --color-text-primary:   var(--color-neutral-50);
+  --color-text-secondary: var(--color-neutral-400);
+  --color-text-muted:     var(--color-neutral-500);
+  --color-text-inverse:   var(--color-neutral-950);
+
+  /* Bordes */
+  --color-border:        var(--color-neutral-800);
+  --color-border-strong: var(--color-neutral-700);
+
+  /* Gradientes adaptados al fondo oscuro */
+  --gradient-brand-soft: linear-gradient(135deg, var(--color-brand-950), hsl(280, 60%, 10%));
+
+  /* Sombras más pronunciadas en dark mode */
+  --shadow-sm:  0 1px 2px 0 hsla(0, 0%, 0%, 0.3);
+  --shadow-md:  0 4px 6px -1px hsla(0, 0%, 0%, 0.4), 0 2px 4px -1px hsla(0, 0%, 0%, 0.3);
+  --shadow-lg:  0 10px 15px -3px hsla(0, 0%, 0%, 0.4), 0 4px 6px -2px hsla(0, 0%, 0%, 0.25);
+  --shadow-xl:  0 20px 25px -5px hsla(0, 0%, 0%, 0.5), 0 10px 10px -5px hsla(0, 0%, 0%, 0.3);
+  --shadow-brand: 0 8px 24px -4px hsla(239, 84%, 64%, 0.5);
+}

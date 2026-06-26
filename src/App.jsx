@@ -9,6 +9,7 @@
  * @module App
  */
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
+import { useTheme } from './hooks/useTheme'
 import { Header } from './components/layout'
 import { Footer } from './components/layout'
 import {
@@ -54,19 +55,14 @@ function AppLayout({ theme, onToggleTheme }) {
  * @returns {JSX.Element}
  */
 function App() {
-  // Mejora 5: esto se moverá a useTheme() con localStorage
-  const theme = 'light'
-  const handleToggleTheme = () => {
-    // Se implementa en Mejora 5
-    console.info('[DevForge] Dark mode se implementa en Mejora 5')
-  }
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           element={
-            <AppLayout theme={theme} onToggleTheme={handleToggleTheme} />
+            <AppLayout theme={theme} onToggleTheme={toggleTheme} />
           }
         >
           <Route index         element={<HomePage />} />
