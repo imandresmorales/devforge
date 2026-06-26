@@ -18,6 +18,7 @@ import './styles/pages.css'
 
 import App from './App.jsx'
 import { UserProvider } from './context'
+import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 
 const rootElement = document.getElementById('root')
 
@@ -30,8 +31,10 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <ErrorBoundary>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </ErrorBoundary>
   </StrictMode>
 )

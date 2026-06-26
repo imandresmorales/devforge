@@ -17,6 +17,7 @@ import { useTheme } from './hooks/useTheme'
 import { Header } from './components/layout'
 import { Footer } from './components/layout'
 import PageSkeleton from './components/ui/PageSkeleton/PageSkeleton.jsx'
+import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 import './App.css'
 
 // ─── Lazy imports — cada página crea su propio chunk JS ───────
@@ -48,13 +49,15 @@ function AppLayout({ theme, onToggleTheme }) {
       <Header theme={theme} onToggleTheme={onToggleTheme} />
 
       {/*
-        Suspense envuelve el Outlet para mostrar el skeleton
-        mientras se descarga el chunk de la página activa.
-        El fallback debe ser un componente ligero (no lazy).
+        ErrorBoundary captura errores de la ruta activa (incluido el lazy load).
+        Suspense muestra el skeleton mientras se descarga el chunk JS.
+        Orden: ErrorBoundary > Suspense > Outlet (página activa)
       */}
-      <Suspense fallback={<PageSkeleton />}>
-        <Outlet />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<PageSkeleton />}>
+          <Outlet />
+        </Suspense>
+      </ErrorBoundary>
 
       <Footer />
     </div>
