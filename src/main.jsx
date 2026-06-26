@@ -14,6 +14,7 @@ import { createRoot } from 'react-dom/client'
 import './styles/reset.css'
 import './styles/variables.css'
 import './styles/utilities.css'
+import './styles/pages.css'
 
 import App from './App.jsx'
 
