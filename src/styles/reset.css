@@ -1,0 +1,124 @@
+/* ============================================================
+   DevForge — reset.css
+   Reset CSS moderno — base limpia para todos los navegadores
+   ============================================================
+   Basado en: https://piccalil.li/blog/a-more-modern-css-reset/
+   ============================================================ */
+
+/* ─── Box model ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ─── Root ─────────────────────────────────────────────────── */
+html {
+  /* Mejora el scroll suave en toda la app */
+  scroll-behavior: smooth;
+  /* Previene el zoom automático en iOS al enfocar inputs */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ─── Márgenes y paddings por defecto ─────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Body ─────────────────────────────────────────────────── */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Imágenes y medios ────────────────────────────────────── */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Formularios ──────────────────────────────────────────── */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ─── Tipografía ───────────────────────────────────────────── */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* ─── Listas ───────────────────────────────────────────────── */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* ─── Links ────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Accesibilidad — foco visible ─────────────────────────── */
+/* 
+  Mostramos el outline solo cuando el usuario navega con teclado.
+  El selector :focus-visible solo activa cuando es necesario (teclado),
+  no cuando el usuario hace click con el ratón.
+*/
+:focus-visible {
+  outline: 2px solid var(--color-brand-400, #818cf8);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Elementos interactivos ───────────────────────────────── */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ─── Reducir animaciones para usuarios que lo prefieren ───── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Root del árbol React ─────────────────────────────────── */
+#root {
+  isolation: isolate;
+}

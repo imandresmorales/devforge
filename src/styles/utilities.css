@@ -1,0 +1,196 @@
+/* ============================================================
+   DevForge — utilities.css (Mejora 2)
+   Clases de utilidad — complementan los design tokens
+   ============================================================
+   FILOSOFÍA:
+   Este NO es Tailwind. Son utilidades específicas y curadas
+   para las necesidades del proyecto. Cada clase tiene un propósito
+   claro y se usa en los componentes cuando las variantes CSS
+   de los propios componentes serían sobredimensionadas.
+   ============================================================ */
+
+/* ─── Contenedor centrado ───────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+/* ─── Flexbox ───────────────────────────────────────────────── */
+.flex           { display: flex; }
+.flex-col       { flex-direction: column; }
+.flex-wrap      { flex-wrap: wrap; }
+.items-start    { align-items: flex-start; }
+.items-center   { align-items: center; }
+.items-end      { align-items: flex-end; }
+.justify-start  { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end    { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+
+/* ─── Gap ───────────────────────────────────────────────────── */
+.gap-1  { gap: var(--space-1); }
+.gap-2  { gap: var(--space-2); }
+.gap-3  { gap: var(--space-3); }
+.gap-4  { gap: var(--space-4); }
+.gap-sm { gap: var(--space-3); }
+.gap-md { gap: var(--space-6); }
+.gap-lg { gap: var(--space-8); }
+
+/* ─── Grid ──────────────────────────────────────────────────── */
+.grid       { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ─── Texto ─────────────────────────────────────────────────── */
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+
+.text-xs   { font-size: var(--text-xs); }
+.text-sm   { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg   { font-size: var(--text-lg); }
+.text-xl   { font-size: var(--text-xl); }
+.text-2xl  { font-size: var(--text-2xl); }
+
+.font-normal   { font-weight: var(--font-normal); }
+.font-medium   { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold     { font-weight: var(--font-bold); }
+
+.text-muted     { color: var(--color-text-muted); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-primary   { color: var(--color-text-primary); }
+
+/* Gradiente de texto (para logos y títulos destacados) */
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Código inline */
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--color-bg-tertiary);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* ─── Badges ────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1;
+}
+
+.badge--brand {
+  background-color: var(--color-brand-100);
+  color: var(--color-brand-700);
+  border: 1px solid var(--color-brand-200);
+}
+
+.badge--success {
+  background-color: hsl(142, 76%, 93%);
+  color: hsl(142, 72%, 29%);
+  border: 1px solid hsl(142, 71%, 80%);
+}
+
+.badge--warning {
+  background-color: hsl(38, 92%, 93%);
+  color: hsl(38, 87%, 35%);
+  border: 1px solid hsl(38, 92%, 75%);
+}
+
+.badge--error {
+  background-color: hsl(0, 84%, 95%);
+  color: hsl(0, 70%, 40%);
+  border: 1px solid hsl(0, 84%, 80%);
+}
+
+.badge--neutral {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+/* ─── Accesibilidad — Skip link ─────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-brand-500);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ─── Visualmente oculto (accesible) ────────────────────────── */
+/* Oculta visualmente pero mantiene accesibilidad para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ─── Animaciones ───────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-brand {
+  0%, 100% { box-shadow: 0 0 0 0 hsla(239, 84%, 64%, 0.4); }
+  50%       { box-shadow: 0 0 0 8px hsla(239, 84%, 64%, 0); }
+}
+
+.animate-fade-in {
+  animation: fade-in var(--transition-slow) ease both;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale var(--transition-base) ease both;
+}
+
+/* ─── Separadores ───────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  border: none;
+  margin: var(--space-6) 0;
+}
