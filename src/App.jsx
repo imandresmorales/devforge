@@ -17,6 +17,7 @@ import {
   AboutPage,
   DocsPage,
   DashboardPage,
+  ContactPage,
   NotFoundPage,
 } from './pages'
 import './App.css'
@@ -69,6 +70,7 @@ function App() {
           <Route path="about"     element={<AboutPage />} />
           <Route path="docs"      element={<DocsPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="contact"   element={<ContactPage />} />
           {/* Ruta catch-all — debe ir siempre al final */}
           <Route path="*"         element={<NotFoundPage />} />
         </Route>

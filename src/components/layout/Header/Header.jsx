@@ -22,6 +22,7 @@ const NAV_LINKS = [
   { to: '/',          label: 'Inicio',     icon: '🏠', end: true  },
   { to: '/docs',      label: 'Docs',       icon: '📚', end: false },
   { to: '/about',     label: 'Acerca de',  icon: 'ℹ️',  end: false },
+  { to: '/contact',   label: 'Contacto',   icon: '📬', end: false },
   { to: '/dashboard', label: 'Dashboard',  icon: '⚡', end: false },
 ]
 
