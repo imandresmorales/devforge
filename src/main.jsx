@@ -10,11 +10,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-// Estilos globales — orden importante: reset → variables → utilidades → app
+// Estilos globales — orden importante: reset → variables → utilidades → páginas → a11y
 import './styles/reset.css'
 import './styles/variables.css'
 import './styles/utilities.css'
 import './styles/pages.css'
+import './styles/a11y.css'  // SIEMPRE al final para poder sobrescribir
 
 import App from './App.jsx'
 import { UserProvider } from './context'

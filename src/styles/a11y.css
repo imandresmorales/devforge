@@ -1,0 +1,164 @@
+/* ============================================================
+   a11y.css — Mejora 12: Accesibilidad (a11y) primera pasada
+   ============================================================
+   Este archivo centraliza las mejoras de accesibilidad globales:
+   - Focus visible consistente para todos los elementos interactivos
+   - Respeto a la preferencia prefers-reduced-motion del SO
+   - Utilidades adicionales de accesibilidad
+   - Correcciones de contraste para modos claro y oscuro
+   ============================================================ */
+
+/* ─── 1. Focus visible — CRÍTICO para usuarios de teclado ─────
+   El outline por defecto del navegador es correcto pero muy variable.
+   Este outline personalizado es consistente, visible y respeta el
+   sistema de diseño sin eliminar la indicación de foco.
+
+   NUNCA hacer: *:focus { outline: none } sin proporcionar alternativa.
+   ──────────────────────────────────────────────────────────── */
+
+/* Estilo de focus para todos los elementos interactivos */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Focus en botones con fondo oscuro (gradient) */
+.btn-primary:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Focus en inputs y textareas — ya tienen box-shadow, no necesitan outline adicional */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.form-select:focus-visible {
+  outline: none; /* el box-shadow ya indica el focus visualmente */
+}
+
+/* Focus en los NavLinks del Header */
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 4px;
+  border-radius: var(--radius-md);
+}
+
+/* Focus en botones de la tabla de paginación */
+.data-table__page-btn:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* Focus en el skip-link (sobrescribe el comportamiento de top) */
+.skip-link:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+
+/* ─── 2. prefers-reduced-motion — respeto a la preferencia del SO ──
+   Los usuarios con epilepsia fotosensible, vértigo o sensibilidad
+   al movimiento pueden configurar su SO para reducir animaciones.
+   Respetar esta preferencia es una práctica de accesibilidad crítica.
+   WCAG 2.3.3 (AAA) — pero recomendado para todos.
+   ──────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Deshabilitar transiciones */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Excepción: el spinner de loading debe seguir siendo visible */
+  .fetch-demo__spinner {
+    animation: none;
+    border: 2px solid var(--color-brand-500);
+  }
+}
+
+
+/* ─── 3. Contraste mejorado en dark mode ──────────────────────
+   Los badges en dark mode necesitan mayor contraste para
+   cumplir WCAG 2.1 AA (ratio mínimo 4.5:1 para texto normal)
+   ──────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .badge--brand {
+  background-color: hsla(239, 84%, 64%, 0.15);
+  color: var(--color-brand-300);
+  border-color: hsla(239, 84%, 64%, 0.3);
+}
+
+[data-theme="dark"] .badge--success {
+  background-color: hsla(142, 72%, 30%, 0.2);
+  color: hsl(142, 70%, 65%);
+  border-color: hsla(142, 72%, 30%, 0.4);
+}
+
+[data-theme="dark"] .badge--warning {
+  background-color: hsla(38, 92%, 50%, 0.15);
+  color: hsl(38, 92%, 70%);
+  border-color: hsla(38, 92%, 50%, 0.3);
+}
+
+[data-theme="dark"] .badge--error {
+  background-color: hsla(0, 84%, 50%, 0.15);
+  color: hsl(0, 84%, 75%);
+  border-color: hsla(0, 84%, 50%, 0.3);
+}
+
+[data-theme="dark"] .badge--neutral {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border-strong);
+}
+
+
+/* ─── 4. Utilidades adicionales de accesibilidad ─────────────── */
+
+/* not-sr-only: muestra un elemento que estaba sr-only en focus */
+.not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: revert;
+  margin: revert;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Mejora la legibilidad del texto largo */
+.readable {
+  max-width: 65ch;
+  line-height: var(--leading-relaxed);
+}
+
+/* Indicador visual para links externos */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+  speak: never; /* No pronunciar en lectores de pantalla */
+}
+
+/* Excepción: el footer ya añade el ↗ manualmente */
+.footer__link[target="_blank"]::after {
+  content: none;
+}
+
+
+/* ─── 5. Selection (texto seleccionado) ──────────────────────── */
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+[data-theme="dark"] ::selection {
+  background-color: var(--color-brand-800);
+  color: var(--color-brand-100);
+}
