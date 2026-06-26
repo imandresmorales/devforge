@@ -3,5 +3,5 @@
  * @module hooks
  */
 export { useTheme }        from './useTheme'
-// export { useFetch }        from './useFetch'      -- Mejora 7
+export { useFetch }        from './useFetch'
 // export { useLocalStorage } from './useLocalStorage' -- próximamente

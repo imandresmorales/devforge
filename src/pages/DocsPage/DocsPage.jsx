@@ -2,6 +2,7 @@
  * @fileoverview Página de documentación — referencia de mejoras implementadas.
  * @module pages/DocsPage
  */
+import FetchDemo from '../../components/ui/FetchDemo/FetchDemo.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -118,6 +119,9 @@ function DocsPage() {
             ))}
           </div>
         </section>
+
+        {/* Demo interactivo del hook useFetch — Mejora 7 */}
+        <FetchDemo />
 
       </div>
     </main>
