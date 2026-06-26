@@ -12,6 +12,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import UserWidget from '../../../components/ui/UserWidget/UserWidget.jsx'
+import LanguageSelector from '../../../components/ui/LanguageSelector/LanguageSelector.jsx'
 import './Header.css'
 
 /**
@@ -83,6 +84,9 @@ function Header({ theme, onToggleTheme }) {
           <div className="header__actions">
             {/* Widget de sesión (Context API — Mejora 8) */}
             <UserWidget />
+
+            {/* Selector de idioma (i18n — Mejora 13) */}
+            <LanguageSelector />
 
             {/* Toggle de tema — la lógica viene de useTheme (Mejora 5) */}
             <button

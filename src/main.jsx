@@ -17,6 +17,9 @@ import './styles/utilities.css'
 import './styles/pages.css'
 import './styles/a11y.css'  // SIEMPRE al final para poder sobrescribir
 
+// i18n debe inicializarse ANTES de que React renderice el árbol de componentes
+import './i18n/i18n.js'
+
 import App from './App.jsx'
 import { UserProvider } from './context'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'

@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "docs": "Docs",
+    "about": "About",
+    "contact": "Contact",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "badge": "Improvement {{current}} of {{total}} active",
+    "title": "Everything a",
+    "titleHighlight": "developer",
+    "titleEnd": "must master",
+    "subtitle": "DevForge is a platform built improvement by improvement — from React to Next.js, from Stripe payments to WhatsApp API. Real code, real production.",
+    "cta_docs": "View documentation",
+    "cta_github": "GitHub",
+    "stats_planned": "Planned improvements",
+    "stats_done": "Implemented",
+    "stats_commits": "Commits today",
+    "stats_vulns": "Vulnerabilities"
+  },
+  "features": {
+    "title": "What will you learn?",
+    "subtitle": "Each technology is implemented in a real project, with clean, secure code and best practices.",
+    "auth_title": "Secure Authentication",
+    "auth_desc": "Google OAuth, NextAuth.js, JWT, refresh tokens, protected routes, and session management.",
+    "payments_title": "Stripe Payments",
+    "payments_desc": "Checkout sessions, signed webhooks, recurring subscriptions, and billing portal.",
+    "whatsapp_title": "WhatsApp Cloud API",
+    "whatsapp_desc": "Send messages, Meta templates, webhooks to receive messages, and automated replies.",
+    "security_title": "Web Security",
+    "security_desc": "reCAPTCHA v3, CSP headers, XSS prevention with DOMPurify, rate limiting with Redis.",
+    "nextjs_title": "Next.js + TypeScript",
+    "nextjs_desc": "App Router, Server Components, Prisma ORM, Supabase PostgreSQL, and strict TypeScript.",
+    "pwa_title": "PWA + SEO",
+    "pwa_desc": "Service Worker, mobile installable, offline support, sitemap, Open Graph, and Core Web Vitals."
+  },
+  "user": {
+    "login": "Sign in",
+    "logging_in": "Signing in…",
+    "logout": "Sign out",
+    "profile": "My profile",
+    "settings": "Settings",
+    "billing": "Plan & billing",
+    "plan": "{{plan}} Plan"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "back_home": "Go to home",
+    "language": "Language"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "titleHighlight": "technology",
+    "name": "Name",
+    "email": "Email",
+    "topic": "Topic",
+    "message": "Message",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "success_title": "Message sent!",
+    "success_desc": "Thanks for reaching out. We'll reply within 24 hours.",
+    "send_another": "Send another message"
+  },
+  "footer": {
+    "desc": "Educational and interactive platform for developers. Learn React, Next.js, TypeScript, payments, security, and more — step by step, with 100 planned improvements.",
+    "progress_label": "Progress: {{current}} / {{total}} improvements ({{percent}}%)",
+    "nav_title": "Navigation",
+    "resources_title": "Resources",
+    "copyright": "© {{year}} Andres Morales — DevForge. MIT License."
+  }
+}
