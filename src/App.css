@@ -1,0 +1,142 @@
+/* ============================================================
+   DevForge — App.css
+   Estilos específicos del componente App.jsx
+   ============================================================
+   NOTA: Los estilos globales (variables, reset, utilidades) están
+   en src/styles/. Este archivo solo contiene estilos del layout
+   principal de la aplicación.
+   ============================================================ */
+
+/* ─── Layout principal ──────────────────────────────────────── */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+}
+
+.app-logo {
+  font-size: var(--text-2xl);
+}
+
+.app-brand {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Main content ───────────────────────────────────────────── */
+.app-main {
+  flex: 1;
+  padding: var(--space-16) 0;
+}
+
+/* ─── Hero section ───────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: var(--space-16) 0 var(--space-12);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-extrabold);
+  line-height: 1.15;
+  margin-bottom: var(--space-6);
+  color: var(--color-text-primary);
+}
+
+.hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.hero__badge {
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── Features grid ──────────────────────────────────────────── */
+.features {
+  padding-top: var(--space-12);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ─── Feature card ───────────────────────────────────────────── */
+.feature-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-brand-400);
+}
+
+.feature-card__icon {
+  font-size: var(--text-3xl);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.feature-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.feature-card__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+.app-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-8) 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .app-main {
+    padding: var(--space-10) 0;
+  }
+
+  .hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+}

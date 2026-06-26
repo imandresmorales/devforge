@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO básico -->
+    <title>DevForge — Plataforma para Informáticos</title>
+    <meta
+      name="description"
+      content="DevForge es una plataforma educativa e interactiva para informáticos. Aprende React, Next.js, TypeScript, autenticación, pagos, seguridad y mucho más."
+    />
+    <meta name="author" content="Andres Morales" />
+
+    <!-- Open Graph (redes sociales) — se mejorará en la Mejora 66 -->
+    <meta property="og:title" content="DevForge — Plataforma para Informáticos" />
+    <meta
+      property="og:description"
+      content="Aprende React, Next.js, TypeScript, Stripe, WhatsApp API, OAuth y seguridad web."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- 
+      NOTA: Las fuentes Google se importan en variables.css con @import.
+      No las importamos aquí para mantener un único punto de control
+      de la tipografía.
+    -->
+  </head>
+  <body>
+    <!-- Skip to content — accesibilidad para usuarios de teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Punto de montaje de React -->
+    <div id="root"></div>
+
+    <!-- 
+      <noscript> para usuarios sin JavaScript.
+      Se mejorará en la Mejora 3 con SSR de Next.js.
+    -->
+    <noscript>
+      <p style="padding: 2rem; text-align: center; font-family: sans-serif;">
+        DevForge requiere JavaScript para funcionar. Por favor, habilita JavaScript en tu navegador.
+      </p>
+    </noscript>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

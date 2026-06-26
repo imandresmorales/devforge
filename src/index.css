@@ -1,0 +1,14 @@
+/* ============================================================
+   DevForge — index.css
+   ============================================================
+   Los estilos globales se han organizado en archivos separados
+   y se importan desde src/main.jsx en el siguiente orden:
+   
+     1. reset.css     — Reset CSS moderno
+     2. variables.css — Design tokens (CSS Custom Properties)
+     3. utilities.css — Clases de utilidad
+   
+   Este archivo queda vacío intencionalmente para evitar conflictos.
+   Los estilos de componentes van en sus propios archivos .css
+   o en App.css para los estilos del layout principal.
+   ============================================================ */
