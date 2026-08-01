@@ -18,6 +18,7 @@ import { Header } from './components/layout'
 import { Footer } from './components/layout'
 import PageSkeleton from './components/ui/PageSkeleton/PageSkeleton.jsx'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
+import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
 // ─── Lazy imports — cada página crea su propio chunk JS ───────
@@ -72,23 +73,25 @@ function App() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          element={
-            <AppLayout theme={theme} onToggleTheme={toggleTheme} />
-          }
-        >
-          <Route index              element={<HomePage />} />
-          <Route path="about"      element={<AboutPage />} />
-          <Route path="docs"       element={<DocsPage />} />
-          <Route path="dashboard"  element={<DashboardPage />} />
-          <Route path="contact"    element={<ContactPage />} />
-          {/* Ruta catch-all — debe ir siempre al final */}
-          <Route path="*"          element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ToastProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <AppLayout theme={theme} onToggleTheme={toggleTheme} />
+            }
+          >
+            <Route index              element={<HomePage />} />
+            <Route path="about"      element={<AboutPage />} />
+            <Route path="docs"       element={<DocsPage />} />
+            <Route path="dashboard"  element={<DashboardPage />} />
+            <Route path="contact"    element={<ContactPage />} />
+            {/* Ruta catch-all — debe ir siempre al final */}
+            <Route path="*"          element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ToastProvider>
   )
 }
 

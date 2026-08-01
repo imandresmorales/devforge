@@ -15,6 +15,7 @@
 import { useState, useId } from 'react'
 import { isValidEmail } from '../../utils'
 import { sanitizeInput } from '../../utils/security'
+import { useToast } from '../../context/ToastContext'
 import './ContactPage.css'
 
 /** Longitud máxima del mensaje */
@@ -91,6 +92,7 @@ function hasErrors(errors) {
  */
 function ContactPage() {
   const formId = useId() // Genera IDs únicos para aria-describedby
+  const { addToast } = useToast()
 
   const [values,  setValues]  = useState(INITIAL_FORM)
   const [errors,  setErrors]  = useState(INITIAL_ERRORS)
@@ -158,9 +160,14 @@ function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Simular llamada a API (en producción: fetch('/api/contact', { method: 'POST', body: JSON.stringify(values) }))
+      // Simular llamada a API
       await new Promise((resolve) => setTimeout(resolve, 1500))
       setSubmitted(true)
+      addToast({
+        type: 'success',
+        title: '¡Mensaje enviado!',
+        message: 'Hemos recibido tu consulta con éxito. Te responderemos pronto.',
+      })
     } catch (err) {
       console.error('[ContactPage] Error al enviar el formulario:', err)
     } finally {
