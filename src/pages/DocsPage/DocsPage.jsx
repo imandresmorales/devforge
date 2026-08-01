@@ -13,18 +13,23 @@ const COMPLETED = [
   { num: 5,  title: 'Dark Mode con useTheme',              desc: 'Toggle dark/light, localStorage, CSS variables, sin dependencias' },
   { num: 6,  title: 'Formulario controlado',               desc: 'Validación en tiempo real, aria-live, mensajes de error accesibles' },
   { num: 7,  title: 'Hook useFetch con AbortController',   desc: 'Peticiones HTTP con loading/error/data, cancelación correcta' },
+  { num: 8,  title: 'Context API — Estado global usuario', desc: 'UserContext + useReducer para autenticación y estado global' },
+  { num: 9,  title: 'Tabla dinámica DataTable',            desc: 'Paginación, ordenación por columna y búsqueda integrada' },
+  { num: 10, title: 'Lazy loading y Code Splitting',       desc: 'React.lazy + Suspense para optimización de bundles JS' },
+  { num: 11, title: 'Error Boundaries',                    desc: 'Captura y aislamiento de errores de renderizado en React' },
+  { num: 12, title: 'Accesibilidad (a11y)',                desc: 'Skip-links, WAI-ARIA, soporte teclado y hoja a11y.css' },
+  { num: 13, title: 'Internacionalización (i18n)',         desc: 'i18next + react-i18next con soporte Español/Inglés' },
+  { num: 14, title: 'Testing unitario con Vitest',         desc: 'Vitest + React Testing Library y suite de pruebas automatizada' },
 ]
 
 /** Lista de próximas mejoras */
 const UPCOMING = [
-  { num: 8,  title: 'Context API — Estado global de usuario' },
-  { num: 9,  title: 'Tabla dinámica con paginación' },
-  { num: 10, title: 'Lazy loading y Code Splitting' },
-  { num: 11, title: 'Error Boundaries' },
-  { num: 12, title: 'Accesibilidad (a11y) — Primera pasada' },
-  { num: 13, title: 'Internacionalización (i18n)' },
-  { num: 14, title: 'Tests unitarios con Vitest' },
-  { num: 15, title: 'Storybook — Documentación de componentes' },
+  { num: 15, title: 'Seguridad Web I — Sanitización XSS con DOMPurify y CSP' },
+  { num: 16, title: 'Hook useLocalStorage seguro con sincronización multi-pestaña' },
+  { num: 17, title: 'Sistema global de notificaciones Toast accesibles' },
+  { num: 18, title: 'Componente Modal reutilizable con portal y focus trap' },
+  { num: 19, title: 'Exportación CSV segura e interactiva en DataTable' },
+  { num: 20, title: 'Página de perfil con medidor de contraseñas y 2FA' },
 ]
 
 function DocsPage() {
