@@ -15,7 +15,8 @@
  *
  * @module hooks/useTheme
  */
-import { useState, useEffect, useCallback } from 'react'
+import { useEffect, useCallback } from 'react'
+import { useLocalStorage } from './useLocalStorage'
 
 /** Clave de localStorage donde se persiste la preferencia del usuario */
 const STORAGE_KEY = 'devforge-theme'
@@ -24,56 +25,20 @@ const STORAGE_KEY = 'devforge-theme'
 const VALID_THEMES = new Set(['light', 'dark'])
 
 /**
- * Lee el tema guardado en localStorage de forma segura.
- * @returns {'light' | 'dark' | null}
- */
-function readStoredTheme() {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    return VALID_THEMES.has(stored) ? stored : null
-  } catch {
-    // localStorage no disponible (modo privado, cookies bloqueadas, etc.)
-    return null
-  }
-}
-
-/**
- * Guarda el tema en localStorage de forma segura.
- * @param {'light' | 'dark'} theme
- */
-function writeStoredTheme(theme) {
-  try {
-    localStorage.setItem(STORAGE_KEY, theme)
-  } catch {
-    // Silencioso si localStorage no está disponible
-  }
-}
-
-/**
- * Determina el tema inicial:
- * 1. Preferencia guardada en localStorage
- * 2. Preferencia del sistema operativo
- * 3. Por defecto: 'light'
- *
+ * Determina el tema inicial basado en la preferencia del SO.
  * @returns {'light' | 'dark'}
  */
-function getInitialTheme() {
-  const stored = readStoredTheme()
-  if (stored) return stored
-
+function getSystemTheme() {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
   return prefersDark ? 'dark' : 'light'
 }
 
 /**
  * Aplica el tema al elemento <html> modificando el atributo data-theme.
- * Las variables CSS en variables.css leen este atributo.
- *
  * @param {'light' | 'dark'} theme
  */
 function applyThemeToDOM(theme) {
   document.documentElement.setAttribute('data-theme', theme)
-  // También actualiza el meta theme-color para el color de la barra del navegador
   const metaThemeColor = document.querySelector('meta[name="theme-color"]')
   if (metaThemeColor) {
     metaThemeColor.setAttribute(
@@ -83,31 +48,11 @@ function applyThemeToDOM(theme) {
   }
 }
 
-/**
- * Hook personalizado para gestionar el tema claro/oscuro.
- *
- * @returns {{
- *   theme: 'light' | 'dark',
- *   isDark: boolean,
- *   toggleTheme: () => void,
- *   setTheme: (theme: 'light' | 'dark') => void
- * }}
- *
- * @example
- * const { theme, isDark, toggleTheme } = useTheme()
- * // En JSX:
- * <button onClick={toggleTheme}>{isDark ? '☀️' : '🌙'}</button>
- */
 export function useTheme() {
-  const [theme, setThemeState] = useState(() => {
-    // La función de inicialización lazy se ejecuta solo una vez
-    return getInitialTheme()
-  })
+  const [theme, setThemeState] = useLocalStorage(STORAGE_KEY, getSystemTheme)
 
-  // Aplicar el tema al DOM cada vez que cambia
   useEffect(() => {
     applyThemeToDOM(theme)
-    writeStoredTheme(theme)
   }, [theme])
 
   // Escuchar cambios en la preferencia del sistema
