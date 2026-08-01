@@ -20,16 +20,20 @@ const COMPLETED = [
   { num: 12, title: 'Accesibilidad (a11y)',                desc: 'Skip-links, WAI-ARIA, soporte teclado y hoja a11y.css' },
   { num: 13, title: 'Internacionalización (i18n)',         desc: 'i18next + react-i18next con soporte Español/Inglés' },
   { num: 14, title: 'Testing unitario con Vitest',         desc: 'Vitest + React Testing Library y suite de pruebas automatizada' },
+  { num: 15, title: 'Seguridad Web I (DOMPurify & CSP)',   desc: 'Sanitización estricta XSS con DOMPurify y cabeceras CSP' },
+  { num: 16, title: 'Hook useLocalStorage seguro',         desc: 'Manejo de errores, cuota y sincronización en tiempo real entre pestañas' },
+  { num: 17, title: 'Notificaciones Toast accesibles',     desc: 'ToastContext global, animaciones CSS y soporte aria-live' },
+  { num: 18, title: 'Componente Modal accesible',          desc: 'Renderizado con createPortal, focus trap y atajos de teclado (Esc)' },
+  { num: 19, title: 'Exportación CSV defensiva',           desc: 'Protección contra inyección de fórmulas CSV y descarga directa' },
+  { num: 20, title: 'Página de Perfil y Medidor 2FA',      desc: 'Vista /profile, medidor de fuerza de contraseñas y simulación 2FA' },
 ]
 
 /** Lista de próximas mejoras */
 const UPCOMING = [
-  { num: 15, title: 'Seguridad Web I — Sanitización XSS con DOMPurify y CSP' },
-  { num: 16, title: 'Hook useLocalStorage seguro con sincronización multi-pestaña' },
-  { num: 17, title: 'Sistema global de notificaciones Toast accesibles' },
-  { num: 18, title: 'Componente Modal reutilizable con portal y focus trap' },
-  { num: 19, title: 'Exportación CSV segura e interactiva en DataTable' },
-  { num: 20, title: 'Página de perfil con medidor de contraseñas y 2FA' },
+  { num: 21, title: 'Storybook — Documentación interactiva de componentes' },
+  { num: 22, title: 'Middleware de Autenticación y Rutas Protegidas' },
+  { num: 23, title: 'Infinite Scroll con Intersection Observer' },
+  { num: 24, title: 'Drag and Drop accesible para gestión de listas' },
 ]
 
 function DocsPage() {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { sanitizeInput, sanitizeHtml } from './security.js'
+import { sanitizeInput, sanitizeHtml, evaluatePasswordStrength } from './security.js'
 
 describe('Seguridad - Sanitización XSS (security.js)', () => {
   describe('sanitizeInput', () => {
@@ -28,6 +28,20 @@ describe('Seguridad - Sanitización XSS (security.js)', () => {
     it('debe remover etiquetas peligrosas como <iframe/> o <script/>', () => {
       const iframeXSS = '<iframe src="javascript:alert(1)"></iframe><b>Seguro</b>'
       expect(sanitizeHtml(iframeXSS)).toBe('<b>Seguro</b>')
+    })
+  })
+
+  describe('evaluatePasswordStrength', () => {
+    it('debe devolver nivel "Muy débil" para contraseñas cortas o simples', () => {
+      const res = evaluatePasswordStrength('123')
+      expect(res.label).toBe('Muy débil')
+      expect(res.percentage).toBeLessThanOrEqual(20)
+    })
+
+    it('debe devolver nivel "Excelente" para contraseñas largas con mayúsculas, símbolos y números', () => {
+      const res = evaluatePasswordStrength('P@ssw0rdSecure2026!')
+      expect(res.label).toBe('Excelente')
+      expect(res.percentage).toBe(100)
     })
   })
 })

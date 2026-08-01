@@ -29,6 +29,7 @@ const AboutPage     = lazy(() => import('./pages/AboutPage/AboutPage.jsx'))
 const DocsPage      = lazy(() => import('./pages/DocsPage/DocsPage.jsx'))
 const DashboardPage = lazy(() => import('./pages/DashboardPage/DashboardPage.jsx'))
 const ContactPage   = lazy(() => import('./pages/ContactPage/ContactPage.jsx'))
+const ProfilePage   = lazy(() => import('./pages/ProfilePage/ProfilePage.jsx'))
 const NotFoundPage  = lazy(() => import('./pages/NotFoundPage/NotFoundPage.jsx'))
 
 /**
@@ -86,6 +87,7 @@ function App() {
             <Route path="docs"       element={<DocsPage />} />
             <Route path="dashboard"  element={<DashboardPage />} />
             <Route path="contact"    element={<ContactPage />} />
+            <Route path="profile"    element={<ProfilePage />} />
             {/* Ruta catch-all — debe ir siempre al final */}
             <Route path="*"          element={<NotFoundPage />} />
           </Route>

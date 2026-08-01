@@ -1,0 +1,130 @@
+/**
+ * Estilos para la página de Perfil de Usuario
+ */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+}
+
+.profile-card {
+  background: var(--color-bg-secondary, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-xl, 1rem);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+.profile-card--full {
+  grid-column: 1 / -1;
+}
+
+.profile-card__title {
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: var(--font-bold, 700);
+  color: var(--color-text-primary, #ffffff);
+  margin: 0;
+}
+
+.profile-card__desc {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-secondary, #94a3b8);
+  margin-top: var(--space-1, 0.25rem);
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+/* Medidor de contraseña */
+.password-meter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+  padding: var(--space-3, 0.75rem);
+  background: var(--color-bg-tertiary, #0f172a);
+  border-radius: var(--radius-md, 0.375rem);
+  border: 1px solid var(--color-border, #334155);
+}
+
+.password-meter__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary, #94a3b8);
+}
+
+.password-meter__track {
+  height: 6px;
+  background: var(--color-border, #334155);
+  border-radius: var(--radius-full, 9999px);
+  overflow: hidden;
+}
+
+.password-meter__bar {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.password-meter__checks {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-1, 0.25rem) 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1, 0.25rem);
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #64748b);
+}
+
+.password-meter__checks li::before {
+  content: '⚪ ';
+}
+
+.password-meter__checks li.valid {
+  color: var(--color-success, #10b981);
+}
+
+.password-meter__checks li.valid::before {
+  content: '✅ ';
+}
+
+/* 2FA Container */
+.twofa-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4, 1rem);
+}
+
+.twofa-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+}
+
+.twofa-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4, 1rem);
+}
+
+.twofa-qr-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  padding: var(--space-6, 1.5rem);
+  background: var(--color-bg-tertiary, #0f172a);
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, #334155);
+  width: 100%;
+}
