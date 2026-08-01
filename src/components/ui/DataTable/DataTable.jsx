@@ -13,6 +13,7 @@
  * @module components/ui/DataTable
  */
 import { useState, useMemo } from 'react'
+import { downloadCsv } from '../../../utils/exportCsv'
 import './DataTable.css'
 
 /**
@@ -166,6 +167,27 @@ function DataTable({
             ))}
           </select>
         </div>
+
+        <button
+          type="button"
+          className="btn-secondary btn-sm"
+          onClick={() => downloadCsv('devforge-export.csv', columns, processedData)}
+          aria-label="Exportar datos visibles a archivo CSV"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 'var(--space-2)',
+            padding: 'var(--space-2) var(--space-3)',
+            borderRadius: 'var(--radius-md)',
+            background: 'var(--color-bg-tertiary)',
+            border: '1px solid var(--color-border)',
+            color: 'var(--color-text-primary)',
+            fontSize: 'var(--text-xs)',
+            cursor: 'pointer',
+          }}
+        >
+          <span aria-hidden="true">📥</span> Exportar CSV
+        </button>
       </div>
 
       {/* ── Tabla ── */}
