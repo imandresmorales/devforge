@@ -14,6 +14,7 @@
  */
 import { useState, useId } from 'react'
 import { isValidEmail } from '../../utils'
+import { sanitizeInput } from '../../utils/security'
 import './ContactPage.css'
 
 /** Longitud máxima del mensaje */
@@ -135,9 +136,16 @@ function ContactPage() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    const sanitizedValues = {
+      name: sanitizeInput(values.name),
+      email: sanitizeInput(values.email),
+      topic: values.topic,
+      message: sanitizeInput(values.message),
+    }
+
     // Marcar todos los campos como tocados para mostrar errores
     setTouched({ name: true, email: true, topic: true, message: true })
-    const allErrors = validateAll(values)
+    const allErrors = validateAll(sanitizedValues)
     setErrors(allErrors)
 
     if (hasErrors(allErrors)) {
