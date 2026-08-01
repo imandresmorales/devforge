@@ -3,6 +3,4 @@
  * @module components/ui
  */
 export { default as FetchDemo } from './FetchDemo/FetchDemo.jsx'
-// export { default as Button } from './Button/Button.jsx'   -- Mejora 3+
-// export { default as Card }   from './Card/Card.jsx'
-// export { default as Badge }  from './Badge/Badge.jsx'
+export { default as Modal }     from './Modal/Modal.jsx'
