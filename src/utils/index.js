@@ -19,7 +19,9 @@
  * formatDate('2025-06-25')      // "25 de junio de 2025"
  */
 export function formatDate(date, options = { dateStyle: 'long' }) {
-  return new Intl.DateTimeFormat('es-ES', options).format(new Date(date))
+  const d = new Date(date)
+  if (isNaN(d.getTime())) return ''
+  return new Intl.DateTimeFormat('es-ES', options).format(d)
 }
 
 /**
