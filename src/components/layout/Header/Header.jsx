@@ -1,48 +1,76 @@
 /**
  * @fileoverview Componente Header — cabecera principal de la aplicación.
  *
- * Responsabilidades:
- * - Logo y nombre de la marca con enlace al inicio
- * - Navegación principal (desktop y móvil)
- * - Toggle de tema claro/oscuro (se conecta en Mejora 5)
- * - Accesibilidad: aria-label, aria-current, aria-expanded
+ * MEJORA 21 — AUTENTICACIÓN:
+ * - Los links Dashboard y Profile solo son visibles si hay sesión activa
+ * - El botón Login/Logout se muestra dinámicamente según el estado de auth
+ * - El logout llama a AuthContext.logout() que limpia tokens y redirige
  *
  * @module components/layout/Header
  */
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../context/AuthContext'
+import { useToast } from '../../../context/ToastContext'
 import UserWidget from '../../../components/ui/UserWidget/UserWidget.jsx'
 import LanguageSelector from '../../../components/ui/LanguageSelector/LanguageSelector.jsx'
 import './Header.css'
 
 /**
- * Elementos de navegación principal.
- * Definidos fuera del componente para evitar re-creaciones en cada render.
+ * Links de navegación base (siempre visibles).
+ * @type {Array<{to: string, label: string, icon: string, end?: boolean}>}
+ */
+const PUBLIC_NAV_LINKS = [
+  { to: '/',        label: 'Inicio',    icon: '🏠', end: true  },
+  { to: '/docs',    label: 'Docs',      icon: '📚', end: false },
+  { to: '/about',   label: 'Acerca de', icon: 'ℹ️',  end: false },
+  { to: '/contact', label: 'Contacto',  icon: '📬', end: false },
+]
+
+/**
+ * Links de navegación exclusivos para usuarios autenticados.
  * @type {Array<{to: string, label: string, icon: string}>}
  */
-const NAV_LINKS = [
-  { to: '/',          label: 'Inicio',     icon: '🏠', end: true  },
-  { to: '/docs',      label: 'Docs',       icon: '📚', end: false },
-  { to: '/about',     label: 'Acerca de',  icon: 'ℹ️',  end: false },
-  { to: '/contact',   label: 'Contacto',   icon: '📬', end: false },
-  { to: '/dashboard', label: 'Dashboard',  icon: '⚡', end: false },
+const PRIVATE_NAV_LINKS = [
+  { to: '/dashboard', label: 'Dashboard', icon: '⚡', end: false },
+  { to: '/github',    label: 'GitHub',    icon: '🐙', end: false },
 ]
 
 /**
  * Componente de cabecera principal.
  *
  * @param {Object}   props
- * @param {string}   props.theme      - Tema actual: 'light' | 'dark'
- * @param {Function} props.onToggleTheme - Callback para cambiar el tema
+ * @param {string}   props.theme           - Tema actual: 'light' | 'dark'
+ * @param {Function} props.onToggleTheme   - Callback para cambiar el tema
  * @returns {JSX.Element}
  */
 function Header({ theme, onToggleTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { isAuthenticated, user, logout } = useAuth()
+  const { addToast } = useToast()
+  const navigate = useNavigate()
 
   /** Cierra el menú móvil al navegar */
   function handleNavLinkClick() {
     setMobileMenuOpen(false)
   }
+
+  /** Maneja el cierre de sesión */
+  function handleLogout() {
+    logout()
+    setMobileMenuOpen(false)
+    addToast({
+      type:    'info',
+      title:   'Sesión cerrada',
+      message: 'Has cerrado sesión correctamente.',
+    })
+    navigate('/', { replace: true })
+  }
+
+  // Combinar links según el estado de auth
+  const navLinks = isAuthenticated
+    ? [...PUBLIC_NAV_LINKS, ...PRIVATE_NAV_LINKS]
+    : PUBLIC_NAV_LINKS
 
   return (
     <header className="header" role="banner">
@@ -61,7 +89,7 @@ function Header({ theme, onToggleTheme }) {
 
           {/* ── Navegación desktop ── */}
           <nav className="header__nav" aria-label="Navegación principal">
-            {NAV_LINKS.map((link) => (
+            {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
@@ -100,6 +128,28 @@ function Header({ theme, onToggleTheme }) {
               </span>
             </button>
 
+            {/* Mejora 21 — Botón Login / Logout según estado de auth */}
+            {isAuthenticated ? (
+              <button
+                className="header__auth-btn header__auth-btn--logout"
+                onClick={handleLogout}
+                aria-label={`Cerrar sesión de ${user?.name || 'usuario'}`}
+                title="Cerrar sesión"
+              >
+                <span aria-hidden="true">🚪</span>
+                <span className="header__auth-btn-label">Salir</span>
+              </button>
+            ) : (
+              <NavLink
+                to="/login"
+                className="header__auth-btn header__auth-btn--login"
+                aria-label="Iniciar sesión"
+              >
+                <span aria-hidden="true">🔐</span>
+                <span className="header__auth-btn-label">Entrar</span>
+              </NavLink>
+            )}
+
             {/* Botón menú móvil */}
             <button
               className="header__menu-btn"
@@ -121,7 +171,7 @@ function Header({ theme, onToggleTheme }) {
         aria-label="Navegación móvil"
         aria-hidden={!mobileMenuOpen}
       >
-        {NAV_LINKS.map((link) => (
+        {navLinks.map((link) => (
           <NavLink
             key={link.to}
             to={link.to}
@@ -137,6 +187,26 @@ function Header({ theme, onToggleTheme }) {
             {link.label}
           </NavLink>
         ))}
+
+        {/* Login/Logout en menú móvil */}
+        {isAuthenticated ? (
+          <button
+            className="header__nav-link header__mobile-logout"
+            onClick={handleLogout}
+          >
+            <span className="header__nav-link-icon" aria-hidden="true">🚪</span>
+            Cerrar sesión
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="header__nav-link"
+            onClick={handleNavLinkClick}
+          >
+            <span className="header__nav-link-icon" aria-hidden="true">🔐</span>
+            Iniciar sesión
+          </NavLink>
+        )}
       </nav>
     </header>
   )

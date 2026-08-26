@@ -3,3 +3,5 @@
  * @module context
  */
 export { UserProvider, useUser, USER_ACTIONS } from './UserContext'
+// Mejora 21 — Autenticación
+export { AuthProvider, useAuth, AUTH_ACTIONS } from './AuthContext'

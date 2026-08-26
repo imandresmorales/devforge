@@ -3,27 +3,27 @@
  *
  * MEJORA 10 — CODE SPLITTING:
  * Todas las páginas se cargan con React.lazy() + Suspense.
- * Cada página es un chunk JS separado que solo se descarga cuando
- * el usuario navega a esa ruta, reduciendo el bundle inicial.
  *
- * ANTES (Mejora 3):  Un solo bundle con TODAS las páginas.
- * DESPUÉS (Mejora 10): Bundle inicial pequeño + chunks por ruta.
+ * MEJORA 21 — AUTENTICACIÓN JWT + RUTAS PROTEGIDAS:
+ * - Rutas /login y /register son públicas (redirigen al dashboard si ya hay sesión)
+ * - /dashboard y /profile están protegidas con PrivateRoute
+ * - PrivateRoute verifica isAuthenticated de AuthContext
  *
  * @module App
  */
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import { useTheme } from './hooks/useTheme'
+import { useAuth } from './context/AuthContext'
 import { Header } from './components/layout'
 import { Footer } from './components/layout'
 import PageSkeleton from './components/ui/PageSkeleton/PageSkeleton.jsx'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
+import PrivateRoute from './components/ui/PrivateRoute/PrivateRoute.jsx'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
 // ─── Lazy imports — cada página crea su propio chunk JS ───────
-// React.lazy() recibe una función que retorna un import() dinámico.
-// El componente solo se descarga cuando se navega a esa ruta.
 const HomePage      = lazy(() => import('./pages/HomePage/HomePage.jsx'))
 const AboutPage     = lazy(() => import('./pages/AboutPage/AboutPage.jsx'))
 const DocsPage      = lazy(() => import('./pages/DocsPage/DocsPage.jsx'))
@@ -31,6 +31,23 @@ const DashboardPage = lazy(() => import('./pages/DashboardPage/DashboardPage.jsx
 const ContactPage   = lazy(() => import('./pages/ContactPage/ContactPage.jsx'))
 const ProfilePage   = lazy(() => import('./pages/ProfilePage/ProfilePage.jsx'))
 const NotFoundPage  = lazy(() => import('./pages/NotFoundPage/NotFoundPage.jsx'))
+// Mejora 21 — Páginas de autenticación
+const LoginPage    = lazy(() => import('./pages/LoginPage/LoginPage.jsx'))
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage.jsx'))
+
+/**
+ * Ruta pública que redirige al dashboard si el usuario ya está autenticado.
+ * Evita que un usuario logueado pueda volver a ver el login/register.
+ *
+ * @param {{ children: React.ReactNode }} props
+ */
+function PublicOnlyRoute({ children }) {
+  const { isAuthenticated, isLoading } = useAuth()
+
+  if (isLoading) return <PageSkeleton />
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />
+  return children
+}
 
 /**
  * Layout principal de la aplicación.
@@ -82,14 +99,50 @@ function App() {
               <AppLayout theme={theme} onToggleTheme={toggleTheme} />
             }
           >
+            {/* ── Rutas públicas ── */}
             <Route index              element={<HomePage />} />
             <Route path="about"      element={<AboutPage />} />
             <Route path="docs"       element={<DocsPage />} />
-            <Route path="dashboard"  element={<DashboardPage />} />
             <Route path="contact"    element={<ContactPage />} />
-            <Route path="profile"    element={<ProfilePage />} />
+
+            {/* ── Rutas de autenticación (solo accesibles si NO hay sesión) ── */}
+            <Route
+              path="login"
+              element={
+                <PublicOnlyRoute>
+                  <LoginPage />
+                </PublicOnlyRoute>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <PublicOnlyRoute>
+                  <RegisterPage />
+                </PublicOnlyRoute>
+              }
+            />
+
+            {/* ── Rutas protegidas (requieren autenticación) ── */}
+            <Route
+              path="dashboard"
+              element={
+                <PrivateRoute>
+                  <DashboardPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <PrivateRoute>
+                  <ProfilePage />
+                </PrivateRoute>
+              }
+            />
+
             {/* Ruta catch-all — debe ir siempre al final */}
-            <Route path="*"          element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

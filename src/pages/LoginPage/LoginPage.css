@@ -1,0 +1,206 @@
+/**
+ * Estilos para las páginas de autenticación: Login y Register.
+ * Comparte la misma hoja de estilos para mantener coherencia visual.
+ */
+
+/* ─── Layout centrado verticalmente ─────────────────────────── */
+.auth-page {
+  min-height: calc(100vh - 80px);  /* Descontar altura del header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--color-bg-primary);
+}
+
+/* ─── Card principal ─────────────────────────────────────────── */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-xl);
+  animation: auth-card-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes auth-card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Cabecera ───────────────────────────────────────────────── */
+.auth-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.auth-card__logo {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px hsla(239, 84%, 64%, 0.6));
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px  hsla(239, 84%, 64%, 0.4)); }
+  50%       { filter: drop-shadow(0 0 20px hsla(239, 84%, 64%, 0.8)); }
+}
+
+.auth-card__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.auth-card__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ─── Credenciales de demo ───────────────────────────────────── */
+.auth-demo-credentials {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+
+.auth-demo-credentials__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2) 0;
+  font-weight: var(--font-medium);
+}
+
+.auth-demo-credentials__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.auth-demo-credentials__items > div {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.auth-demo-credentials__items code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-brand-500);
+  background: var(--color-bg-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* ─── Formulario ─────────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ─── Input con toggle de visibilidad ───────────────────────── */
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-wrapper__input {
+  width: 100%;
+  padding-right: var(--space-10) !important;
+}
+
+.auth-input-wrapper__toggle {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  line-height: 1;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.auth-input-wrapper__toggle:hover,
+.auth-input-wrapper__toggle:focus-visible {
+  color: var(--color-brand-500);
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+}
+
+/* ─── Botón submit ───────────────────────────────────────────── */
+.auth-submit {
+  width: 100%;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* ─── Spinner de carga inline ───────────────────────────────── */
+.auth-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Pie: enlace secundario ─────────────────────────────────── */
+.auth-card__footer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.auth-card__link {
+  color: var(--color-brand-500);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.auth-card__link:hover,
+.auth-card__link:focus-visible {
+  color: var(--color-brand-400);
+  text-decoration: underline;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .auth-page {
+    align-items: flex-start;
+    padding-top: var(--space-6);
+  }
+
+  .auth-card {
+    padding: var(--space-8) var(--space-6);
+  }
+}

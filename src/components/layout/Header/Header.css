@@ -166,4 +166,67 @@
   .header__menu-btn {
     display: flex;
   }
+
+  .header__auth-btn-label {
+    display: none;
+  }
+}
+
+/* ─── Botón de autenticación (Login / Logout) ────────────────── */
+/* Mejora 21 */
+.header__auth-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  font-family: inherit;
+}
+
+.header__auth-btn--login {
+  color: var(--color-brand-500);
+  background-color: var(--color-brand-50);
+  border: 1px solid var(--color-brand-200);
+}
+
+.header__auth-btn--login:hover,
+.header__auth-btn--login:focus-visible {
+  background-color: var(--color-brand-100);
+  color: var(--color-brand-600);
+}
+
+[data-theme="dark"] .header__auth-btn--login {
+  background-color: var(--color-brand-950);
+  border-color: var(--color-brand-800);
+  color: var(--color-brand-400);
+}
+
+.header__auth-btn--logout {
+  color: var(--color-text-muted);
+  background-color: transparent;
+}
+
+.header__auth-btn--logout:hover,
+.header__auth-btn--logout:focus-visible {
+  color: var(--color-error);
+  background-color: hsla(0, 72%, 51%, 0.1);
+}
+
+/* ─── Botón logout en menú móvil ────────────────────────────── */
+.header__mobile-logout {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-error);
 }

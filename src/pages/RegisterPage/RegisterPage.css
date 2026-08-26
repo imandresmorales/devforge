@@ -1,0 +1,32 @@
+/**
+ * Estilos adicionales exclusivos de la página de Registro.
+ * Los estilos base de autenticación están en LoginPage.css (importado en el JSX).
+ */
+
+/* ─── Medidor de fuerza de contraseña ─────────────────────── */
+.register-strength {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.register-strength__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.register-strength__track {
+  height: 5px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.register-strength__bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
