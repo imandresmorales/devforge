@@ -1,168 +1,203 @@
 /**
- * @fileoverview Página Dashboard — área privada (se protegerá en Mejora 17).
+ * @fileoverview Página Dashboard — área privada protegida con autenticación JWT.
+ *
+ * MEJORA 21: Esta ruta ahora está protegida por PrivateRoute.
+ * MEJORA 22: Dashboard rediseñado con gráficos SVG puros (BarChart, DonutChart, LineChart).
+ *
+ * Los datos son estáticos/simulados para demostrar los patrones de visualización.
+ * En una app de producción provendrían de una API (ej. GET /api/dashboard/stats).
+ *
  * @module pages/DashboardPage
  */
+import { useAuth } from '../../context/AuthContext'
+import { BarChart, DonutChart, LineChart } from '../../components/ui/Charts'
 import DataTable from '../../components/ui/DataTable/DataTable.jsx'
+import './DashboardPage.css'
 
-/** Columnas de la tabla de mejoras */
-const COLUMNS = [
-  { key: 'num',    label: '#',          sortable: true,
-    render: (v) => <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-brand-500)', fontSize: 'var(--text-xs)' }}>{v}</span> },
-  { key: 'title',  label: 'Mejora',     sortable: true },
-  { key: 'fase',   label: 'Fase',       sortable: true,
-    render: (v) => <span className="badge badge--neutral">{v}</span> },
-  { key: 'status', label: 'Estado',     sortable: true,
-    render: (v) => <span className={`badge badge--${v === 'done' ? 'success' : v === 'wip' ? 'warning' : 'neutral'}`}>
-      {v === 'done' ? '✅ Listo' : v === 'wip' ? '🔄 En curso' : '⏳ Pendiente'}
-    </span> },
-  { key: 'commit', label: 'Commit',     sortable: false,
-    render: (v) => v ? <code style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--color-brand-500)' }}>{v}</code> : '—' },
+/* ─── Datos de los gráficos ────────────────────────────────── */
+
+/** BarChart: mejoras completadas por fase */
+const PHASE_DATA = [
+  { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
+  { label: 'Fase 2',  value: 6,  color: 'hsl(262, 80%, 65%)' },
+  { label: 'Fase 3',  value: 0,  color: 'hsl(215, 20%, 65%)' },
+  { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
+  { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
 
-/** Datos de las mejoras para la tabla */
-const IMPROVEMENTS_DATA = [
-  { id: 1,  num: '01', title: 'Scaffolding inicial',             fase: 'Fase 1', status: 'done', commit: '4a366c2' },
-  { id: 2,  num: '02', title: 'Design tokens CSS',               fase: 'Fase 1', status: 'done', commit: 'e46bc65' },
-  { id: 3,  num: '03', title: 'React Router + Layout',           fase: 'Fase 1', status: 'done', commit: 'f8900fa' },
-  { id: 4,  num: '04', title: 'Hero section con animaciones',    fase: 'Fase 1', status: 'done', commit: '7701c5e' },
-  { id: 5,  num: '05', title: 'Dark Mode con useTheme',          fase: 'Fase 1', status: 'done', commit: '24cc94f' },
-  { id: 6,  num: '06', title: 'Formulario controlado',           fase: 'Fase 1', status: 'done', commit: 'c8a1ae7' },
-  { id: 7,  num: '07', title: 'Hook useFetch + AbortController', fase: 'Fase 1', status: 'done', commit: '1f138a0' },
-  { id: 8,  num: '08', title: 'Context API + useReducer',        fase: 'Fase 1', status: 'done', commit: '2fd51b9' },
-  { id: 9,  num: '09', title: 'Tabla dinámica con paginación',   fase: 'Fase 1', status: 'wip',  commit: null },
-  { id: 10, num: '10', title: 'Lazy loading y Code Splitting',   fase: 'Fase 1', status: 'wip',  commit: null },
-  { id: 11, num: '11', title: 'Error Boundaries',                fase: 'Fase 1', status: 'wip',  commit: null },
-  { id: 12, num: '12', title: 'Accesibilidad (a11y)',            fase: 'Fase 1', status: 'wip',  commit: null },
-  { id: 13, num: '13', title: 'Internacionalización (i18n)',      fase: 'Fase 1', status: 'wip',  commit: null },
-  { id: 14, num: '14', title: 'Tests con Vitest',                fase: 'Fase 1', status: 'todo', commit: null },
-  { id: 15, num: '15', title: 'Storybook',                       fase: 'Fase 1', status: 'todo', commit: null },
-  { id: 16, num: '16', title: 'Variables de entorno seguras',    fase: 'Fase 2', status: 'todo', commit: null },
-  { id: 17, num: '17', title: 'Login con JWT',                   fase: 'Fase 2', status: 'todo', commit: null },
-  { id: 18, num: '18', title: 'Google reCAPTCHA v3',             fase: 'Fase 2', status: 'todo', commit: null },
-  { id: 19, num: '19', title: 'Sanitización XSS con DOMPurify', fase: 'Fase 2', status: 'todo', commit: null },
-  { id: 20, num: '20', title: 'Cabeceras de seguridad HTTP',     fase: 'Fase 2', status: 'todo', commit: null },
+/** DonutChart: distribución de tecnologías del roadmap */
+const TECH_SEGMENTS = [
+  { label: 'React / JS',  value: 35, color: 'hsl(192, 95%, 68%)' },
+  { label: 'Seguridad',   value: 20, color: 'hsl(0,   72%, 65%)' },
+  { label: 'Next.js',     value: 20, color: 'hsl(239, 84%, 64%)' },
+  { label: 'APIs',        value: 15, color: 'hsl(142, 71%, 45%)' },
+  { label: 'DevOps',      value: 10, color: 'hsl(38,  92%, 55%)' },
 ]
 
-/** Estadísticas de ejemplo del dashboard */
+/** LineChart: commits por semana (últimas 8 semanas) */
+const WEEKLY_COMMITS = [
+  { label: 'S1', value: 3 },
+  { label: 'S2', value: 5 },
+  { label: 'S3', value: 4 },
+  { label: 'S4', value: 8 },
+  { label: 'S5', value: 6 },
+  { label: 'S6', value: 10 },
+  { label: 'S7', value: 9 },
+  { label: 'S8', value: 7 },
+]
+
+/* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',    label: 'Mejoras implementadas', value: '7',    unit: 'de 100', icon: '✅' },
-  { id: 'commits',    label: 'Commits en GitHub',     value: '7',    unit: 'commits', icon: '📦' },
-  { id: 'componentes',label: 'Componentes creados',   value: '12',   unit: 'archivos', icon: '🧩' },
-  { id: 'lineas',     label: 'Líneas de código',      value: '3.2K', unit: 'lines',   icon: '💻' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '21',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '21',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '16',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Cobertura de código',   value: '0%',   unit: 'tests',   icon: '🧪', color: 'hsl(38, 92%, 55%)' },
 ]
 
+/* ─── Tabla de mejoras ──────────────────────────────────────── */
+const COLUMNS = [
+  {
+    key: 'num', label: '#', sortable: true,
+    render: (v) => <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-brand-500)', fontSize: 'var(--text-xs)' }}>{v}</span>,
+  },
+  { key: 'title',  label: 'Mejora',  sortable: true },
+  {
+    key: 'status', label: 'Estado', sortable: true,
+    render: (v) => (
+      <span className={`badge badge--${v === 'done' ? 'success' : v === 'wip' ? 'warning' : 'neutral'}`}>
+        {v === 'done' ? '✅ Listo' : v === 'wip' ? '🔄 En curso' : '⏳ Pendiente'}
+      </span>
+    ),
+  },
+  {
+    key: 'commit', label: 'Commit', sortable: false,
+    render: (v) => v
+      ? <code style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--color-brand-500)' }}>{v}</code>
+      : '—',
+  },
+]
+
+const IMPROVEMENTS_DATA = [
+  { id: 1,  num: '01', title: 'Scaffolding inicial',             status: 'done', commit: '4a366c2' },
+  { id: 2,  num: '02', title: 'Design tokens CSS',               status: 'done', commit: 'e46bc65' },
+  { id: 3,  num: '03', title: 'React Router + Layout',           status: 'done', commit: 'f8900fa' },
+  { id: 4,  num: '04', title: 'Hero section con animaciones',    status: 'done', commit: '7701c5e' },
+  { id: 5,  num: '05', title: 'Dark Mode con useTheme',          status: 'done', commit: '24cc94f' },
+  { id: 6,  num: '06', title: 'Formulario controlado',           status: 'done', commit: 'c8a1ae7' },
+  { id: 7,  num: '07', title: 'Hook useFetch + AbortController', status: 'done', commit: '1f138a0' },
+  { id: 8,  num: '08', title: 'Context API + useReducer',        status: 'done', commit: '2fd51b9' },
+  { id: 9,  num: '09', title: 'Tabla dinámica paginada',         status: 'done', commit: 'c4ea2fb' },
+  { id: 10, num: '10', title: 'Lazy loading y Code Splitting',   status: 'done', commit: 'd4c5334' },
+  { id: 11, num: '11', title: 'Error Boundaries',                status: 'done', commit: 'd4f5bd9' },
+  { id: 12, num: '12', title: 'Accesibilidad (a11y)',            status: 'done', commit: '184a461' },
+  { id: 13, num: '13', title: 'Internacionalización (i18n)',      status: 'done', commit: '160c331' },
+  { id: 14, num: '14', title: 'Tests con Vitest',                status: 'done', commit: '2354efb' },
+  { id: 15, num: '15', title: 'Sanitización XSS + CSP headers',  status: 'done', commit: '6d8452e' },
+  { id: 16, num: '16', title: 'hook useLocalStorage seguro',     status: 'done', commit: '04482d0' },
+  { id: 17, num: '17', title: 'Toast notifications globales',    status: 'done', commit: '03f7f72' },
+  { id: 18, num: '18', title: 'Modal reutilizable con portal',   status: 'done', commit: '1f7b4bb' },
+  { id: 19, num: '19', title: 'Exportación CSV segura',          status: 'done', commit: '804c61f' },
+  { id: 20, num: '20', title: 'Página de perfil + 2FA + medidor',status: 'done', commit: '78b5e08' },
+  { id: 21, num: '21', title: 'Auth JWT + PrivateRoute',         status: 'done', commit: '73dd0b2' },
+  { id: 22, num: '22', title: 'Dashboard con gráficos SVG',      status: 'wip',  commit: null },
+  { id: 23, num: '23', title: 'GitHub REST API real',            status: 'todo', commit: null },
+  { id: 24, num: '24', title: 'Cobertura de tests completa',     status: 'todo', commit: null },
+  { id: 25, num: '25', title: 'PWA + Service Worker',            status: 'todo', commit: null },
+]
+
+/**
+ * Página de Dashboard con gráficos SVG y tabla de mejoras.
+ * Protegida por PrivateRoute (requiere autenticación).
+ * @returns {JSX.Element}
+ */
 function DashboardPage() {
+  const { user } = useAuth()
+
   return (
     <main id="main-content" className="page-main">
       <div className="container">
 
+        {/* ── Hero ── */}
         <section className="page-hero" aria-labelledby="dashboard-title">
-          <span className="badge badge--warning">⚠️ Ruta no protegida — Mejora 17</span>
+          <span className="badge badge--brand">⚡ Área privada</span>
           <h1 id="dashboard-title">
-            <span className="text-gradient">Dashboard</span>
+            Hola, <span className="text-gradient">{user?.name?.split(' ')[0] || 'Desarrollador'}</span> 👋
           </h1>
           <p>
-            Esta página se protegerá con autenticación real en la <strong>Mejora 17</strong>{' '}
-            (JWT + rutas privadas). Por ahora muestra el estado del proyecto.
+            Aquí está el estado completo del proyecto DevForge —
+            <strong> {IMPROVEMENTS_DATA.filter(m => m.status === 'done').length} de 100</strong> mejoras implementadas.
           </p>
         </section>
 
-        {/* Stats grid */}
-        <section
-          aria-labelledby="stats-title"
-          style={{ marginTop: 'var(--space-10)' }}
-        >
-          <h2
-            id="stats-title"
-            style={{
-              fontSize: 'var(--text-xl)',
-              fontWeight: 'var(--font-bold)',
-              marginBottom: 'var(--space-6)',
-              color: 'var(--color-text-primary)',
-            }}
-          >
-            Estado del proyecto
-          </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-              gap: 'var(--space-4)',
-            }}
-          >
+        {/* ── Stats cards ── */}
+        <section aria-labelledby="stats-title" className="dashboard-stats-section">
+          <h2 id="stats-title" className="dashboard-section-title">Métricas del proyecto</h2>
+          <div className="dashboard-stats-grid">
             {STATS.map((stat) => (
-              <article
-                key={stat.id}
-                style={{
-                  padding: 'var(--space-6)',
-                  background: 'var(--color-bg-secondary)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 'var(--radius-xl)',
-                  transition: 'border-color var(--transition-base)',
-                }}
-              >
-                <div style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-3)' }} aria-hidden="true">
-                  {stat.icon}
-                </div>
-                <div
-                  style={{
-                    fontSize: 'var(--text-3xl)',
-                    fontWeight: 'var(--font-bold)',
-                    background: 'var(--gradient-brand)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    marginBottom: 'var(--space-1)',
-                  }}
-                >
+              <article key={stat.id} className="dashboard-stat-card">
+                <div className="dashboard-stat-card__icon" aria-hidden="true">{stat.icon}</div>
+                <div className="dashboard-stat-card__value" style={{ color: stat.color }}>
                   {stat.value}
                 </div>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-muted)', marginBottom: 'var(--space-2)' }}>
-                  {stat.unit}
-                </div>
-                <div style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', fontWeight: 'var(--font-medium)' }}>
-                  {stat.label}
-                </div>
+                <div className="dashboard-stat-card__unit">{stat.unit}</div>
+                <div className="dashboard-stat-card__label">{stat.label}</div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* Nota educativa */}
-        <aside
-          style={{
-            marginTop: 'var(--space-10)',
-            padding: 'var(--space-6)',
-            background: 'var(--color-brand-50)',
-            border: '1px solid var(--color-brand-200)',
-            borderRadius: 'var(--radius-xl)',
-          }}
-          aria-label="Nota educativa"
-        >
-          <h2 style={{ fontSize: 'var(--text-base)', fontWeight: 'var(--font-semibold)', color: 'var(--color-brand-700)', marginBottom: 'var(--space-2)' }}>
-            🎓 ¿Por qué no está protegida esta ruta?
-          </h2>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-brand-600)', lineHeight: 'var(--leading-relaxed)' }}>
-            En la <strong>Mejora 17</strong> implementaremos un componente{' '}
-            <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>PrivateRoute</code>{' '}
-            que verificará si hay un token JWT válido antes de renderizar esta página.
-            Si no hay sesión activa, redirigirá automáticamente al login.
-          </p>
-        </aside>
+        {/* ── Gráficos — fila de 2 ── */}
+        <section aria-labelledby="charts-title" className="dashboard-charts-section">
+          <h2 id="charts-title" className="dashboard-section-title">Visualización de datos</h2>
 
-        {/* Tabla de mejoras — Mejora 9 */}
-        <section aria-labelledby="table-title" style={{ marginTop: 'var(--space-10)' }}>
-          <h2
-            id="table-title"
-            style={{ fontSize: 'var(--text-xl)', fontWeight: 'var(--font-bold)', marginBottom: 'var(--space-6)', color: 'var(--color-text-primary)' }}
-          >
-            📊 Registro de mejoras
-          </h2>
+          <div className="dashboard-charts-grid">
+
+            {/* BarChart */}
+            <article className="dashboard-chart-card">
+              <h3 className="dashboard-chart-card__title">Mejoras por fase</h3>
+              <p className="dashboard-chart-card__desc">Número de mejoras completadas en cada fase del roadmap.</p>
+              <BarChart
+                data={PHASE_DATA}
+                title="Mejoras completadas por fase del roadmap DevForge"
+                unit=" mejoras"
+                height={180}
+              />
+            </article>
+
+            {/* DonutChart */}
+            <article className="dashboard-chart-card">
+              <h3 className="dashboard-chart-card__title">Distribución tecnológica</h3>
+              <p className="dashboard-chart-card__desc">Peso de cada área del roadmap de 100 mejoras.</p>
+              <DonutChart
+                segments={TECH_SEGMENTS}
+                title="Distribución de tecnologías en el roadmap de DevForge"
+                centerLabel="100"
+              />
+            </article>
+
+            {/* LineChart — fila completa */}
+            <article className="dashboard-chart-card dashboard-chart-card--full">
+              <h3 className="dashboard-chart-card__title">Actividad semanal (commits)</h3>
+              <p className="dashboard-chart-card__desc">Número de commits realizados en las últimas 8 semanas.</p>
+              <LineChart
+                data={WEEKLY_COMMITS}
+                title="Commits por semana en las últimas 8 semanas"
+                color="hsl(239, 84%, 64%)"
+                unit=" commits"
+              />
+            </article>
+
+          </div>
+        </section>
+
+        {/* ── Tabla de mejoras ── */}
+        <section aria-labelledby="table-title" className="dashboard-table-section">
+          <h2 id="table-title" className="dashboard-section-title">📋 Registro de mejoras</h2>
           <DataTable
             data={IMPROVEMENTS_DATA}
             columns={COLUMNS}
             caption="Tabla de las 100 mejoras del proyecto DevForge"
-            initialPageSize={5}
+            initialPageSize={10}
           />
         </section>
 
