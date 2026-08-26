@@ -12,3 +12,5 @@ export { default as NotFoundPage }  from './NotFoundPage/NotFoundPage.jsx'
 // Mejora 21 — Autenticación
 export { default as LoginPage }    from './LoginPage/LoginPage.jsx'
 export { default as RegisterPage } from './RegisterPage/RegisterPage.jsx'
+// Mejora 23 — GitHub API
+export { default as GitHubPage }   from './GitHubPage/GitHubPage.jsx'

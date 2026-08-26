@@ -34,6 +34,8 @@ const NotFoundPage  = lazy(() => import('./pages/NotFoundPage/NotFoundPage.jsx')
 // Mejora 21 — Páginas de autenticación
 const LoginPage    = lazy(() => import('./pages/LoginPage/LoginPage.jsx'))
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage.jsx'))
+// Mejora 23 — GitHub API
+const GitHubPage   = lazy(() => import('./pages/GitHubPage/GitHubPage.jsx'))
 
 /**
  * Ruta pública que redirige al dashboard si el usuario ya está autenticado.
@@ -137,6 +139,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <ProfilePage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="github"
+              element={
+                <PrivateRoute>
+                  <GitHubPage />
                 </PrivateRoute>
               }
             />
