@@ -19,7 +19,7 @@ import './DashboardPage.css'
 /** BarChart: mejoras completadas por fase */
 const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
-  { label: 'Fase 2',  value: 6,  color: 'hsl(262, 80%, 65%)' },
+  { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
   { label: 'Fase 3',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
@@ -43,15 +43,15 @@ const WEEKLY_COMMITS = [
   { label: 'S5', value: 6 },
   { label: 'S6', value: 10 },
   { label: 'S7', value: 9 },
-  { label: 'S8', value: 7 },
+  { label: 'S8', value: 12 },
 ]
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '21',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '21',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '16',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Cobertura de código',   value: '0%',   unit: 'tests',   icon: '🧪', color: 'hsl(38, 92%, 55%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '25',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '25',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '22',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '78',   unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -99,10 +99,10 @@ const IMPROVEMENTS_DATA = [
   { id: 19, num: '19', title: 'Exportación CSV segura',          status: 'done', commit: '804c61f' },
   { id: 20, num: '20', title: 'Página de perfil + 2FA + medidor',status: 'done', commit: '78b5e08' },
   { id: 21, num: '21', title: 'Auth JWT + PrivateRoute',         status: 'done', commit: '73dd0b2' },
-  { id: 22, num: '22', title: 'Dashboard con gráficos SVG',      status: 'wip',  commit: null },
-  { id: 23, num: '23', title: 'GitHub REST API real',            status: 'todo', commit: null },
-  { id: 24, num: '24', title: 'Cobertura de tests completa',     status: 'todo', commit: null },
-  { id: 25, num: '25', title: 'PWA + Service Worker',            status: 'todo', commit: null },
+  { id: 22, num: '22', title: 'Dashboard con gráficos SVG',      status: 'done', commit: '405b7c5' },
+  { id: 23, num: '23', title: 'GitHub REST API real',            status: 'done', commit: '03cefa2' },
+  { id: 24, num: '24', title: 'Cobertura de tests completa',     status: 'done', commit: 'ab2ba25' },
+  { id: 25, num: '25', title: 'PWA + Service Worker nativo',     status: 'done', commit: 'main' },
 ]
 
 /**

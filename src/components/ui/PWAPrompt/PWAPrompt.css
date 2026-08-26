@@ -1,0 +1,147 @@
+/**
+ * Estilos para el componente de PWA y notificaciones de estado.
+ */
+
+.pwa-container {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 380px;
+  width: calc(100% - var(--space-8));
+  pointer-events: none;
+}
+
+.pwa-container > * {
+  pointer-events: auto;
+}
+
+/* ─── Banner Offline ─────────────────────────────────────────── */
+.pwa-banner--offline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: hsl(38, 92%, 50%);
+  color: #1e1b4b;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: pwa-slide-up 0.3s ease-out;
+}
+
+.pwa-banner__icon {
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+}
+
+.pwa-banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pwa-banner__title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pwa-banner__desc {
+  font-size: var(--text-xs);
+  opacity: 0.95;
+}
+
+/* ─── Card de Actualización / Instalación ─────────────────────── */
+.pwa-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  animation: pwa-slide-up 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pwa-card--update {
+  border-color: var(--color-brand-400);
+}
+
+.pwa-card--install {
+  border-color: var(--color-success);
+}
+
+.pwa-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.pwa-card__icon {
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.pwa-card__title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 2px 0;
+}
+
+.pwa-card__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+.pwa-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.pwa-btn {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+}
+
+.pwa-btn--dismiss {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.pwa-btn--dismiss:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+@keyframes pwa-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .pwa-container {
+    bottom: var(--space-3);
+    right: var(--space-3);
+    left: var(--space-3);
+    width: auto;
+  }
+}

@@ -20,6 +20,7 @@ import { Footer } from './components/layout'
 import PageSkeleton from './components/ui/PageSkeleton/PageSkeleton.jsx'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 import PrivateRoute from './components/ui/PrivateRoute/PrivateRoute.jsx'
+import PWAPrompt from './components/ui/PWAPrompt/PWAPrompt.jsx'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
@@ -81,6 +82,7 @@ function AppLayout({ theme, onToggleTheme }) {
       </ErrorBoundary>
 
       <Footer />
+      <PWAPrompt />
     </div>
   )
 }
