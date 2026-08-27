@@ -10,6 +10,7 @@
  * @module pages/PricingPage
  */
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import CheckoutModal from '../../components/ui/CheckoutModal/CheckoutModal.jsx'
 import './PricingPage.css'
 
@@ -33,6 +34,7 @@ const FAQS = [
 ]
 
 function PricingPage() {
+  const navigate = useNavigate()
   const [annualBilling, setAnnualBilling] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState(null)
   const [checkoutOpen, setCheckoutOpen] = useState(false)
@@ -92,7 +94,7 @@ function PricingPage() {
 
   const handleSelectPlan = (plan) => {
     if (plan.price === 0) {
-      window.location.href = '/register'
+      navigate('/register')
       return
     }
     setSelectedPlan(plan)

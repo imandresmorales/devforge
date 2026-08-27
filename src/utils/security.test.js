@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { sanitizeInput, sanitizeHtml, evaluatePasswordStrength } from './security.js'
+import { sanitizeInput, sanitizeHtml, evaluatePasswordStrength, sanitizeRedirectPath } from './security.js'
 
 describe('Seguridad - Sanitización XSS (security.js)', () => {
   describe('sanitizeInput', () => {
@@ -125,6 +125,35 @@ describe('Seguridad - Sanitización XSS (security.js)', () => {
         expect(percentage).toBeGreaterThanOrEqual(0)
         expect(percentage).toBeLessThanOrEqual(100)
       })
+    })
+  })
+
+  describe('sanitizeRedirectPath (Anti-Open Redirect CWE-601)', () => {
+    it('debe permitir rutas relativas internas válidas', () => {
+      expect(sanitizeRedirectPath('/dashboard')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('/profile/security')).toBe('/profile/security')
+      expect(sanitizeRedirectPath('/pricing')).toBe('/pricing')
+      expect(sanitizeRedirectPath('/')).toBe('/')
+    })
+
+    it('debe bloquear URLs absolutas externas y retornar el fallback', () => {
+      expect(sanitizeRedirectPath('https://evil.com')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('http://malicious.org/phish')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('//evil.com')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('///evil.com')).toBe('/dashboard')
+    })
+
+    it('debe bloquear esquemas peligrosos como javascript: o data:', () => {
+      expect(sanitizeRedirectPath('javascript:alert(1)')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('/javascript:alert(1)')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('data:text/html,<script>')).toBe('/dashboard')
+    })
+
+    it('debe manejar valores nulos, no válidos o vacíos usando el fallback', () => {
+      expect(sanitizeRedirectPath(null)).toBe('/dashboard')
+      expect(sanitizeRedirectPath(undefined)).toBe('/dashboard')
+      expect(sanitizeRedirectPath('')).toBe('/dashboard')
+      expect(sanitizeRedirectPath('invalid', '/home')).toBe('/home')
     })
   })
 })

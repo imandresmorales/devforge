@@ -16,6 +16,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useToast } from '../../context/ToastContext'
 import { isValidEmail } from '../../utils'
+import { sanitizeRedirectPath } from '../../utils/security'
 import './LoginPage.css'
 
 /** Estado inicial del formulario */
@@ -53,8 +54,8 @@ function LoginPage() {
   const [touched,      setTouched]      = useState({ email: false, password: false })
   const [showPassword, setShowPassword] = useState(false)
 
-  // Destino post-login: la ruta que intentó acceder, o el dashboard por defecto
-  const from = location.state?.from?.pathname || '/dashboard'
+  // Destino post-login seguro (previene vulnerabilidades de Open Redirect)
+  const from = sanitizeRedirectPath(location.state?.from?.pathname, '/dashboard')
 
   function handleChange(e) {
     const { name, value } = e.target

@@ -79,3 +79,26 @@ export function evaluatePasswordStrength(password) {
     checks,
   }
 }
+
+/**
+ * Valida que una ruta de redirección interna sea segura y relativa al origen actual.
+ * Previene vulnerabilidades de Open Redirect (CWE-601).
+ *
+ * @param {unknown} path - Ruta a validar
+ * @param {string} [fallback='/dashboard'] - Ruta por defecto
+ * @returns {string} Ruta segura garantizada
+ *
+ * @example
+ * sanitizeRedirectPath('/dashboard')         // '/dashboard'
+ * sanitizeRedirectPath('//evil.com')          // '/dashboard'
+ * sanitizeRedirectPath('javascript:alert(1)') // '/dashboard'
+ */
+export function sanitizeRedirectPath(path, fallback = '/dashboard') {
+  if (typeof path !== 'string' || !path.trim()) return fallback
+  const trimmed = path.trim()
+  // Debe comenzar con exactamente un '/', no con '//', ni '\\', ni esquemas con ':'
+  if (/^\/(?!\/)[^\\:]*$/.test(trimmed)) {
+    return trimmed
+  }
+  return fallback
+}

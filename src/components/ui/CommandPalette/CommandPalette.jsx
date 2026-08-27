@@ -92,7 +92,7 @@ function CommandPalette({ isOpen, onClose, onToggleTheme }) {
       icon: '🔗',
       subtitle: 'github.com/imandresmorales/devforge',
       action: () => {
-        window.open('https://github.com/imandresmorales/devforge', '_blank')
+        window.open('https://github.com/imandresmorales/devforge', '_blank', 'noopener,noreferrer')
         onClose()
       },
     },
