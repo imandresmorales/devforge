@@ -21,7 +21,7 @@ import './styles/a11y.css'  // SIEMPRE al final para poder sobrescribir
 import './i18n/i18n.js'
 
 import App from './App.jsx'
-import { UserProvider, AuthProvider, NotificationProvider } from './context'
+import { UserProvider, AuthProvider, NotificationProvider, TourProvider } from './context'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 
 const rootElement = document.getElementById('root')
@@ -37,13 +37,15 @@ createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary>
       {/*
-        AuthProvider debe envolver a UserProvider y NotificationProvider
-        para proveer autenticación y centro de notificaciones globales.
+        Jerarquía de proveedores globales:
+        AuthProvider -> UserProvider -> NotificationProvider -> TourProvider -> App
       */}
       <AuthProvider>
         <UserProvider>
           <NotificationProvider>
-            <App />
+            <TourProvider>
+              <App />
+            </TourProvider>
           </NotificationProvider>
         </UserProvider>
       </AuthProvider>

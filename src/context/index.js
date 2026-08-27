@@ -7,3 +7,5 @@ export { UserProvider, useUser, USER_ACTIONS } from './UserContext'
 export { AuthProvider, useAuth, AUTH_ACTIONS } from './AuthContext'
 // Mejora 28 — Notificaciones
 export { NotificationProvider, useNotifications, NOTIFICATION_ACTIONS } from './NotificationContext'
+// Mejora 29 — Tour Guiado Interactivo
+export { TourProvider, useTour } from './TourContext'

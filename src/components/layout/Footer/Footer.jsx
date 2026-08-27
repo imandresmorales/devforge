@@ -7,10 +7,11 @@
  * @module components/layout/Footer
  */
 import { Link } from 'react-router-dom'
+import { useTour } from '../../../context/TourContext'
 import './Footer.css'
 
 /** Mejora actual para calcular el progreso */
-const CURRENT_IMPROVEMENT = 7
+const CURRENT_IMPROVEMENT = 29
 const TOTAL_IMPROVEMENTS = 100
 
 /** Columnas de enlaces del footer */
@@ -19,8 +20,8 @@ const FOOTER_LINKS = [
     title: 'Navegación',
     links: [
       { label: 'Inicio',     to: '/' },
+      { label: 'Planes',     to: '/pricing' },
       { label: 'Docs',       to: '/docs' },
-      { label: 'Acerca de', to: '/about' },
       { label: 'Dashboard',  to: '/dashboard' },
       { label: 'Contacto',   to: '/contact' },
     ],
@@ -44,6 +45,7 @@ const TECH_STACK = ['React 18', 'Vite', 'CSS Tokens', 'React Router']
  * @returns {JSX.Element}
  */
 function Footer() {
+  const { resetTour } = useTour()
   const progressPercent = Math.round(
     (CURRENT_IMPROVEMENT / TOTAL_IMPROVEMENTS) * 100
   )
@@ -124,6 +126,16 @@ function Footer() {
           <p className="footer__copyright">
             © {currentYear} Andres Morales — DevForge. MIT License.
           </p>
+
+          <button
+            type="button"
+            className="footer__tour-btn"
+            onClick={resetTour}
+            title="Reiniciar el tour guiado interactivo"
+          >
+            🚀 Tour de Bienvenida
+          </button>
+
           <div className="footer__tech-stack" aria-label="Tecnologías utilizadas">
             {TECH_STACK.map((tech) => (
               <span key={tech} className="footer__tech-badge">

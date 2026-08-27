@@ -23,6 +23,7 @@ import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 import PrivateRoute from './components/ui/PrivateRoute/PrivateRoute.jsx'
 import PWAPrompt from './components/ui/PWAPrompt/PWAPrompt.jsx'
 import CommandPalette from './components/ui/CommandPalette/CommandPalette.jsx'
+import TourGuide from './components/ui/TourGuide/TourGuide.jsx'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
@@ -103,6 +104,9 @@ function AppLayout({ theme, onToggleTheme }) {
         onClose={() => setIsSearchOpen(false)}
         onToggleTheme={onToggleTheme}
       />
+
+      {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
+      <TourGuide />
     </div>
   )
 }
