@@ -45,7 +45,7 @@ const PRIVATE_NAV_LINKS = [
  * @param {Function} props.onToggleTheme   - Callback para cambiar el tema
  * @returns {JSX.Element}
  */
-function Header({ theme, onToggleTheme }) {
+function Header({ theme, onToggleTheme, onOpenSearch }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { isAuthenticated, user, logout } = useAuth()
   const { addToast } = useToast()
@@ -111,6 +111,19 @@ function Header({ theme, onToggleTheme }) {
 
           {/* ── Acciones ── */}
           <div className="header__actions">
+            {/* Buscador global con atajo Ctrl+K (Mejora 27) */}
+            <button
+              type="button"
+              className="header__search-btn"
+              onClick={onOpenSearch}
+              aria-label="Abrir buscador global y paleta de comandos (Ctrl+K)"
+              title="Buscar (Ctrl+K)"
+            >
+              <span className="header__search-icon" aria-hidden="true">🔍</span>
+              <span className="header__search-placeholder">Buscar…</span>
+              <kbd className="header__search-kbd">Ctrl K</kbd>
+            </button>
+
             {/* Widget de sesión (Context API — Mejora 8) */}
             <UserWidget />
 

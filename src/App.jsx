@@ -11,16 +11,18 @@
  *
  * @module App
  */
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import { useTheme } from './hooks/useTheme'
 import { useAuth } from './context/AuthContext'
+import { useKeyboardShortcut } from './hooks/useKeyboardShortcut'
 import { Header } from './components/layout'
 import { Footer } from './components/layout'
 import PageSkeleton from './components/ui/PageSkeleton/PageSkeleton.jsx'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 import PrivateRoute from './components/ui/PrivateRoute/PrivateRoute.jsx'
 import PWAPrompt from './components/ui/PWAPrompt/PWAPrompt.jsx'
+import CommandPalette from './components/ui/CommandPalette/CommandPalette.jsx'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
@@ -63,6 +65,11 @@ function PublicOnlyRoute({ children }) {
  * @param {Function} props.onToggleTheme  - Callback para cambiar el tema
  */
 function AppLayout({ theme, onToggleTheme }) {
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+
+  // Atajo global Ctrl+K / Cmd+K
+  useKeyboardShortcut('k', () => setIsSearchOpen(true), { ctrlOrCmd: true })
+
   return (
     <div className="app-root">
       {/* Skip to content — accesibilidad para teclado */}
@@ -70,7 +77,11 @@ function AppLayout({ theme, onToggleTheme }) {
         Saltar al contenido principal
       </a>
 
-      <Header theme={theme} onToggleTheme={onToggleTheme} />
+      <Header
+        theme={theme}
+        onToggleTheme={onToggleTheme}
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
 
       {/*
         ErrorBoundary captura errores de la ruta activa (incluido el lazy load).
@@ -85,6 +96,13 @@ function AppLayout({ theme, onToggleTheme }) {
 
       <Footer />
       <PWAPrompt />
+
+      {/* Paleta de Comandos y Búsqueda Global (Mejora 27) */}
+      <CommandPalette
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onToggleTheme={onToggleTheme}
+      />
     </div>
   )
 }
