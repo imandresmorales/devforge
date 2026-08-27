@@ -23,6 +23,7 @@ import './Header.css'
 const PUBLIC_NAV_LINKS = [
   { to: '/',        label: 'Inicio',    icon: '🏠', end: true  },
   { to: '/docs',    label: 'Docs',      icon: '📚', end: false },
+  { to: '/pricing', label: 'Planes',    icon: '💳', end: false },
   { to: '/about',   label: 'Acerca de', icon: 'ℹ️',  end: false },
   { to: '/contact', label: 'Contacto',  icon: '📬', end: false },
 ]

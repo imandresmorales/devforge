@@ -14,3 +14,5 @@ export { default as LoginPage }    from './LoginPage/LoginPage.jsx'
 export { default as RegisterPage } from './RegisterPage/RegisterPage.jsx'
 // Mejora 23 — GitHub API
 export { default as GitHubPage }   from './GitHubPage/GitHubPage.jsx'
+// Mejora 26 — Pasarela de pagos con Stripe
+export { default as PricingPage }  from './PricingPage/PricingPage.jsx'

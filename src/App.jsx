@@ -37,6 +37,8 @@ const LoginPage    = lazy(() => import('./pages/LoginPage/LoginPage.jsx'))
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage.jsx'))
 // Mejora 23 — GitHub API
 const GitHubPage   = lazy(() => import('./pages/GitHubPage/GitHubPage.jsx'))
+// Mejora 26 — Stripe Pricing
+const PricingPage  = lazy(() => import('./pages/PricingPage/PricingPage.jsx'))
 
 /**
  * Ruta pública que redirige al dashboard si el usuario ya está autenticado.
@@ -107,6 +109,7 @@ function App() {
             <Route index              element={<HomePage />} />
             <Route path="about"      element={<AboutPage />} />
             <Route path="docs"       element={<DocsPage />} />
+            <Route path="pricing"    element={<PricingPage />} />
             <Route path="contact"    element={<ContactPage />} />
 
             {/* ── Rutas de autenticación (solo accesibles si NO hay sesión) ── */}
