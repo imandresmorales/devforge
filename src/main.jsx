@@ -21,8 +21,7 @@ import './styles/a11y.css'  // SIEMPRE al final para poder sobrescribir
 import './i18n/i18n.js'
 
 import App from './App.jsx'
-import { UserProvider } from './context'
-import { AuthProvider } from './context'
+import { UserProvider, AuthProvider, NotificationProvider } from './context'
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx'
 
 const rootElement = document.getElementById('root')
@@ -38,13 +37,14 @@ createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary>
       {/*
-        AuthProvider debe envolver a UserProvider porque algunos componentes
-        usan ambos contextos. AuthProvider gestiona tokens JWT, UserProvider
-        gestiona datos de perfil extendido.
+        AuthProvider debe envolver a UserProvider y NotificationProvider
+        para proveer autenticación y centro de notificaciones globales.
       */}
       <AuthProvider>
         <UserProvider>
-          <App />
+          <NotificationProvider>
+            <App />
+          </NotificationProvider>
         </UserProvider>
       </AuthProvider>
     </ErrorBoundary>

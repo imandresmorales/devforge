@@ -14,6 +14,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { useToast } from '../../../context/ToastContext'
 import UserWidget from '../../../components/ui/UserWidget/UserWidget.jsx'
 import LanguageSelector from '../../../components/ui/LanguageSelector/LanguageSelector.jsx'
+import NotificationCenter from '../../../components/ui/NotificationCenter/NotificationCenter.jsx'
 import './Header.css'
 
 /**
@@ -129,6 +130,9 @@ function Header({ theme, onToggleTheme, onOpenSearch }) {
 
             {/* Selector de idioma (i18n — Mejora 13) */}
             <LanguageSelector />
+
+            {/* Centro de Notificaciones y Web Push (Mejora 28) */}
+            <NotificationCenter />
 
             {/* Toggle de tema — la lógica viene de useTheme (Mejora 5) */}
             <button
