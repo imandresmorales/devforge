@@ -24,6 +24,7 @@ import PrivateRoute from './components/ui/PrivateRoute/PrivateRoute.jsx'
 import PWAPrompt from './components/ui/PWAPrompt/PWAPrompt.jsx'
 import CommandPalette from './components/ui/CommandPalette/CommandPalette.jsx'
 import TourGuide from './components/ui/TourGuide/TourGuide.jsx'
+import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
@@ -107,6 +108,9 @@ function AppLayout({ theme, onToggleTheme }) {
 
       {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
       <TourGuide />
+
+      {/* Widget de soporte por WhatsApp (Mejora 31) */}
+      <WhatsAppWidget />
     </div>
   )
 }
