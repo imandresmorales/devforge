@@ -25,6 +25,8 @@ import PWAPrompt from './components/ui/PWAPrompt/PWAPrompt.jsx'
 import CommandPalette from './components/ui/CommandPalette/CommandPalette.jsx'
 import TourGuide from './components/ui/TourGuide/TourGuide.jsx'
 import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
+import ZenModeHUD from './components/ui/ZenModeHUD/ZenModeHUD.jsx'
+import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
 
@@ -68,6 +70,7 @@ function PublicOnlyRoute({ children }) {
  */
 function AppLayout({ theme, onToggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const zen = useZenMode()
 
   // Atajo global Ctrl+K / Cmd+K
   useKeyboardShortcut('k', () => setIsSearchOpen(true), { ctrlOrCmd: true })
@@ -83,6 +86,7 @@ function AppLayout({ theme, onToggleTheme }) {
         theme={theme}
         onToggleTheme={onToggleTheme}
         onOpenSearch={() => setIsSearchOpen(true)}
+        onToggleZen={zen.toggleZenMode}
       />
 
       {/*
@@ -111,6 +115,19 @@ function AppLayout({ theme, onToggleTheme }) {
 
       {/* Widget de soporte por WhatsApp (Mejora 31) */}
       <WhatsAppWidget />
+
+      {/* HUD de Modo Zen (Mejora 32) */}
+      <ZenModeHUD
+        isZenMode={zen.isZenMode}
+        readingProgress={zen.readingProgress}
+        fontSizeOffset={zen.fontSizeOffset}
+        onExit={zen.exitZenMode}
+        onIncreaseFont={zen.increaseFontSize}
+        onDecreaseFont={zen.decreaseFontSize}
+        onResetFont={zen.resetFontSize}
+        onToggleTheme={onToggleTheme}
+        theme={theme}
+      />
     </div>
   )
 }

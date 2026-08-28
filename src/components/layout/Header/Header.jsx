@@ -46,7 +46,7 @@ const PRIVATE_NAV_LINKS = [
  * @param {Function} props.onToggleTheme   - Callback para cambiar el tema
  * @returns {JSX.Element}
  */
-function Header({ theme, onToggleTheme, onOpenSearch }) {
+function Header({ theme, onToggleTheme, onOpenSearch, onToggleZen }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { isAuthenticated, user, logout } = useAuth()
   const { addToast } = useToast()
@@ -133,6 +133,17 @@ function Header({ theme, onToggleTheme, onOpenSearch }) {
 
             {/* Centro de Notificaciones y Web Push (Mejora 28) */}
             <NotificationCenter />
+
+            {/* Modo Zen (Mejora 32) */}
+            <button
+              type="button"
+              className="header__theme-btn header__zen-btn"
+              onClick={onToggleZen}
+              aria-label="Activar Modo Zen (Lectura sin distracciones, Alt+Z)"
+              title="Modo Zen (Alt+Z)"
+            >
+              <span aria-hidden="true">🧘</span>
+            </button>
 
             {/* Toggle de tema — la lógica viene de useTheme (Mejora 5) */}
             <button

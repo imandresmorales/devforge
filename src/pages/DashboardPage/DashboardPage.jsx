@@ -20,7 +20,7 @@ import './DashboardPage.css'
 const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
-  { label: 'Fase 3',  value: 4,  color: 'hsl(142, 71%, 45%)' },
+  { label: 'Fase 3',  value: 7,  color: 'hsl(142, 71%, 45%)' },
   { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
@@ -43,15 +43,15 @@ const WEEKLY_COMMITS = [
   { label: 'S5', value: 6 },
   { label: 'S6', value: 10 },
   { label: 'S7', value: 9 },
-  { label: 'S8', value: 16 },
+  { label: 'S8', value: 20 },
 ]
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '29',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '29',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '26',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '104',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '32',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '32',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '29',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '126',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -106,7 +106,10 @@ const IMPROVEMENTS_DATA = [
   { id: 26, num: '26', title: 'Pasarela Stripe + Checkout Luhn', status: 'done', commit: 'e875c75' },
   { id: 27, num: '27', title: 'Buscador Global Ctrl+K Palette',  status: 'done', commit: '7e7747c' },
   { id: 28, num: '28', title: 'Centro de Alertas & Web Push API',status: 'done', commit: '3dfd46c' },
-  { id: 29, num: '29', title: 'Tour Guiado Interactivo Onboarding', status: 'done', commit: 'main' },
+  { id: 29, num: '29', title: 'Tour Guiado Interactivo Onboarding', status: 'done', commit: '80c9ff4' },
+  { id: 30, num: '30', title: 'OAuth 2.0 Google & GitHub Login',  status: 'done', commit: '03aad46' },
+  { id: 31, num: '31', title: 'WhatsApp Cloud API & Chat Widget', status: 'done', commit: 'd358246' },
+  { id: 32, num: '32', title: 'Modo Zen / Lectura Inmersiva',     status: 'done', commit: 'main' },
 ]
 
 /**
