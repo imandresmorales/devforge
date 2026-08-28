@@ -15,6 +15,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useToast } from '../../context/ToastContext'
 import { evaluatePasswordStrength } from '../../utils/security'
 import { isValidEmail } from '../../utils'
+import SocialAuthButtons from '../../components/ui/SocialAuthButtons/SocialAuthButtons.jsx'
 import '../LoginPage/LoginPage.css'
 import './RegisterPage.css'
 
@@ -272,6 +273,9 @@ function RegisterPage() {
             )}
           </button>
         </form>
+
+        {/* Registro con OAuth 2.0 Social (Mejora 30) */}
+        <SocialAuthButtons redirectTo="/dashboard" />
 
         {/* ── Pie ── */}
         <p className="auth-card__footer">

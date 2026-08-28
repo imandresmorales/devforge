@@ -17,6 +17,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useToast } from '../../context/ToastContext'
 import { isValidEmail } from '../../utils'
 import { sanitizeRedirectPath } from '../../utils/security'
+import SocialAuthButtons from '../../components/ui/SocialAuthButtons/SocialAuthButtons.jsx'
 import './LoginPage.css'
 
 /** Estado inicial del formulario */
@@ -230,6 +231,9 @@ function LoginPage() {
             )}
           </button>
         </form>
+
+        {/* Login con OAuth 2.0 Social (Mejora 30) */}
+        <SocialAuthButtons redirectTo={from} />
 
         {/* ── Pie: enlace a registro ── */}
         <p className="auth-card__footer">

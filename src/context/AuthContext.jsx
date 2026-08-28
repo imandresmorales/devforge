@@ -350,6 +350,37 @@ export function AuthProvider({ children }) {
   }, [])
 
   /**
+   * Inicia sesión o registra al usuario mediante un proveedor OAuth 2.0 (Google / GitHub).
+   * @param {{ id: string, name: string, email: string, provider: string, avatar?: string }} profile
+   * @param {string} [customToken]
+   */
+  const loginWithOAuth = useCallback((profile, customToken) => {
+    const accessToken = customToken || generateSimulatedJWT(
+      { id: profile.id, email: profile.email, role: 'user', provider: profile.provider },
+      ACCESS_TOKEN_TTL_MS
+    )
+    const refreshToken = generateSimulatedJWT(
+      { id: profile.id },
+      7 * 24 * 60 * 60 * 1000
+    )
+
+    setAccessToken(accessToken)
+    localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken)
+
+    const oauthUser = {
+      id: profile.id,
+      email: profile.email,
+      name: profile.name,
+      avatar: profile.avatar || null,
+      provider: profile.provider,
+      role: 'user',
+      linkedAccounts: { [profile.provider]: true },
+    }
+
+    dispatch({ type: AUTH_ACTIONS.LOGIN, payload: oauthUser })
+  }, [])
+
+  /**
    * Cierra la sesión del usuario.
    * Limpia todos los tokens y el estado.
    */
@@ -377,6 +408,7 @@ export function AuthProvider({ children }) {
     // Acciones
     login,
     register,
+    loginWithOAuth,
     logout,
     getAccessToken,
   }
