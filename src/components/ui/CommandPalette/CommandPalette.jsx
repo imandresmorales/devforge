@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -93,6 +93,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTermin
       subtitle: 'Ejecutar comandos en la consola integrada DevForge',
       action: () => {
         onOpenTerminal?.()
+        onClose()
+      },
+    },
+    {
+      id: 'action-achievements',
+      category: 'Acciones',
+      title: 'Ver Logros y Medallas',
+      icon: '🏆',
+      subtitle: 'Puntos XP, nivel y recompensas desbloqueadas',
+      action: () => {
+        onOpenAchievements?.()
         onClose()
       },
     },
