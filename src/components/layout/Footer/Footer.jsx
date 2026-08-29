@@ -44,7 +44,7 @@ const TECH_STACK = ['React 18', 'Vite', 'CSS Tokens', 'React Router']
  * Componente de pie de página.
  * @returns {JSX.Element}
  */
-function Footer() {
+function Footer({ onOpenFeedback }) {
   const { resetTour } = useTour()
   const progressPercent = Math.round(
     (CURRENT_IMPROVEMENT / TOTAL_IMPROVEMENTS) * 100
@@ -127,14 +127,24 @@ function Footer() {
             © {currentYear} Andres Morales — DevForge. MIT License.
           </p>
 
-          <button
-            type="button"
-            className="footer__tour-btn"
-            onClick={resetTour}
-            title="Reiniciar el tour guiado interactivo"
-          >
-            🚀 Tour de Bienvenida
-          </button>
+          <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
+            <button
+              type="button"
+              className="footer__tour-btn"
+              onClick={resetTour}
+              title="Reiniciar el tour guiado interactivo"
+            >
+              🚀 Tour
+            </button>
+            <button
+              type="button"
+              className="footer__tour-btn"
+              onClick={onOpenFeedback}
+              title="Calificar el proyecto DevForge"
+            >
+              ⭐ Calificar
+            </button>
+          </div>
 
           <div className="footer__tech-stack" aria-label="Tecnologías utilizadas">
             {TECH_STACK.map((tech) => (

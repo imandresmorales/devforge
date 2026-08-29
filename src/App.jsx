@@ -27,6 +27,7 @@ import TourGuide from './components/ui/TourGuide/TourGuide.jsx'
 import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
 import ZenModeHUD from './components/ui/ZenModeHUD/ZenModeHUD.jsx'
 import QRCodeModal from './components/ui/QRCodeModal/QRCodeModal.jsx'
+import FeedbackModal from './components/ui/FeedbackModal/FeedbackModal.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
@@ -72,6 +73,7 @@ function PublicOnlyRoute({ children }) {
 function AppLayout({ theme, onToggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isQROpen, setIsQROpen] = useState(false)
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
   const zen = useZenMode()
 
   // Atajo global Ctrl+K / Cmd+K
@@ -102,7 +104,7 @@ function AppLayout({ theme, onToggleTheme }) {
         </Suspense>
       </ErrorBoundary>
 
-      <Footer />
+      <Footer onOpenFeedback={() => setIsFeedbackOpen(true)} />
       <PWAPrompt />
 
       {/* Paleta de Comandos y Búsqueda Global (Mejora 27) */}
@@ -136,6 +138,12 @@ function AppLayout({ theme, onToggleTheme }) {
       <QRCodeModal
         isOpen={isQROpen}
         onClose={() => setIsQROpen(false)}
+      />
+
+      {/* Módulo de Calificación y Feedback (Mejora 37) */}
+      <FeedbackModal
+        isOpen={isFeedbackOpen}
+        onClose={() => setIsFeedbackOpen(false)}
       />
     </div>
   )
