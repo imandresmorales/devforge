@@ -1,0 +1,92 @@
+/**
+ * Estilos para QRCodeModal.
+ */
+
+.qr-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.qr-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.qr-preset-btn {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.qr-preset-btn:hover,
+.qr-preset-btn--active {
+  background: hsla(239, 84%, 64%, 0.1);
+  border-color: var(--color-brand-500);
+  color: var(--color-brand-400);
+}
+
+.qr-custom-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.qr-preview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.qr-svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.qr-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.qr-info__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.qr-info__code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-brand-400);
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qr-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}

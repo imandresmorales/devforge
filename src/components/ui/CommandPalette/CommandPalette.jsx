@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -74,6 +74,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme }) {
     { id: 'page-login', category: 'Páginas', title: 'Iniciar Sesión', icon: '🔐', subtitle: 'Autenticación con JWT', path: '/login' },
 
     // ── Acciones Rápidas ──
+    {
+      id: 'action-qr',
+      category: 'Acciones',
+      title: 'Generar Código QR',
+      icon: '📱',
+      subtitle: 'Crear código QR para URLs, 2FA y pagos',
+      action: () => {
+        onOpenQR?.()
+        onClose()
+      },
+    },
     {
       id: 'action-theme',
       category: 'Acciones',

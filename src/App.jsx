@@ -26,6 +26,7 @@ import CommandPalette from './components/ui/CommandPalette/CommandPalette.jsx'
 import TourGuide from './components/ui/TourGuide/TourGuide.jsx'
 import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
 import ZenModeHUD from './components/ui/ZenModeHUD/ZenModeHUD.jsx'
+import QRCodeModal from './components/ui/QRCodeModal/QRCodeModal.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
@@ -70,6 +71,7 @@ function PublicOnlyRoute({ children }) {
  */
 function AppLayout({ theme, onToggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isQROpen, setIsQROpen] = useState(false)
   const zen = useZenMode()
 
   // Atajo global Ctrl+K / Cmd+K
@@ -108,6 +110,7 @@ function AppLayout({ theme, onToggleTheme }) {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
         onToggleTheme={onToggleTheme}
+        onOpenQR={() => setIsQROpen(true)}
       />
 
       {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
@@ -127,6 +130,12 @@ function AppLayout({ theme, onToggleTheme }) {
         onResetFont={zen.resetFontSize}
         onToggleTheme={onToggleTheme}
         theme={theme}
+      />
+
+      {/* Generador de Código QR (Mejora 33) */}
+      <QRCodeModal
+        isOpen={isQROpen}
+        onClose={() => setIsQROpen(false)}
       />
     </div>
   )
