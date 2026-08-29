@@ -9,10 +9,12 @@
  *
  * @module pages/DashboardPage
  */
+import { useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { BarChart, DonutChart, LineChart } from '../../components/ui/Charts'
 import DataTable from '../../components/ui/DataTable/DataTable.jsx'
 import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
+import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
 /* ─── Datos de los gráficos ────────────────────────────────── */
@@ -120,6 +122,7 @@ const IMPROVEMENTS_DATA = [
  */
 function DashboardPage() {
   const { user } = useAuth()
+  const [isReportOpen, setIsReportOpen] = useState(false)
 
   return (
     <main id="main-content" className="page-main">
@@ -127,7 +130,17 @@ function DashboardPage() {
 
         {/* ── Hero ── */}
         <section className="page-hero" aria-labelledby="dashboard-title">
-          <span className="badge badge--brand">⚡ Área privada</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-3)' }}>
+            <span className="badge badge--brand">⚡ Área privada</span>
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => setIsReportOpen(true)}
+              style={{ fontSize: 'var(--text-xs)' }}
+            >
+              📄 Generar Certificado PDF
+            </button>
+          </div>
           <h1 id="dashboard-title">
             Hola, <span className="text-gradient">{user?.name?.split(' ')[0] || 'Desarrollador'}</span> 👋
           </h1>
@@ -211,6 +224,12 @@ function DashboardPage() {
 
         {/* ── Tablero Kanban (Mejora 34) ── */}
         <KanbanBoard />
+
+        {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
+        <ReportModal
+          isOpen={isReportOpen}
+          onClose={() => setIsReportOpen(false)}
+        />
 
       </div>
     </main>

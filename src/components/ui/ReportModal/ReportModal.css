@@ -1,0 +1,182 @@
+/**
+ * Estilos para ReportModal y hoja de impresión @media print.
+ */
+
+.report-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.report-sheet {
+  background: #ffffff;
+  color: #0f172a;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-md);
+}
+
+.report-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.report-sheet__brand {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.1em;
+  color: #4f46e5;
+}
+
+.report-sheet__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: #0f172a;
+  margin: 2px 0;
+}
+
+.report-sheet__sub {
+  font-size: var(--text-xs);
+  color: #64748b;
+  margin: 0;
+}
+
+.report-sheet__divider {
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+.report-sheet__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: #334155;
+  background: #f8fafc;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 1px solid #e2e8f0;
+}
+
+.report-sheet__meta code {
+  color: #4f46e5;
+  font-family: var(--font-mono);
+}
+
+.report-sheet__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.report-metric-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+.report-metric-box__num {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  font-family: var(--font-mono);
+  color: #4f46e5;
+}
+
+.report-metric-box__label {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.report-sheet__phases {
+  font-size: var(--text-xs);
+  color: #334155;
+}
+
+.report-sheet__phases h4 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-xs);
+}
+
+.report-sheet__phases ul {
+  margin: 0;
+  padding-left: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.report-sheet__signature {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid #e2e8f0;
+  margin-top: var(--space-2);
+}
+
+.report-sig-line {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-sig-name {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: #0f172a;
+}
+
+.report-sig-role {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.report-badge-seal {
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  color: #10b981;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+}
+
+.report-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* ─── Estilos de Impresión Nativa @media print ─────────────────── */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-report-area,
+  #printable-report-area * {
+    visibility: visible;
+  }
+
+  #printable-report-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 32px;
+    border: none;
+    box-shadow: none;
+  }
+}
