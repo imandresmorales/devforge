@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -82,6 +82,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR }) {
       subtitle: 'Crear código QR para URLs, 2FA y pagos',
       action: () => {
         onOpenQR?.()
+        onClose()
+      },
+    },
+    {
+      id: 'action-terminal',
+      category: 'Acciones',
+      title: 'Abrir Terminal CLI Interactiva',
+      icon: '💻',
+      subtitle: 'Ejecutar comandos en la consola integrada DevForge',
+      action: () => {
+        onOpenTerminal?.()
         onClose()
       },
     },

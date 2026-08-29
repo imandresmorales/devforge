@@ -28,6 +28,7 @@ import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
 import ZenModeHUD from './components/ui/ZenModeHUD/ZenModeHUD.jsx'
 import QRCodeModal from './components/ui/QRCodeModal/QRCodeModal.jsx'
 import FeedbackModal from './components/ui/FeedbackModal/FeedbackModal.jsx'
+import TerminalModal from './components/ui/TerminalModal/TerminalModal.jsx'
 import PerformanceMonitor from './components/ui/PerformanceMonitor/PerformanceMonitor.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
@@ -75,10 +76,12 @@ function AppLayout({ theme, onToggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isQROpen, setIsQROpen] = useState(false)
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false)
   const zen = useZenMode()
 
-  // Atajo global Ctrl+K / Cmd+K
+  // Atajos globales: Ctrl+K (Buscador) y Ctrl+` (Terminal)
   useKeyboardShortcut('k', () => setIsSearchOpen(true), { ctrlOrCmd: true })
+  useKeyboardShortcut('`', () => setIsTerminalOpen((prev) => !prev), { ctrlOrCmd: true })
 
   return (
     <div className="app-root">
@@ -114,6 +117,7 @@ function AppLayout({ theme, onToggleTheme }) {
         onClose={() => setIsSearchOpen(false)}
         onToggleTheme={onToggleTheme}
         onOpenQR={() => setIsQROpen(true)}
+        onOpenTerminal={() => setIsTerminalOpen(true)}
       />
 
       {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
@@ -145,6 +149,14 @@ function AppLayout({ theme, onToggleTheme }) {
       <FeedbackModal
         isOpen={isFeedbackOpen}
         onClose={() => setIsFeedbackOpen(false)}
+      />
+
+      {/* Terminal Interactiva CLI (Mejora 40) */}
+      <TerminalModal
+        isOpen={isTerminalOpen}
+        onClose={() => setIsTerminalOpen(false)}
+        onToggleTheme={onToggleTheme}
+        theme={theme}
       />
 
       {/* Monitor de Rendimiento y Core Web Vitals en Vivo (Mejora 39) */}
