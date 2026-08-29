@@ -14,6 +14,7 @@ import { useAuth } from '../../context/AuthContext'
 import { BarChart, DonutChart, LineChart } from '../../components/ui/Charts'
 import DataTable from '../../components/ui/DataTable/DataTable.jsx'
 import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
+import WebhookManager from '../../components/ui/WebhookManager/WebhookManager.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -23,7 +24,7 @@ import './DashboardPage.css'
 const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
-  { label: 'Fase 3',  value: 14, color: 'hsl(142, 71%, 45%)' },
+  { label: 'Fase 3',  value: 17, color: 'hsl(142, 71%, 45%)' },
   { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
@@ -51,10 +52,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '39',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '39',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '32',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '148',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '42',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '42',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '35',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '158',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -119,7 +120,10 @@ const IMPROVEMENTS_DATA = [
   { id: 36, num: '36', title: 'Tipado TypeScript & Validador',    status: 'done', commit: 'e4b34cb' },
   { id: 37, num: '37', title: 'Módulo Feedback & Métricas NPS',   status: 'done', commit: 'fe2c77e' },
   { id: 38, num: '38', title: 'Reportes y Certificados PDF',      status: 'done', commit: 'f7a46a4' },
-  { id: 39, num: '39', title: 'Monitor de Core Web Vitals en Vivo', status: 'done', commit: 'main' },
+  { id: 39, num: '39', title: 'Monitor de Core Web Vitals en Vivo', status: 'done', commit: '92d6f2c' },
+  { id: 40, num: '40', title: 'Terminal Interactiva CLI Emulada', status: 'done', commit: '4f6cd75' },
+  { id: 41, num: '41', title: 'Sistema de Logros y Gamificación', status: 'done', commit: '0287c23' },
+  { id: 42, num: '42', title: 'Gestor de Webhooks y Verif. HMAC', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -231,6 +235,9 @@ function DashboardPage() {
 
         {/* ── Tablero Kanban (Mejora 34) ── */}
         <KanbanBoard />
+
+        {/* ── Gestor de Webhooks & HMAC (Mejora 42) ── */}
+        <WebhookManager />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
