@@ -12,6 +12,7 @@
 import { useAuth } from '../../context/AuthContext'
 import { BarChart, DonutChart, LineChart } from '../../components/ui/Charts'
 import DataTable from '../../components/ui/DataTable/DataTable.jsx'
+import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
 import './DashboardPage.css'
 
 /* ─── Datos de los gráficos ────────────────────────────────── */
@@ -207,6 +208,9 @@ function DashboardPage() {
             initialPageSize={10}
           />
         </section>
+
+        {/* ── Tablero Kanban (Mejora 34) ── */}
+        <KanbanBoard />
 
       </div>
     </main>
