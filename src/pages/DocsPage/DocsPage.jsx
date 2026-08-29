@@ -3,6 +3,7 @@
  * @module pages/DocsPage
  */
 import FetchDemo from '../../components/ui/FetchDemo/FetchDemo.jsx'
+import CodePlayground from '../../components/ui/CodePlayground/CodePlayground.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -131,6 +132,9 @@ function DocsPage() {
 
         {/* Demo interactivo del hook useFetch — Mejora 7 */}
         <FetchDemo />
+
+        {/* Live Code Playground interactivo — Mejora 35 */}
+        <CodePlayground />
 
       </div>
     </main>
