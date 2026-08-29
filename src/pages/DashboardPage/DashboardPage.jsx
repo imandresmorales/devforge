@@ -23,7 +23,7 @@ import './DashboardPage.css'
 const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
-  { label: 'Fase 3',  value: 7,  color: 'hsl(142, 71%, 45%)' },
+  { label: 'Fase 3',  value: 14, color: 'hsl(142, 71%, 45%)' },
   { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
@@ -46,15 +46,15 @@ const WEEKLY_COMMITS = [
   { label: 'S5', value: 6 },
   { label: 'S6', value: 10 },
   { label: 'S7', value: 9 },
-  { label: 'S8', value: 20 },
+  { label: 'S8', value: 28 },
 ]
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '32',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '32',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '29',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '126',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '39',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '39',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '32',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '148',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -112,7 +112,14 @@ const IMPROVEMENTS_DATA = [
   { id: 29, num: '29', title: 'Tour Guiado Interactivo Onboarding', status: 'done', commit: '80c9ff4' },
   { id: 30, num: '30', title: 'OAuth 2.0 Google & GitHub Login',  status: 'done', commit: '03aad46' },
   { id: 31, num: '31', title: 'WhatsApp Cloud API & Chat Widget', status: 'done', commit: 'd358246' },
-  { id: 32, num: '32', title: 'Modo Zen / Lectura Inmersiva',     status: 'done', commit: 'main' },
+  { id: 32, num: '32', title: 'Modo Zen / Lectura Inmersiva',     status: 'done', commit: 'e990f5e' },
+  { id: 33, num: '33', title: 'Generador de Códigos QR SVG/PNG',  status: 'done', commit: '567efc8' },
+  { id: 34, num: '34', title: 'Tablero Kanban Drag and Drop',     status: 'done', commit: '4abafa5' },
+  { id: 35, num: '35', title: 'Playground Código Sandbox Seguro', status: 'done', commit: '4bafb45' },
+  { id: 36, num: '36', title: 'Tipado TypeScript & Validador',    status: 'done', commit: 'e4b34cb' },
+  { id: 37, num: '37', title: 'Módulo Feedback & Métricas NPS',   status: 'done', commit: 'fe2c77e' },
+  { id: 38, num: '38', title: 'Reportes y Certificados PDF',      status: 'done', commit: 'f7a46a4' },
+  { id: 39, num: '39', title: 'Monitor de Core Web Vitals en Vivo', status: 'done', commit: 'main' },
 ]
 
 /**

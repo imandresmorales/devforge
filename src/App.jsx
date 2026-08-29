@@ -28,6 +28,7 @@ import WhatsAppWidget from './components/ui/WhatsAppWidget/WhatsAppWidget.jsx'
 import ZenModeHUD from './components/ui/ZenModeHUD/ZenModeHUD.jsx'
 import QRCodeModal from './components/ui/QRCodeModal/QRCodeModal.jsx'
 import FeedbackModal from './components/ui/FeedbackModal/FeedbackModal.jsx'
+import PerformanceMonitor from './components/ui/PerformanceMonitor/PerformanceMonitor.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
@@ -145,6 +146,9 @@ function AppLayout({ theme, onToggleTheme }) {
         isOpen={isFeedbackOpen}
         onClose={() => setIsFeedbackOpen(false)}
       />
+
+      {/* Monitor de Rendimiento y Core Web Vitals en Vivo (Mejora 39) */}
+      <PerformanceMonitor />
     </div>
   )
 }
