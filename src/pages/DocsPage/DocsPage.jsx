@@ -4,6 +4,7 @@
  */
 import FetchDemo from '../../components/ui/FetchDemo/FetchDemo.jsx'
 import CodePlayground from '../../components/ui/CodePlayground/CodePlayground.jsx'
+import RegexTester from '../../components/ui/RegexTester/RegexTester.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -135,6 +136,9 @@ function DocsPage() {
 
         {/* Live Code Playground interactivo — Mejora 35 */}
         <CodePlayground />
+
+        {/* Regex Tester interactivo en vivo — Mejora 43 */}
+        <RegexTester />
 
       </div>
     </main>
