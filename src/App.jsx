@@ -30,6 +30,7 @@ import QRCodeModal from './components/ui/QRCodeModal/QRCodeModal.jsx'
 import FeedbackModal from './components/ui/FeedbackModal/FeedbackModal.jsx'
 import TerminalModal from './components/ui/TerminalModal/TerminalModal.jsx'
 import AchievementsModal from './components/ui/AchievementsModal/AchievementsModal.jsx'
+import DataExporterModal from './components/ui/DataExporterModal/DataExporterModal.jsx'
 import PerformanceMonitor from './components/ui/PerformanceMonitor/PerformanceMonitor.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
@@ -79,6 +80,7 @@ function AppLayout({ theme, onToggleTheme }) {
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
   const [isTerminalOpen, setIsTerminalOpen] = useState(false)
   const [isAchievementsOpen, setIsAchievementsOpen] = useState(false)
+  const [isExporterOpen, setIsExporterOpen] = useState(false)
   const zen = useZenMode()
 
   // Atajos globales: Ctrl+K (Buscador) y Ctrl+` (Terminal)
@@ -121,6 +123,7 @@ function AppLayout({ theme, onToggleTheme }) {
         onOpenQR={() => setIsQROpen(true)}
         onOpenTerminal={() => setIsTerminalOpen(true)}
         onOpenAchievements={() => setIsAchievementsOpen(true)}
+        onOpenExporter={() => setIsExporterOpen(true)}
       />
 
       {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
@@ -166,6 +169,12 @@ function AppLayout({ theme, onToggleTheme }) {
       <AchievementsModal
         isOpen={isAchievementsOpen}
         onClose={() => setIsAchievementsOpen(false)}
+      />
+
+      {/* Centro de Exportación de Datos Multi-formato (Mejora 44) */}
+      <DataExporterModal
+        isOpen={isExporterOpen}
+        onClose={() => setIsExporterOpen(false)}
       />
 
       {/* Monitor de Rendimiento y Core Web Vitals en Vivo (Mejora 39) */}

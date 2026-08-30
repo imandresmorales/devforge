@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements, onOpenExporter }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -104,6 +104,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTermin
       subtitle: 'Puntos XP, nivel y recompensas desbloqueadas',
       action: () => {
         onOpenAchievements?.()
+        onClose()
+      },
+    },
+    {
+      id: 'action-export',
+      category: 'Acciones',
+      title: 'Exportar Datos (JSON, YAML, MD, CSV)',
+      icon: '📦',
+      subtitle: 'Centro de exportación y descarga multi-formato',
+      action: () => {
+        onOpenExporter?.()
         onClose()
       },
     },
