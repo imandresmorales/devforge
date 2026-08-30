@@ -15,6 +15,7 @@ import { BarChart, DonutChart, LineChart } from '../../components/ui/Charts'
 import DataTable from '../../components/ui/DataTable/DataTable.jsx'
 import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
 import WebhookManager from '../../components/ui/WebhookManager/WebhookManager.jsx'
+import RateLimitSimulator from '../../components/ui/RateLimitSimulator/RateLimitSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -24,7 +25,7 @@ import './DashboardPage.css'
 const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
-  { label: 'Fase 3',  value: 17, color: 'hsl(142, 71%, 45%)' },
+  { label: 'Fase 3',  value: 20, color: 'hsl(142, 71%, 45%)' },
   { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
@@ -52,10 +53,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '42',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '42',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '35',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '158',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '45',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '45',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '37',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '170',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -123,7 +124,10 @@ const IMPROVEMENTS_DATA = [
   { id: 39, num: '39', title: 'Monitor de Core Web Vitals en Vivo', status: 'done', commit: '92d6f2c' },
   { id: 40, num: '40', title: 'Terminal Interactiva CLI Emulada', status: 'done', commit: '4f6cd75' },
   { id: 41, num: '41', title: 'Sistema de Logros y Gamificación', status: 'done', commit: '0287c23' },
-  { id: 42, num: '42', title: 'Gestor de Webhooks y Verif. HMAC', status: 'done', commit: 'main' },
+  { id: 42, num: '42', title: 'Gestor de Webhooks y Verif. HMAC', status: 'done', commit: '1387dad' },
+  { id: 43, num: '43', title: 'Tester de Regex en Vivo (Anti-ReDoS)', status: 'done', commit: '1325b2d' },
+  { id: 44, num: '44', title: 'Centro de Exportación Multi-formato', status: 'done', commit: '945e7a8' },
+  { id: 45, num: '45', title: 'Simulador Rate Limiting & Token Bucket', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -238,6 +242,9 @@ function DashboardPage() {
 
         {/* ── Gestor de Webhooks & HMAC (Mejora 42) ── */}
         <WebhookManager />
+
+        {/* ── Simulador de Rate Limiting & Token Bucket (Mejora 45) ── */}
+        <RateLimitSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
