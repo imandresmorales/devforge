@@ -16,6 +16,7 @@ import DataTable from '../../components/ui/DataTable/DataTable.jsx'
 import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
 import WebhookManager from '../../components/ui/WebhookManager/WebhookManager.jsx'
 import RateLimitSimulator from '../../components/ui/RateLimitSimulator/RateLimitSimulator.jsx'
+import CircuitBreakerSimulator from '../../components/ui/CircuitBreakerSimulator/CircuitBreakerSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -245,6 +246,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Rate Limiting & Token Bucket (Mejora 45) ── */}
         <RateLimitSimulator />
+
+        {/* ── Simulador de Circuit Breaker para Microservicios (Mejora 49) ── */}
+        <CircuitBreakerSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
