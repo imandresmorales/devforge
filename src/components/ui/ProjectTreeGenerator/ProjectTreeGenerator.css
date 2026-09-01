@@ -1,0 +1,150 @@
+/**
+ * Estilos para ProjectTreeGenerator.
+ */
+
+.tree-gen-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.tree-gen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tree-gen-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.tree-gen-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.tree-presets-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tree-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 860px) {
+  .tree-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tree-editor-pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tree-editor-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tree-name-input {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  outline: none;
+}
+
+.tree-name-input:focus {
+  border-color: var(--color-brand-500);
+}
+
+.tree-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tree-textarea {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  padding: var(--space-3);
+  resize: vertical;
+  outline: none;
+}
+
+.tree-textarea:focus {
+  border-color: var(--color-brand-500);
+}
+
+/* ─── Visor ASCII ─────────────────────────────────────────────── */
+.tree-preview-pane {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tree-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: var(--space-2) var(--space-3);
+}
+
+.tree-preview-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #8b949e;
+}
+
+.tree-preview-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.tree-btn-xs {
+  font-size: 10px;
+  padding: 2px 8px;
+}
+
+.tree-ascii-box {
+  margin: 0;
+  padding: var(--space-3);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  overflow: auto;
+  max-height: 280px;
+}

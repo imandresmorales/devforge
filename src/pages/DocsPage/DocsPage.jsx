@@ -6,6 +6,7 @@ import FetchDemo from '../../components/ui/FetchDemo/FetchDemo.jsx'
 import CodePlayground from '../../components/ui/CodePlayground/CodePlayground.jsx'
 import RegexTester from '../../components/ui/RegexTester/RegexTester.jsx'
 import WebSocketLiveDemo from '../../components/ui/WebSocketLiveDemo/WebSocketLiveDemo.jsx'
+import ProjectTreeGenerator from '../../components/ui/ProjectTreeGenerator/ProjectTreeGenerator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -143,6 +144,9 @@ function DocsPage() {
 
         {/* Cliente WebSocket en vivo — Mejora 46 */}
         <WebSocketLiveDemo />
+
+        {/* Generador de Árboles ASCII — Mejora 47 */}
+        <ProjectTreeGenerator />
 
       </div>
     </main>
