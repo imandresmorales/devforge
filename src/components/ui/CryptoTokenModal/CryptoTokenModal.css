@@ -1,0 +1,161 @@
+/**
+ * Estilos para CryptoTokenModal.
+ */
+
+.token-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.token-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.token-type-tabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.token-options-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.token-option-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.token-option-field input[type='range'] {
+  accent-color: var(--color-brand-500);
+}
+
+.token-gen-btn {
+  margin-left: auto;
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* ─── Lista de Tokens ─────────────────────────────────────────── */
+.token-list-pane {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.token-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: var(--space-2) var(--space-3);
+}
+
+.token-list-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #8b949e;
+}
+
+.token-copy-all-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.token-copy-all-btn:hover {
+  color: #ffffff;
+  border-color: #58a6ff;
+}
+
+.token-items-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.token-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-3);
+}
+
+.token-card-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.token-idx {
+  font-size: 10px;
+  color: #8b949e;
+  font-family: var(--font-mono);
+}
+
+.token-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: #58a6ff;
+  word-break: break-all;
+}
+
+.token-card-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.token-meta {
+  font-size: 10px;
+  color: #8b949e;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.token-btn-copy {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-xs);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.token-btn-copy:hover {
+  opacity: 1;
+}
+
+.token-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+}

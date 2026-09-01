@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements, onOpenExporter }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements, onOpenExporter, onOpenCryptoTokens }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -115,6 +115,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTermin
       subtitle: 'Centro de exportación y descarga multi-formato',
       action: () => {
         onOpenExporter?.()
+        onClose()
+      },
+    },
+    {
+      id: 'action-crypto-tokens',
+      category: 'Acciones',
+      title: 'Generar Tokens (UUIDv7 & NanoID)',
+      icon: '🔑',
+      subtitle: 'Tokens criptográficamente seguros y ordenables por tiempo',
+      action: () => {
+        onOpenCryptoTokens?.()
         onClose()
       },
     },

@@ -31,6 +31,7 @@ import FeedbackModal from './components/ui/FeedbackModal/FeedbackModal.jsx'
 import TerminalModal from './components/ui/TerminalModal/TerminalModal.jsx'
 import AchievementsModal from './components/ui/AchievementsModal/AchievementsModal.jsx'
 import DataExporterModal from './components/ui/DataExporterModal/DataExporterModal.jsx'
+import CryptoTokenModal from './components/ui/CryptoTokenModal/CryptoTokenModal.jsx'
 import PerformanceMonitor from './components/ui/PerformanceMonitor/PerformanceMonitor.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
@@ -81,6 +82,7 @@ function AppLayout({ theme, onToggleTheme }) {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false)
   const [isAchievementsOpen, setIsAchievementsOpen] = useState(false)
   const [isExporterOpen, setIsExporterOpen] = useState(false)
+  const [isCryptoTokensOpen, setIsCryptoTokensOpen] = useState(false)
   const zen = useZenMode()
 
   // Atajos globales: Ctrl+K (Buscador) y Ctrl+` (Terminal)
@@ -124,6 +126,7 @@ function AppLayout({ theme, onToggleTheme }) {
         onOpenTerminal={() => setIsTerminalOpen(true)}
         onOpenAchievements={() => setIsAchievementsOpen(true)}
         onOpenExporter={() => setIsExporterOpen(true)}
+        onOpenCryptoTokens={() => setIsCryptoTokensOpen(true)}
       />
 
       {/* Tour Guiado Interactivo de Onboarding (Mejora 29) */}
@@ -175,6 +178,12 @@ function AppLayout({ theme, onToggleTheme }) {
       <DataExporterModal
         isOpen={isExporterOpen}
         onClose={() => setIsExporterOpen(false)}
+      />
+
+      {/* Generador de Tokens Criptográficos UUIDv7 y NanoID (Mejora 48) */}
+      <CryptoTokenModal
+        isOpen={isCryptoTokensOpen}
+        onClose={() => setIsCryptoTokensOpen(false)}
       />
 
       {/* Monitor de Rendimiento y Core Web Vitals en Vivo (Mejora 39) */}
