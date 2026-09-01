@@ -7,6 +7,7 @@ import CodePlayground from '../../components/ui/CodePlayground/CodePlayground.js
 import RegexTester from '../../components/ui/RegexTester/RegexTester.jsx'
 import WebSocketLiveDemo from '../../components/ui/WebSocketLiveDemo/WebSocketLiveDemo.jsx'
 import ProjectTreeGenerator from '../../components/ui/ProjectTreeGenerator/ProjectTreeGenerator.jsx'
+import CodeDiffViewer from '../../components/ui/CodeDiffViewer/CodeDiffViewer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -147,6 +148,9 @@ function DocsPage() {
 
         {/* Generador de Árboles ASCII — Mejora 47 */}
         <ProjectTreeGenerator />
+
+        {/* Comparador de Diferencias de Código — Mejora 50 */}
+        <CodeDiffViewer />
 
       </div>
     </main>

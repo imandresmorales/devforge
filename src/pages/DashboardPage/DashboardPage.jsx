@@ -27,7 +27,7 @@ const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
   { label: 'Fase 3',  value: 20, color: 'hsl(142, 71%, 45%)' },
-  { label: 'Fase 4',  value: 0,  color: 'hsl(215, 20%, 65%)' },
+  { label: 'Fase 4',  value: 5,  color: 'hsl(280, 85%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
 
@@ -54,10 +54,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '45',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '45',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '37',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '170',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '50',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '50',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '40',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '188',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -128,7 +128,12 @@ const IMPROVEMENTS_DATA = [
   { id: 42, num: '42', title: 'Gestor de Webhooks y Verif. HMAC', status: 'done', commit: '1387dad' },
   { id: 43, num: '43', title: 'Tester de Regex en Vivo (Anti-ReDoS)', status: 'done', commit: '1325b2d' },
   { id: 44, num: '44', title: 'Centro de Exportación Multi-formato', status: 'done', commit: '945e7a8' },
-  { id: 45, num: '45', title: 'Simulador Rate Limiting & Token Bucket', status: 'done', commit: 'main' },
+  { id: 45, num: '45', title: 'Simulador Rate Limiting & Token Bucket', status: 'done', commit: '00a2169' },
+  { id: 46, num: '46', title: 'Cliente WebSocket en Tiempo Real',    status: 'done', commit: 'b29c3c7' },
+  { id: 47, num: '47', title: 'Generador de Árboles ASCII / MD',      status: 'done', commit: '53a324e' },
+  { id: 48, num: '48', title: 'Tokens UUIDv7 y NanoID Seguro',        status: 'done', commit: '02f5b56' },
+  { id: 49, num: '49', title: 'Patrón Circuit Breaker Resiliente',    status: 'done', commit: '35a5440' },
+  { id: 50, num: '50', title: 'Comparador Visual Code Diff Viewer',   status: 'done', commit: 'main' },
 ]
 
 /**
