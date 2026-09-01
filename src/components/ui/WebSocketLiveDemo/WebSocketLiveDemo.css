@@ -1,0 +1,238 @@
+/**
+ * Estilos para WebSocketLiveDemo.
+ */
+
+.ws-demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.ws-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ws-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.ws-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.ws-status-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.ws-status-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.ws-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.ws-status-dot--open {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.ws-status-dot--connecting {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.ws-status-dot--closed {
+  background: #ef4444;
+}
+
+.ws-status-text {
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.ws-latency-pill {
+  background: hsla(239, 84%, 64%, 0.15);
+  border: 1px solid var(--color-brand-500);
+  color: var(--color-brand-400);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.ws-btn-sm {
+  font-size: 11px;
+  padding: 4px 12px;
+}
+
+/* ─── Contenedor Principal ────────────────────────────────────── */
+.ws-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-md);
+}
+
+.ws-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.ws-presets-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.ws-chip {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ws-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ws-chip:not(:disabled):hover {
+  border-color: var(--color-brand-500);
+  color: var(--color-brand-400);
+}
+
+.ws-chip--clear {
+  margin-left: auto;
+}
+
+/* ─── Consola de Mensajes ─────────────────────────────────────── */
+.ws-chat-pane {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xl);
+  height: 220px;
+  overflow-y: auto;
+  padding: var(--space-3);
+}
+
+.ws-chat-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #8b949e;
+  font-size: var(--text-xs);
+}
+
+.ws-messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ws-msg-item {
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ws-msg-item--system {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #8b949e;
+}
+
+.ws-msg-item--user {
+  background: hsla(239, 84%, 64%, 0.15);
+  border: 1px solid var(--color-brand-500);
+  color: #e0e7ff;
+  align-self: flex-end;
+  max-width: 80%;
+}
+
+.ws-msg-item--server {
+  background: hsla(142, 71%, 45%, 0.12);
+  border: 1px solid #10b981;
+  color: #a7f3d0;
+  align-self: flex-start;
+  max-width: 80%;
+}
+
+.ws-msg-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.ws-msg-sender {
+  font-weight: bold;
+}
+
+.ws-msg-time {
+  font-family: var(--font-mono);
+}
+
+.ws-msg-body {
+  line-height: 1.4;
+  word-break: break-word;
+  font-family: var(--font-mono);
+}
+
+/* ─── Formulario de Entrada ───────────────────────────────────── */
+.ws-input-form {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.ws-input-field {
+  flex: 1;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  outline: none;
+}
+
+.ws-input-field:focus {
+  border-color: var(--color-brand-500);
+}

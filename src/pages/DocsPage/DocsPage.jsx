@@ -5,6 +5,7 @@
 import FetchDemo from '../../components/ui/FetchDemo/FetchDemo.jsx'
 import CodePlayground from '../../components/ui/CodePlayground/CodePlayground.jsx'
 import RegexTester from '../../components/ui/RegexTester/RegexTester.jsx'
+import WebSocketLiveDemo from '../../components/ui/WebSocketLiveDemo/WebSocketLiveDemo.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -139,6 +140,9 @@ function DocsPage() {
 
         {/* Regex Tester interactivo en vivo — Mejora 43 */}
         <RegexTester />
+
+        {/* Cliente WebSocket en vivo — Mejora 46 */}
+        <WebSocketLiveDemo />
 
       </div>
     </main>
