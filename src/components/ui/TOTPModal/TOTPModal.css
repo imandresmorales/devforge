@@ -1,0 +1,198 @@
+/**
+ * Estilos para TOTPModal.
+ */
+
+.totp-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.totp-generator-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+}
+
+.totp-timer-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.totp-timer-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.totp-timer-bg {
+  fill: none;
+  stroke: var(--color-border-strong);
+  stroke-width: 3;
+}
+
+.totp-timer-progress {
+  fill: none;
+  stroke: var(--color-brand-500);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.totp-seconds {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.totp-code-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.totp-code-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.totp-code-display {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-brand-400);
+  letter-spacing: 2px;
+  cursor: pointer;
+  user-select: all;
+  transition: opacity var(--transition-fast);
+}
+
+.totp-code-display:hover {
+  opacity: 0.8;
+}
+
+.totp-subtext {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* ─── Clave Secreta y URI ─────────────────────────────────────── */
+.totp-secret-card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.totp-secret-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.totp-secret-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.totp-secret-label {
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.totp-secret-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+.totp-secret-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.totp-btn-sm {
+  font-size: 10px;
+  padding: 2px 8px;
+}
+
+.totp-uri-preview {
+  font-size: 10px;
+  color: #8b949e;
+  word-break: break-all;
+  font-family: var(--font-mono);
+}
+
+/* ─── Verificador Interactivo ─────────────────────────────────── */
+.totp-verifier-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+}
+
+.totp-verify-row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.totp-input-field {
+  flex: 1;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  letter-spacing: 4px;
+  text-align: center;
+  outline: none;
+}
+
+.totp-input-field:focus {
+  border-color: var(--color-brand-500);
+}
+
+.totp-status-banner {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+}
+
+.totp-status-banner--success {
+  background: hsla(142, 71%, 45%, 0.15);
+  border: 1px solid #10b981;
+  color: #10b981;
+}
+
+.totp-status-banner--error {
+  background: hsla(0, 72%, 65%, 0.15);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+.totp-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+}

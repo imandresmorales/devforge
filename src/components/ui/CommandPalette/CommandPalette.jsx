@@ -37,7 +37,7 @@ function HighlightMatch({ text, query }) {
   )
 }
 
-function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements, onOpenExporter, onOpenCryptoTokens }) {
+function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTerminal, onOpenAchievements, onOpenExporter, onOpenCryptoTokens, onOpenTOTP }) {
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const debouncedQuery = useDebounce(query, 120)
@@ -126,6 +126,17 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTermin
       subtitle: 'Tokens criptográficamente seguros y ordenables por tiempo',
       action: () => {
         onOpenCryptoTokens?.()
+        onClose()
+      },
+    },
+    {
+      id: 'action-totp',
+      category: 'Acciones',
+      title: 'Autenticación 2FA / TOTP (RFC 6238)',
+      icon: '🔐',
+      subtitle: 'Generador de códigos temporales de 6 dígitos con cuenta regresiva',
+      action: () => {
+        onOpenTOTP?.()
         onClose()
       },
     },
