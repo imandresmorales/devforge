@@ -22,9 +22,14 @@ export function fireConfetti({ particleCount = 80, durationMs = 2500 } = {}) {
   canvas.style.zIndex = '999999'
   document.body.appendChild(canvas)
 
-  const ctx = canvas.getContext('2d')
-  const width = (canvas.width = window.innerWidth)
-  const height = (canvas.height = window.innerHeight)
+  const ctx = canvas.getContext ? canvas.getContext('2d') : null
+  if (!ctx) {
+    if (canvas.parentNode) canvas.parentNode.removeChild(canvas)
+    return
+  }
+
+  const width = (canvas.width = window.innerWidth || 800)
+  const height = (canvas.height = window.innerHeight || 600)
 
   const colors = ['#4f46e5', '#7c3aed', '#db2777', '#10b981', '#fbbf24', '#00f0ff', '#f43f5e']
 

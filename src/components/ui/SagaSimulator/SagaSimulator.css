@@ -1,0 +1,288 @@
+/**
+ * Estilos para SagaSimulator.
+ */
+
+.saga-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.saga-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saga-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.saga-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.saga-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Pipeline Visual ─────────────────────────────────────────── */
+.saga-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding: var(--space-2) 0;
+}
+
+.saga-node-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.saga-node {
+  flex: 1;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  transition: all var(--transition-fast);
+}
+
+.saga-node--idle {
+  opacity: 0.8;
+}
+
+.saga-node--success {
+  border-color: #10b981;
+  background: hsla(142, 71%, 45%, 0.08);
+  box-shadow: 0 0 10px hsla(142, 71%, 45%, 0.2);
+}
+
+.saga-node--error {
+  border-color: #ef4444;
+  background: hsla(0, 72%, 65%, 0.1);
+  box-shadow: 0 0 10px hsla(0, 72%, 65%, 0.2);
+}
+
+.saga-node--compensated {
+  border-color: #f59e0b;
+  background: hsla(38, 92%, 55%, 0.1);
+  box-shadow: 0 0 10px hsla(38, 92%, 55%, 0.2);
+}
+
+.saga-node-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saga-node-idx {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--color-brand-400);
+}
+
+.saga-node-status {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.saga-node-title {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+}
+
+.saga-node-service {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.saga-node-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 4px;
+  font-size: 9px;
+  color: var(--color-text-secondary);
+}
+
+.saga-node-actions code {
+  color: #38bdf8;
+}
+
+.saga-connector {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ─── Controles de Inyección ──────────────────────────────────── */
+.saga-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.saga-toggles-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.saga-toggles-title {
+  font-size: var(--text-xs);
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+.saga-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 11px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.saga-actions-group {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ─── Banner de Resultado ─────────────────────────────────────── */
+.saga-result-banner {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+}
+
+.saga-result-banner--success {
+  background: hsla(142, 71%, 45%, 0.15);
+  border: 1px solid #10b981;
+  color: #a7f3d0;
+}
+
+.saga-result-banner--failed {
+  background: hsla(38, 92%, 55%, 0.15);
+  border: 1px solid #f59e0b;
+  color: #fde68a;
+}
+
+/* ─── Registro de Logs ────────────────────────────────────────── */
+.saga-logs-pane {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.saga-logs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: var(--space-2);
+}
+
+.saga-logs-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #8b949e;
+}
+
+.saga-logs-empty {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b949e;
+  font-size: var(--text-xs);
+}
+
+.saga-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.saga-log-item {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.saga-log-item--comp {
+  border-color: #f59e0b;
+  background: hsla(38, 92%, 55%, 0.1);
+}
+
+.saga-log-item--err {
+  border-color: #ef4444;
+}
+
+.saga-log-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saga-log-service {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #58a6ff;
+}
+
+.saga-log-time {
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.saga-log-msg {
+  font-size: 11px;
+  color: #f0f6fc;
+}
+
+.saga-log-msg code {
+  color: #f59e0b;
+}

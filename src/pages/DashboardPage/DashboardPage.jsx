@@ -17,6 +17,7 @@ import KanbanBoard from '../../components/ui/KanbanBoard/KanbanBoard.jsx'
 import WebhookManager from '../../components/ui/WebhookManager/WebhookManager.jsx'
 import RateLimitSimulator from '../../components/ui/RateLimitSimulator/RateLimitSimulator.jsx'
 import CircuitBreakerSimulator from '../../components/ui/CircuitBreakerSimulator/CircuitBreakerSimulator.jsx'
+import SagaSimulator from '../../components/ui/SagaSimulator/SagaSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -27,7 +28,7 @@ const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
   { label: 'Fase 3',  value: 20, color: 'hsl(142, 71%, 45%)' },
-  { label: 'Fase 4',  value: 5,  color: 'hsl(280, 85%, 65%)' },
+  { label: 'Fase 4',  value: 7,  color: 'hsl(280, 85%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
 
@@ -54,10 +55,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '50',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '50',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '40',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '188',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '52',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '52',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '41',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '196',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -133,7 +134,9 @@ const IMPROVEMENTS_DATA = [
   { id: 47, num: '47', title: 'Generador de Árboles ASCII / MD',      status: 'done', commit: '53a324e' },
   { id: 48, num: '48', title: 'Tokens UUIDv7 y NanoID Seguro',        status: 'done', commit: '02f5b56' },
   { id: 49, num: '49', title: 'Patrón Circuit Breaker Resiliente',    status: 'done', commit: '35a5440' },
-  { id: 50, num: '50', title: 'Comparador Visual Code Diff Viewer',   status: 'done', commit: 'main' },
+  { id: 50, num: '50', title: 'Comparador Visual Code Diff Viewer',   status: 'done', commit: 'ecf506f' },
+  { id: 51, num: '51', title: 'Generador 2FA TOTP con Temporizador',   status: 'done', commit: '9506416' },
+  { id: 52, num: '52', title: 'Patrón Saga Transacciones Distribuidas', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -254,6 +257,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Circuit Breaker para Microservicios (Mejora 49) ── */}
         <CircuitBreakerSimulator />
+
+        {/* ── Simulador del Patrón Saga para Transacciones Distribuidas (Mejora 52) ── */}
+        <SagaSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
