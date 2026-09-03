@@ -8,6 +8,7 @@ import RegexTester from '../../components/ui/RegexTester/RegexTester.jsx'
 import WebSocketLiveDemo from '../../components/ui/WebSocketLiveDemo/WebSocketLiveDemo.jsx'
 import ProjectTreeGenerator from '../../components/ui/ProjectTreeGenerator/ProjectTreeGenerator.jsx'
 import CodeDiffViewer from '../../components/ui/CodeDiffViewer/CodeDiffViewer.jsx'
+import SecurityHeadersInspector from '../../components/ui/SecurityHeadersInspector/SecurityHeadersInspector.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -151,6 +152,9 @@ function DocsPage() {
 
         {/* Comparador de Diferencias de Código — Mejora 50 */}
         <CodeDiffViewer />
+
+        {/* Auditor de Cabeceras de Seguridad HTTP — Mejora 53 */}
+        <SecurityHeadersInspector />
 
       </div>
     </main>

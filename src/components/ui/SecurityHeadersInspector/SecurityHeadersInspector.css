@@ -1,0 +1,269 @@
+/**
+ * Estilos para SecurityHeadersInspector.
+ */
+
+.headers-inspector-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.headers-inspector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.headers-inspector-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.headers-inspector-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.headers-presets-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.headers-inspector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .headers-inspector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Panel Izquierdo ─────────────────────────────────────────── */
+.headers-left-pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.headers-score-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.headers-grade-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.headers-grade-badge--aplus,
+.headers-grade-badge--a {
+  background: hsla(142, 71%, 45%, 0.15);
+  border: 2px solid #10b981;
+  color: #10b981;
+}
+
+.headers-grade-badge--b {
+  background: hsla(217, 91%, 60%, 0.15);
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.headers-grade-badge--c,
+.headers-grade-badge--d {
+  background: hsla(38, 92%, 55%, 0.15);
+  border: 2px solid #f59e0b;
+  color: #f59e0b;
+}
+
+.headers-grade-badge--f {
+  background: hsla(0, 72%, 65%, 0.15);
+  border: 2px solid #ef4444;
+  color: #ef4444;
+}
+
+.headers-score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.headers-score-val {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.headers-score-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.headers-editor-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.headers-editor-title {
+  font-size: var(--text-xs);
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+.headers-textarea {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-lg);
+  color: #7ee787;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.4;
+  padding: var(--space-3);
+  resize: vertical;
+  outline: none;
+}
+
+/* ─── Panel Derecho ───────────────────────────────────────────── */
+.headers-audit-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.headers-audit-heading {
+  font-size: var(--text-sm);
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.headers-audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.headers-rule-item {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.headers-rule-item--secure {
+  border-left: 3px solid #10b981;
+}
+
+.headers-rule-item--weak {
+  border-left: 3px solid #f59e0b;
+}
+
+.headers-rule-item--missing {
+  border-left: 3px solid #ef4444;
+}
+
+.headers-rule-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headers-rule-name {
+  font-size: var(--text-xs);
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.headers-rule-desc {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.headers-rule-reason {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.headers-rule-curr {
+  margin-top: 2px;
+  font-size: 10px;
+  color: #58a6ff;
+  font-family: var(--font-mono);
+  word-break: break-all;
+}
+
+/* ─── Snippets de Servidores ──────────────────────────────────── */
+.headers-snippets-card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.headers-snippets-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.headers-snippets-tabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.headers-copy-btn {
+  font-size: var(--text-xs);
+}
+
+.headers-snippet-code {
+  margin: 0;
+  padding: var(--space-3);
+  background: #161b22;
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #f0f6fc;
+}

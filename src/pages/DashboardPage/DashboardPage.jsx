@@ -28,7 +28,7 @@ const PHASE_DATA = [
   { label: 'Fase 1',  value: 14, color: 'hsl(239, 84%, 64%)' },
   { label: 'Fase 2',  value: 11, color: 'hsl(262, 80%, 65%)' },
   { label: 'Fase 3',  value: 20, color: 'hsl(142, 71%, 45%)' },
-  { label: 'Fase 4',  value: 7,  color: 'hsl(280, 85%, 65%)' },
+  { label: 'Fase 4',  value: 8,  color: 'hsl(280, 85%, 65%)' },
   { label: 'Fase 5',  value: 0,  color: 'hsl(215, 20%, 65%)' },
 ]
 
@@ -55,10 +55,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '52',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '52',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '41',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '196',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '53',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '53',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '42',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '199',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -136,7 +136,8 @@ const IMPROVEMENTS_DATA = [
   { id: 49, num: '49', title: 'Patrón Circuit Breaker Resiliente',    status: 'done', commit: '35a5440' },
   { id: 50, num: '50', title: 'Comparador Visual Code Diff Viewer',   status: 'done', commit: 'ecf506f' },
   { id: 51, num: '51', title: 'Generador 2FA TOTP con Temporizador',   status: 'done', commit: '9506416' },
-  { id: 52, num: '52', title: 'Patrón Saga Transacciones Distribuidas', status: 'done', commit: 'main' },
+  { id: 52, num: '52', title: 'Patrón Saga Transacciones Distribuidas', status: 'done', commit: '33695dc' },
+  { id: 53, num: '53', title: 'Auditor Cabeceras HTTP de Seguridad',   status: 'done', commit: 'main' },
 ]
 
 /**
