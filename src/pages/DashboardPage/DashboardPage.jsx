@@ -18,6 +18,7 @@ import WebhookManager from '../../components/ui/WebhookManager/WebhookManager.js
 import RateLimitSimulator from '../../components/ui/RateLimitSimulator/RateLimitSimulator.jsx'
 import CircuitBreakerSimulator from '../../components/ui/CircuitBreakerSimulator/CircuitBreakerSimulator.jsx'
 import SagaSimulator from '../../components/ui/SagaSimulator/SagaSimulator.jsx'
+import CacheSimulator from '../../components/ui/CacheSimulator/CacheSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -55,10 +56,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '54',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '54',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '43',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '209',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '55',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '55',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '44',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '216',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -138,7 +139,8 @@ const IMPROVEMENTS_DATA = [
   { id: 51, num: '51', title: 'Generador 2FA TOTP con Temporizador',   status: 'done', commit: '9506416' },
   { id: 52, num: '52', title: 'Patrón Saga Transacciones Distribuidas', status: 'done', commit: '33695dc' },
   { id: 53, num: '53', title: 'Auditor Cabeceras HTTP de Seguridad',   status: 'done', commit: 'a3055ce' },
-  { id: 54, num: '54', title: 'Consultas SQL Seguras & Anti-SQLi',     status: 'done', commit: 'main' },
+  { id: 54, num: '54', title: 'Consultas SQL Seguras & Anti-SQLi',     status: 'done', commit: 'a1295c4' },
+  { id: 55, num: '55', title: 'Simulador Caché Distribuida (LRU/TTL)', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -262,6 +264,9 @@ function DashboardPage() {
 
         {/* ── Simulador del Patrón Saga para Transacciones Distribuidas (Mejora 52) ── */}
         <SagaSimulator />
+
+        {/* ── Simulador de Memoria Caché Distribuida (Mejora 55) ── */}
+        <CacheSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
