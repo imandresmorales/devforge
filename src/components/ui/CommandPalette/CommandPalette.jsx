@@ -164,6 +164,9 @@ function CommandPalette({ isOpen, onClose, onToggleTheme, onOpenQR, onOpenTermin
     },
 
     // ── Mejoras del Roadmap ──
+    { id: 'm-55', category: 'Roadmap (Mejoras)', title: 'Mejora 55: Caché Distribuida (LRU/TTL)', icon: '⚡', subtitle: 'Simulador de memoria con políticas de evicción y TTL', path: '/dashboard' },
+    { id: 'm-54', category: 'Roadmap (Mejoras)', title: 'Mejora 54: Consultas SQL Seguras & Anti-SQLi', icon: '🛡️', subtitle: 'Constructor parametrizado y detector de inyecciones', path: '/docs' },
+    { id: 'm-53', category: 'Roadmap (Mejoras)', title: 'Mejora 53: Cabeceras HTTP de Seguridad', icon: '🔒', subtitle: 'Auditor OWASP de cabeceras HTTP (CSP, HSTS)', path: '/docs' },
     { id: 'm-26', category: 'Roadmap (Mejoras)', title: 'Mejora 26: Pasarela de Pagos Stripe', icon: '💳', subtitle: 'Validación Luhn, Checkout y Recibos', path: '/pricing' },
     { id: 'm-25', category: 'Roadmap (Mejoras)', title: 'Mejora 25: PWA y Soporte Offline', icon: '⚡', subtitle: 'Service Worker nativo y Manifest', path: '/dashboard' },
     { id: 'm-24', category: 'Roadmap (Mejoras)', title: 'Mejora 24: Tests con Vitest & RTL', icon: '🧪', subtitle: '78+ pruebas de unidad e integración', path: '/docs' },

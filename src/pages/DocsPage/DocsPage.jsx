@@ -9,6 +9,7 @@ import WebSocketLiveDemo from '../../components/ui/WebSocketLiveDemo/WebSocketLi
 import ProjectTreeGenerator from '../../components/ui/ProjectTreeGenerator/ProjectTreeGenerator.jsx'
 import CodeDiffViewer from '../../components/ui/CodeDiffViewer/CodeDiffViewer.jsx'
 import SecurityHeadersInspector from '../../components/ui/SecurityHeadersInspector/SecurityHeadersInspector.jsx'
+import SQLQueryBuilder from '../../components/ui/SQLQueryBuilder/SQLQueryBuilder.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -155,6 +156,9 @@ function DocsPage() {
 
         {/* Auditor de Cabeceras de Seguridad HTTP — Mejora 53 */}
         <SecurityHeadersInspector />
+
+        {/* Generador SQL Parametrizado & Anti-SQLi — Mejora 54 */}
+        <SQLQueryBuilder />
 
       </div>
     </main>

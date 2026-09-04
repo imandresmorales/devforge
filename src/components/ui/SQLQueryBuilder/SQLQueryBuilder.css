@@ -1,0 +1,575 @@
+/**
+ * Estilos para SQLQueryBuilder — Generador de consultas y detector anti-SQLi.
+ */
+
+.sql-builder-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.sql-builder-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.sql-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.sql-builder-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.sql-builder-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* Pestañas de modo */
+.sql-mode-tabs {
+  display: flex;
+  gap: var(--space-2);
+  background: var(--color-bg-secondary);
+  padding: var(--space-1);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.sql-mode-tab {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-lg);
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sql-mode-tab:hover {
+  color: var(--color-text-primary);
+}
+
+.sql-mode-tab--active {
+  background: var(--color-brand-600);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Panel de controles ── */
+.sql-builder-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.sql-controls-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.sql-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.sql-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sql-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.sql-select,
+.sql-input {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.sql-select:focus,
+.sql-input:focus,
+.sql-textarea:focus {
+  border-color: var(--color-brand-500);
+  box-shadow: 0 0 0 2px var(--color-brand-100);
+}
+
+/* Cláusula WHERE */
+.sql-where-builder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.sql-where-title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sql-where-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 2fr;
+  gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .sql-where-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sql-textarea {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+  resize: vertical;
+  width: 100%;
+}
+
+/* ── Comparación lado a lado ── */
+.sql-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 860px) {
+  .sql-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sql-code-card {
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.sql-code-card--danger {
+  background: hsla(0, 72%, 51%, 0.04);
+  border: 1px solid hsla(0, 72%, 51%, 0.25);
+}
+
+.sql-code-card--secure {
+  background: hsla(142, 71%, 45%, 0.04);
+  border: 1px solid hsla(142, 71%, 45%, 0.25);
+}
+
+.sql-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sql-card-tag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.sql-card-tag--danger {
+  color: hsl(0, 72%, 51%);
+  background: hsla(0, 72%, 51%, 0.12);
+}
+
+.sql-card-tag--secure {
+  color: hsl(142, 71%, 45%);
+  background: hsla(142, 71%, 45%, 0.12);
+}
+
+.sql-btn-copy {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sql-btn-copy:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-brand-500);
+}
+
+.sql-code-block {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+.sql-code-block--danger {
+  border-left: 3px solid hsl(0, 72%, 51%);
+}
+
+.sql-code-block--secure {
+  border-left: 3px solid hsl(142, 71%, 45%);
+}
+
+.sql-params-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sql-params-title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.sql-params-code {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: hsl(142, 71%, 45%);
+  margin: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.sql-card-footnote {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.sql-card-footnote--danger {
+  color: hsl(0, 72%, 51%);
+}
+
+.sql-card-footnote--secure {
+  color: hsl(142, 71%, 45%);
+}
+
+.sql-error-alert {
+  padding: var(--space-4);
+  background: hsla(0, 72%, 51%, 0.1);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 51%);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+}
+
+/* ── Snippets de Node.js ── */
+.sql-snippets-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sql-snippets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sql-snippets-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sql-driver-tabs {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.sql-driver-tab {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sql-driver-tab--active {
+  background: var(--color-brand-600);
+  border-color: var(--color-brand-600);
+  color: white;
+}
+
+.sql-snippet-content {
+  position: relative;
+}
+
+.sql-btn-copy-driver {
+  margin-top: var(--space-2);
+  align-self: flex-start;
+  font-size: var(--text-xs);
+}
+
+/* ── Sandbox Anti-SQLi ── */
+.sql-sandbox-panel {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.sql-sandbox-panel-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sql-sandbox-panel-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.sql-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-2);
+}
+
+.sql-preset-btn {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sql-preset-btn:hover {
+  border-color: var(--color-brand-500);
+  transform: translateY(-1px);
+}
+
+.sql-preset-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.sql-preset-type {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.sql-sandbox-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sql-sandbox-input {
+  font-size: var(--text-sm);
+}
+
+/* Reporte de riesgo */
+.sql-risk-report {
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sql-risk-report--critical {
+  background: hsla(0, 72%, 51%, 0.08);
+  border: 1px solid hsl(0, 72%, 51%);
+}
+
+.sql-risk-report--high {
+  background: hsla(38, 92%, 50%, 0.08);
+  border: 1px solid hsl(38, 92%, 50%);
+}
+
+.sql-risk-report--medium {
+  background: hsla(48, 96%, 53%, 0.08);
+  border: 1px solid hsl(48, 96%, 53%);
+}
+
+.sql-risk-report--safe {
+  background: hsla(142, 71%, 45%, 0.08);
+  border: 1px solid hsl(142, 71%, 45%);
+}
+
+.sql-risk-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sql-risk-badge {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.sql-risk-badge--critical {
+  background: hsl(0, 72%, 51%);
+  color: white;
+}
+
+.sql-risk-badge--high {
+  background: hsl(38, 92%, 50%);
+  color: white;
+}
+
+.sql-risk-badge--medium {
+  background: hsl(48, 96%, 53%);
+  color: black;
+}
+
+.sql-risk-badge--safe {
+  background: hsl(142, 71%, 45%);
+  color: white;
+}
+
+.sql-risk-score {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  font-weight: var(--font-bold);
+  color: var(--color-text-secondary);
+}
+
+.sql-matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sql-matches-title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.sql-match-item {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sql-match-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+}
+
+.sql-match-desc {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.sql-match-string {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: hsl(0, 72%, 51%);
+}
+
+.sql-safe-msg {
+  font-size: var(--text-xs);
+  color: hsl(142, 71%, 45%);
+  margin: 0;
+}
+
+.sql-remediation-box {
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-brand-500);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sql-remediation-box p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
