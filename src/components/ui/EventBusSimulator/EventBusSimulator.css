@@ -1,0 +1,393 @@
+/**
+ * Estilos para EventBusSimulator — Simulador de Event Bus y Arquitectura Pub/Sub.
+ */
+
+.event-bus-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.event-bus-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.eb-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.event-bus-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.event-bus-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+.eb-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.eb-btn-preset,
+.eb-btn-reset {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+}
+
+/* KPI Grid */
+.eb-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--space-3);
+}
+
+.eb-kpi-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  box-shadow: var(--shadow-sm);
+}
+
+.eb-kpi-card--brand {
+  background: hsla(239, 84%, 64%, 0.06);
+  border-color: hsla(239, 84%, 64%, 0.3);
+}
+
+.eb-kpi-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.eb-kpi-val {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+}
+
+.eb-kpi-sub {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Main Grid */
+.eb-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 880px) {
+  .eb-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eb-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.eb-card-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.eb-publish-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.eb-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.eb-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.eb-input,
+.eb-textarea {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+}
+
+.eb-textarea {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  resize: vertical;
+}
+
+.eb-input:focus,
+.eb-textarea:focus {
+  border-color: var(--color-brand-500);
+}
+
+.eb-btn-publish {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-4);
+  align-self: flex-start;
+}
+
+/* Subscribers List */
+.eb-subscribers-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.eb-subscriber-item {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: all var(--transition-fast);
+}
+
+.eb-subscriber-item--failing {
+  border-color: hsl(0, 72%, 51%);
+  background: hsla(0, 72%, 51%, 0.04);
+}
+
+.eb-sub-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.eb-sub-name {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.eb-sub-pattern {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.eb-sub-pattern code {
+  color: var(--color-brand-400);
+  font-weight: var(--font-bold);
+}
+
+.eb-sub-toggle {
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+}
+
+.eb-sub-toggle--ok {
+  background: hsla(142, 71%, 45%, 0.15);
+  color: hsl(142, 71%, 45%);
+}
+
+.eb-sub-toggle--fail {
+  background: hsla(0, 72%, 51%, 0.15);
+  color: hsl(0, 72%, 51%);
+}
+
+.eb-sub-meta {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* DLQ Card */
+.eb-dlq-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.eb-dlq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.eb-dlq-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eb-dlq-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.eb-dlq-desc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.eb-btn-clear-dlq {
+  font-size: 11px;
+  padding: var(--space-1) var(--space-2);
+}
+
+.eb-dlq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.eb-dlq-item {
+  background: hsla(0, 72%, 51%, 0.04);
+  border: 1px solid hsla(0, 72%, 51%, 0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.eb-dlq-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.eb-btn-replay {
+  font-size: 11px;
+  padding: var(--space-1) var(--space-2);
+}
+
+.eb-dlq-reason {
+  font-size: 11px;
+  color: hsl(0, 72%, 51%);
+  margin: 0;
+}
+
+.eb-dlq-payload-box {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.eb-dlq-empty {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  font-size: var(--text-xs);
+  color: hsl(142, 71%, 45%);
+}
+
+/* Logs */
+.eb-logs-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.eb-logs-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.eb-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.eb-log-item {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--text-xs);
+}
+
+.eb-log-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.eb-log-time {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.eb-log-idem {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.eb-log-subs {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}

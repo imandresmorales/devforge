@@ -20,6 +20,7 @@ import CircuitBreakerSimulator from '../../components/ui/CircuitBreakerSimulator
 import SagaSimulator from '../../components/ui/SagaSimulator/SagaSimulator.jsx'
 import CacheSimulator from '../../components/ui/CacheSimulator/CacheSimulator.jsx'
 import LoadBalancerSimulator from '../../components/ui/LoadBalancerSimulator/LoadBalancerSimulator.jsx'
+import EventBusSimulator from '../../components/ui/EventBusSimulator/EventBusSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -57,10 +58,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '58',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '58',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '47',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '234',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '59',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '59',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '48',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '240',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -144,7 +145,8 @@ const IMPROVEMENTS_DATA = [
   { id: 55, num: '55', title: 'Simulador Caché Distribuida (LRU/TTL)', status: 'done', commit: 'b599712' },
   { id: 56, num: '56', title: 'Inspector & Validador Tokens JWT',     status: 'done', commit: '057fe68' },
   { id: 57, num: '57', title: 'Balanceador de Carga & Alta Disponibilidad', status: 'done', commit: 'bc2d6d5' },
-  { id: 58, num: '58', title: 'Explorador Hashes KDF y Entropía NIST', status: 'done', commit: 'main' },
+  { id: 58, num: '58', title: 'Explorador Hashes KDF y Entropía NIST', status: 'done', commit: 'f359ac0' },
+  { id: 59, num: '59', title: 'Event Bus Pub/Sub & Dead Letter Queue', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -274,6 +276,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Balanceo de Carga y Alta Disponibilidad (Mejora 57) ── */}
         <LoadBalancerSimulator />
+
+        {/* ── Simulador de Event Bus Pub/Sub & DLQ (Mejora 59) ── */}
+        <EventBusSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
