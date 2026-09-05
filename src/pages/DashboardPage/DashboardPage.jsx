@@ -22,6 +22,7 @@ import CacheSimulator from '../../components/ui/CacheSimulator/CacheSimulator.js
 import LoadBalancerSimulator from '../../components/ui/LoadBalancerSimulator/LoadBalancerSimulator.jsx'
 import EventBusSimulator from '../../components/ui/EventBusSimulator/EventBusSimulator.jsx'
 import ACIDSimulator from '../../components/ui/ACIDSimulator/ACIDSimulator.jsx'
+import RaftSimulator from '../../components/ui/RaftSimulator/RaftSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -59,10 +60,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '62',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '62',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '51',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '264',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '63',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '63',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '52',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '270',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -150,7 +151,8 @@ const IMPROVEMENTS_DATA = [
   { id: 59, num: '59', title: 'Event Bus Pub/Sub & Dead Letter Queue', status: 'done', commit: '774e048' },
   { id: 60, num: '60', title: 'Transacciones ACID y Aislamiento SQL', status: 'done', commit: '7d54958' },
   { id: 61, num: '61', title: 'Control de Acceso Granular RBAC & ABAC', status: 'done', commit: '8ae0ebc' },
-  { id: 62, num: '62', title: 'Inspector Certificados X.509 y PKI',    status: 'done', commit: 'main' },
+  { id: 62, num: '62', title: 'Inspector Certificados X.509 y PKI',    status: 'done', commit: 'a5185a2' },
+  { id: 63, num: '63', title: 'Simulador Consenso Distribuido Raft',   status: 'done', commit: 'main' },
 ]
 
 /**
@@ -286,6 +288,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Transacciones ACID y Aislamiento SQL (Mejora 60) ── */}
         <ACIDSimulator />
+
+        {/* ── Simulador de Consenso Distribuido Raft (Mejora 63) ── */}
+        <RaftSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
