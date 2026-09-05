@@ -1,0 +1,383 @@
+/**
+ * Estilos para JWTInspector — Inspector y validador de tokens JWT.
+ */
+
+.jwt-inspector-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.jwt-inspector-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.jwt-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.jwt-inspector-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.jwt-inspector-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* Presets */
+.jwt-presets-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.jwt-preset-btn {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.jwt-preset-btn:hover {
+  border-color: var(--color-brand-500);
+  transform: translateY(-1px);
+}
+
+.jwt-preset-title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.jwt-preset-tag {
+  font-size: 10px;
+  font-weight: var(--font-bold);
+}
+
+.jwt-preset-tag--secure {
+  color: hsl(142, 71%, 45%);
+}
+
+.jwt-preset-tag--danger {
+  color: hsl(0, 72%, 51%);
+}
+
+.jwt-preset-tag--warning {
+  color: hsl(38, 92%, 50%);
+}
+
+/* Encoded card */
+.jwt-encoded-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.jwt-encoded-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jwt-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.jwt-btn-copy {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.jwt-btn-copy:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-brand-500);
+}
+
+.jwt-raw-token-input {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  padding: var(--space-3);
+  resize: vertical;
+  word-break: break-all;
+}
+
+.jwt-colored-parts-preview {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--color-bg-tertiary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  word-break: break-all;
+  line-height: var(--leading-relaxed);
+}
+
+.jwt-part--header {
+  color: hsl(330, 85%, 60%);
+  font-weight: var(--font-bold);
+}
+
+.jwt-part--payload {
+  color: hsl(262, 80%, 65%);
+  font-weight: var(--font-bold);
+}
+
+.jwt-part--signature {
+  color: hsl(192, 95%, 55%);
+  font-weight: var(--font-bold);
+}
+
+.jwt-dot {
+  color: var(--color-text-muted);
+  font-weight: var(--font-bold);
+  margin: 0 1px;
+}
+
+/* Decoded 3 panels grid */
+.jwt-decoded-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.3fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 960px) {
+  .jwt-decoded-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.jwt-panel-card {
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.jwt-panel-card--header {
+  border-top: 3px solid hsl(330, 85%, 60%);
+}
+
+.jwt-panel-card--payload {
+  border-top: 3px solid hsl(262, 80%, 65%);
+}
+
+.jwt-panel-card--signature {
+  border-top: 3px solid hsl(192, 95%, 55%);
+}
+
+.jwt-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jwt-panel-tag {
+  font-size: 11px;
+  font-weight: var(--font-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.jwt-panel-tag--header {
+  color: hsl(330, 85%, 60%);
+  background: hsla(330, 85%, 60%, 0.12);
+}
+
+.jwt-panel-tag--payload {
+  color: hsl(262, 80%, 65%);
+  background: hsla(262, 80%, 65%, 0.12);
+}
+
+.jwt-panel-tag--signature {
+  color: hsl(192, 95%, 55%);
+  background: hsla(192, 95%, 55%, 0.12);
+}
+
+.jwt-part-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.jwt-json-block {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  margin: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.jwt-claim-status {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+/* Secret input */
+.jwt-secret-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.jwt-input {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+}
+
+.jwt-input:focus {
+  border-color: var(--color-brand-500);
+}
+
+.jwt-status-banner {
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+}
+
+.jwt-status-banner--valid {
+  background: hsla(142, 71%, 45%, 0.12);
+  border: 1px solid hsl(142, 71%, 45%);
+  color: hsl(142, 71%, 45%);
+}
+
+.jwt-status-banner--invalid {
+  background: hsla(0, 72%, 51%, 0.12);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 51%);
+}
+
+.jwt-status-banner--critical {
+  background: hsla(0, 72%, 51%, 0.15);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 51%);
+}
+
+.jwt-status-banner--neutral {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.jwt-error-banner {
+  padding: var(--space-4);
+  background: hsla(0, 72%, 51%, 0.1);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 51%);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+}
+
+/* Audit list */
+.jwt-audit-panel {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.jwt-audit-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.jwt-audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.jwt-audit-item {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.jwt-audit-item--critical {
+  border-left: 3px solid hsl(0, 72%, 51%);
+}
+
+.jwt-audit-item--high {
+  border-left: 3px solid hsl(38, 92%, 50%);
+}
+
+.jwt-audit-item--medium {
+  border-left: 3px solid hsl(48, 96%, 53%);
+}
+
+.jwt-audit-item-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+}
+
+.jwt-audit-desc {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}

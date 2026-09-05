@@ -10,6 +10,7 @@ import ProjectTreeGenerator from '../../components/ui/ProjectTreeGenerator/Proje
 import CodeDiffViewer from '../../components/ui/CodeDiffViewer/CodeDiffViewer.jsx'
 import SecurityHeadersInspector from '../../components/ui/SecurityHeadersInspector/SecurityHeadersInspector.jsx'
 import SQLQueryBuilder from '../../components/ui/SQLQueryBuilder/SQLQueryBuilder.jsx'
+import JWTInspector from '../../components/ui/JWTInspector/JWTInspector.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -159,6 +160,9 @@ function DocsPage() {
 
         {/* Generador SQL Parametrizado & Anti-SQLi — Mejora 54 */}
         <SQLQueryBuilder />
+
+        {/* Inspector y Validador de Tokens JWT — Mejora 56 */}
+        <JWTInspector />
 
       </div>
     </main>
