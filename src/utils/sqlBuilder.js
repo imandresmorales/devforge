@@ -265,7 +265,7 @@ export function buildParameterizedQuery(options = {}) {
  */
 export const SQLI_SIGNATURES = [
   {
-    pattern: /('\s*(or|and)\s*('?[0-9a-z]+'?)\s*=\s*('?\3'?)|1=1|true\s*=\s*true)/i,
+    pattern: /(?:'|\b)\s*(?:or|and)\s+['"]?([0-9a-z_]+)['"]?\s*=\s*['"]?\1['"]?|1\s*=\s*1|true\s*=\s*true/i,
     name: 'Tautología Booleana (Bypass de Autenticación)',
     severity: 'CRITICAL',
     description: 'Fuerza una condición siempre verdadera para omitir validaciones o volcar registros confidenciales.',

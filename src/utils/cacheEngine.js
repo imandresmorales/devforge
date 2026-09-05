@@ -46,6 +46,7 @@ export class DistributedCacheSimulator {
     this.capacity = Math.max(2, options.capacity || 5)
     this.policy = options.policy || 'LRU'
     this.storage = new Map()
+    this._seq = 0
     this.stats = {
       hits: 0,
       misses: 0,
@@ -109,6 +110,7 @@ export class DistributedCacheSimulator {
     this.stats.hits++
     entry.frequency++
     entry.lastAccessedAt = Date.now()
+    entry.lastAccessedSeq = ++this._seq
 
     this._logEvent('HIT', cleanKey, {
       frequency: entry.frequency,
@@ -134,6 +136,7 @@ export class DistributedCacheSimulator {
 
     const cleanKey = key.trim()
     const now = Date.now()
+    const seq = ++this._seq
     const ttlMs = options.ttlMs && Number(options.ttlMs) > 0 ? Number(options.ttlMs) : null
     const expiresAt = ttlMs ? now + ttlMs : null
 
@@ -146,6 +149,7 @@ export class DistributedCacheSimulator {
       existing.expiresAt = expiresAt
       existing.ttlMs = ttlMs
       existing.lastAccessedAt = now
+      existing.lastAccessedSeq = seq
       existing.frequency++
       this.stats.sets++
       this._logEvent('UPDATE', cleanKey, { ttlMs })
@@ -162,7 +166,9 @@ export class DistributedCacheSimulator {
       key: cleanKey,
       value,
       createdAt: now,
+      createdAtSeq: seq,
       lastAccessedAt: now,
+      lastAccessedSeq: seq,
       frequency: 1,
       expiresAt,
       ttlMs,
@@ -205,7 +211,7 @@ export class DistributedCacheSimulator {
       for (let i = 1; i < entries.length; i++) {
         if (
           entries[i].frequency < minEntry.frequency ||
-          (entries[i].frequency === minEntry.frequency && entries[i].lastAccessedAt < minEntry.lastAccessedAt)
+          (entries[i].frequency === minEntry.frequency && entries[i].lastAccessedSeq < minEntry.lastAccessedSeq)
         ) {
           minEntry = entries[i]
         }
@@ -215,7 +221,7 @@ export class DistributedCacheSimulator {
       // El más antiguo por tiempo de creación
       let oldestEntry = entries[0]
       for (let i = 1; i < entries.length; i++) {
-        if (entries[i].createdAt < oldestEntry.createdAt) {
+        if (entries[i].createdAtSeq < oldestEntry.createdAtSeq) {
           oldestEntry = entries[i]
         }
       }
@@ -224,7 +230,7 @@ export class DistributedCacheSimulator {
       // Por defecto: LRU (Least Recently Used)
       let lruEntry = entries[0]
       for (let i = 1; i < entries.length; i++) {
-        if (entries[i].lastAccessedAt < lruEntry.lastAccessedAt) {
+        if (entries[i].lastAccessedSeq < lruEntry.lastAccessedSeq) {
           lruEntry = entries[i]
         }
       }

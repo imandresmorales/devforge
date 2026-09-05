@@ -1,0 +1,348 @@
+/**
+ * Estilos para PKIExplorer — Inspector de certificados X.509 y cadena de confianza.
+ */
+
+.pki-explorer-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.pki-explorer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.pki-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.pki-explorer-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.pki-explorer-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* Presets */
+.pki-presets-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.pki-preset-btn {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pki-preset-btn:hover {
+  border-color: var(--color-brand-500);
+}
+
+.pki-preset-btn--active {
+  background: hsla(239, 84%, 64%, 0.1);
+  border-color: var(--color-brand-500);
+  font-weight: var(--font-bold);
+}
+
+/* Audit Banner Card */
+.pki-audit-banner-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.pki-audit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.pki-grade-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.pki-grade-badge {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-xl);
+}
+
+.pki-grade-badge--a\+ {
+  background: hsla(142, 71%, 45%, 0.15);
+  color: hsl(142, 71%, 45%);
+  border: 1px solid hsl(142, 71%, 45%);
+}
+
+.pki-grade-badge--c {
+  background: hsla(38, 92%, 50%, 0.15);
+  color: hsl(38, 92%, 50%);
+  border: 1px solid hsl(38, 92%, 50%);
+}
+
+.pki-grade-badge--f {
+  background: hsla(0, 72%, 51%, 0.15);
+  color: hsl(0, 72%, 51%);
+  border: 1px solid hsl(0, 72%, 51%);
+}
+
+.pki-grade-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.pki-grade-summary {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.pki-host-tester {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.pki-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.pki-host-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pki-input {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+}
+
+.pki-host-match-badge {
+  font-size: 11px;
+  font-weight: var(--font-bold);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.pki-host-match-badge--ok {
+  background: hsla(142, 71%, 45%, 0.15);
+  color: hsl(142, 71%, 45%);
+}
+
+.pki-host-match-badge--fail {
+  background: hsla(0, 72%, 51%, 0.15);
+  color: hsl(0, 72%, 51%);
+}
+
+.pki-issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.pki-issue-item {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+}
+
+.pki-issue-item--critical {
+  border-left: 3px solid hsl(0, 72%, 51%);
+}
+
+.pki-issue-item--high {
+  border-left: 3px solid hsl(38, 92%, 50%);
+}
+
+.pki-issue-item p {
+  margin: 2px 0 0 0;
+  color: var(--color-text-secondary);
+}
+
+/* Chain Tree */
+.pki-chain-tree-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pki-chain-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.pki-chain-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+
+.pki-chain-arrow {
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+  padding: var(--space-1) 0;
+}
+
+.pki-cert-node {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pki-cert-node--root {
+  border-left: 4px solid var(--color-brand-500);
+}
+
+.pki-cert-node--intermediate {
+  border-left: 4px solid hsl(262, 80%, 65%);
+}
+
+.pki-cert-node--leaf {
+  border-left: 4px solid hsl(142, 71%, 45%);
+}
+
+.pki-cert-node--expired {
+  border-left-color: hsl(0, 72%, 51%);
+}
+
+.pki-cert-node--untrusted {
+  border-left-color: hsl(0, 72%, 51%);
+}
+
+.pki-cert-node--empty {
+  border-style: dashed;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  padding: var(--space-3);
+}
+
+.pki-node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pki-node-type {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-secondary);
+}
+
+.pki-node-cn {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.pki-node-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.pki-sans-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.pki-sans-title {
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.pki-sans-tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.pki-san-tag {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+}
+
+.pki-thumbprint-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 10px;
+}
+
+.pki-thumbprint-label {
+  color: var(--color-text-muted);
+}
+
+.pki-thumbprint-code {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+}

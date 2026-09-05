@@ -13,6 +13,7 @@ import SQLQueryBuilder from '../../components/ui/SQLQueryBuilder/SQLQueryBuilder
 import JWTInspector from '../../components/ui/JWTInspector/JWTInspector.jsx'
 import PasswordCryptoExplorer from '../../components/ui/PasswordCryptoExplorer/PasswordCryptoExplorer.jsx'
 import AccessControlEngine from '../../components/ui/AccessControlEngine/AccessControlEngine.jsx'
+import PKIExplorer from '../../components/ui/PKIExplorer/PKIExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -171,6 +172,9 @@ function DocsPage() {
 
         {/* Motor de Control de Acceso Granular RBAC & ABAC — Mejora 61 */}
         <AccessControlEngine />
+
+        {/* Inspector de Certificados X.509 y Cadena de Confianza SSL/TLS — Mejora 62 */}
+        <PKIExplorer />
 
       </div>
     </main>
