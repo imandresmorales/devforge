@@ -12,6 +12,7 @@ import SecurityHeadersInspector from '../../components/ui/SecurityHeadersInspect
 import SQLQueryBuilder from '../../components/ui/SQLQueryBuilder/SQLQueryBuilder.jsx'
 import JWTInspector from '../../components/ui/JWTInspector/JWTInspector.jsx'
 import PasswordCryptoExplorer from '../../components/ui/PasswordCryptoExplorer/PasswordCryptoExplorer.jsx'
+import AccessControlEngine from '../../components/ui/AccessControlEngine/AccessControlEngine.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -167,6 +168,9 @@ function DocsPage() {
 
         {/* Explorador de Hashing KDF & Entropía NIST — Mejora 58 */}
         <PasswordCryptoExplorer />
+
+        {/* Motor de Control de Acceso Granular RBAC & ABAC — Mejora 61 */}
+        <AccessControlEngine />
 
       </div>
     </main>

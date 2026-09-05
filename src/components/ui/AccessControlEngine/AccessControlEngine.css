@@ -1,0 +1,269 @@
+/**
+ * Estilos para AccessControlEngine — Motor de control de acceso RBAC & ABAC.
+ */
+
+.access-control-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.access-control-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ac-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.access-control-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.access-control-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* Presets */
+.ac-presets-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.ac-preset-btn {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ac-preset-btn:hover {
+  border-color: var(--color-brand-500);
+}
+
+.ac-preset-title {
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.ac-preset-chip {
+  font-size: 9px;
+  font-weight: var(--font-bold);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+
+.ac-preset-chip--allow {
+  color: hsl(142, 71%, 45%);
+  background: hsla(142, 71%, 45%, 0.15);
+}
+
+.ac-preset-chip--deny {
+  color: hsl(0, 72%, 51%);
+  background: hsla(0, 72%, 51%, 0.15);
+}
+
+/* Decision Banner */
+.ac-decision-banner {
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.3s ease;
+}
+
+.ac-decision-banner--allow {
+  background: hsla(142, 71%, 45%, 0.12);
+  border: 1px solid hsl(142, 71%, 45%);
+}
+
+.ac-decision-banner--deny {
+  background: hsla(0, 72%, 51%, 0.12);
+  border: 1px solid hsl(0, 72%, 51%);
+}
+
+.ac-decision-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ac-decision-icon {
+  font-size: var(--text-2xl);
+}
+
+.ac-decision-status {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.ac-decision-reasons {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.ac-decision-badge {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  background: var(--color-bg-secondary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* Attributes Grid */
+.ac-attributes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 960px) {
+  .ac-attributes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ac-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.ac-card-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.ac-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ac-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.ac-select {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+}
+
+.ac-select:focus {
+  border-color: var(--color-brand-500);
+}
+
+.ac-checkbox-group,
+.ac-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ac-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* Audit Card */
+.ac-audit-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ac-audit-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.ac-rules-table-wrapper {
+  overflow-x: auto;
+}
+
+.ac-rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+}
+
+.ac-rules-table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ac-rules-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.ac-match-badge {
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.ac-match-badge--matched {
+  background: hsla(239, 84%, 64%, 0.15);
+  color: var(--color-brand-400);
+}
+
+.ac-match-badge--unmatched {
+  color: var(--color-text-muted);
+}

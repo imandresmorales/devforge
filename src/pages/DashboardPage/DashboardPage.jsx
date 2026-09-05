@@ -59,10 +59,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '60',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '60',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '49',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '245',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '61',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '61',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '50',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '251',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -148,7 +148,8 @@ const IMPROVEMENTS_DATA = [
   { id: 57, num: '57', title: 'Balanceador de Carga & Alta Disponibilidad', status: 'done', commit: 'bc2d6d5' },
   { id: 58, num: '58', title: 'Explorador Hashes KDF y Entropía NIST', status: 'done', commit: 'f359ac0' },
   { id: 59, num: '59', title: 'Event Bus Pub/Sub & Dead Letter Queue', status: 'done', commit: '774e048' },
-  { id: 60, num: '60', title: 'Transacciones ACID y Aislamiento SQL', status: 'done', commit: 'main' },
+  { id: 60, num: '60', title: 'Transacciones ACID y Aislamiento SQL', status: 'done', commit: '7d54958' },
+  { id: 61, num: '61', title: 'Control de Acceso Granular RBAC & ABAC', status: 'done', commit: 'main' },
 ]
 
 /**
