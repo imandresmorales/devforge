@@ -14,6 +14,7 @@ import JWTInspector from '../../components/ui/JWTInspector/JWTInspector.jsx'
 import PasswordCryptoExplorer from '../../components/ui/PasswordCryptoExplorer/PasswordCryptoExplorer.jsx'
 import AccessControlEngine from '../../components/ui/AccessControlEngine/AccessControlEngine.jsx'
 import PKIExplorer from '../../components/ui/PKIExplorer/PKIExplorer.jsx'
+import CORSAuditor from '../../components/ui/CORSAuditor/CORSAuditor.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -175,6 +176,9 @@ function DocsPage() {
 
         {/* Inspector de Certificados X.509 y Cadena de Confianza SSL/TLS — Mejora 62 */}
         <PKIExplorer />
+
+        {/* Auditor de Seguridad CORS y Escáner de Misconfigurations — Mejora 64 */}
+        <CORSAuditor />
 
       </div>
     </main>
