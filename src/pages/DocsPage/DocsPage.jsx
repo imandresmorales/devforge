@@ -11,6 +11,7 @@ import CodeDiffViewer from '../../components/ui/CodeDiffViewer/CodeDiffViewer.js
 import SecurityHeadersInspector from '../../components/ui/SecurityHeadersInspector/SecurityHeadersInspector.jsx'
 import SQLQueryBuilder from '../../components/ui/SQLQueryBuilder/SQLQueryBuilder.jsx'
 import JWTInspector from '../../components/ui/JWTInspector/JWTInspector.jsx'
+import PasswordCryptoExplorer from '../../components/ui/PasswordCryptoExplorer/PasswordCryptoExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -163,6 +164,9 @@ function DocsPage() {
 
         {/* Inspector y Validador de Tokens JWT — Mejora 56 */}
         <JWTInspector />
+
+        {/* Explorador de Hashing KDF & Entropía NIST — Mejora 58 */}
+        <PasswordCryptoExplorer />
 
       </div>
     </main>
