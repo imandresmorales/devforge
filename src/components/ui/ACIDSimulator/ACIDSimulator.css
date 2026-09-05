@@ -1,0 +1,298 @@
+/**
+ * Estilos para ACIDSimulator — Simulador de transacciones ACID y aislamiento SQL.
+ */
+
+.acid-simulator-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.acid-simulator-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.acid-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.acid-simulator-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.acid-simulator-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+.acid-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.acid-btn-action {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+}
+
+/* Controls Grid */
+.acid-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 860px) {
+  .acid-controls-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.acid-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.acid-card-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.acid-scenarios-list,
+.acid-isolation-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.acid-scenario-btn,
+.acid-iso-btn {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: all var(--transition-fast);
+}
+
+.acid-scenario-btn:hover,
+.acid-iso-btn:hover {
+  border-color: var(--color-brand-500);
+}
+
+.acid-scenario-btn--active,
+.acid-iso-btn--active {
+  background: hsla(239, 84%, 64%, 0.1);
+  border-color: var(--color-brand-500);
+}
+
+.acid-scenario-name,
+.acid-iso-name {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.acid-scenario-desc,
+.acid-iso-desc {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-tight);
+}
+
+/* Anomaly banner */
+.acid-anomaly-banner {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  animation: fadeIn 0.3s ease;
+}
+
+.acid-anomaly-banner--danger {
+  background: hsla(0, 72%, 51%, 0.12);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 51%);
+}
+
+.acid-anomaly-banner--success {
+  background: hsla(142, 71%, 45%, 0.12);
+  border: 1px solid hsl(142, 71%, 45%);
+  color: hsl(142, 71%, 45%);
+}
+
+/* Execution Grid */
+.acid-execution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 860px) {
+  .acid-execution-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.acid-data-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.acid-data-item {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.acid-data-key {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.acid-data-name {
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+}
+
+.acid-data-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: hsl(142, 71%, 45%);
+}
+
+/* Timeline */
+.acid-steps-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.acid-timeline-item {
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.acid-timeline-item--current {
+  background: hsla(239, 84%, 64%, 0.1);
+  border-color: var(--color-brand-500);
+  box-shadow: 0 0 0 1px var(--color-brand-500);
+}
+
+.acid-timeline-item--past {
+  background: var(--color-bg-tertiary);
+  opacity: 0.7;
+}
+
+.acid-timeline-item--future {
+  background: transparent;
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.acid-timeline-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.acid-timeline-action {
+  font-family: var(--font-mono);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.acid-timeline-step-num {
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.acid-timeline-desc {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Matrix Table */
+.acid-matrix-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.acid-matrix-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.acid-table-wrapper {
+  overflow-x: auto;
+}
+
+.acid-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+}
+
+.acid-matrix-table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.acid-matrix-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}

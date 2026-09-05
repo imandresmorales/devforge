@@ -11,7 +11,7 @@ import { useTour } from '../../../context/TourContext'
 import './Footer.css'
 
 /** Mejora actual para calcular el progreso */
-const CURRENT_IMPROVEMENT = 59
+const CURRENT_IMPROVEMENT = 60
 const TOTAL_IMPROVEMENTS = 100
 
 /** Columnas de enlaces del footer */
