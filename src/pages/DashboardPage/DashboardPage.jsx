@@ -19,6 +19,7 @@ import RateLimitSimulator from '../../components/ui/RateLimitSimulator/RateLimit
 import CircuitBreakerSimulator from '../../components/ui/CircuitBreakerSimulator/CircuitBreakerSimulator.jsx'
 import SagaSimulator from '../../components/ui/SagaSimulator/SagaSimulator.jsx'
 import CacheSimulator from '../../components/ui/CacheSimulator/CacheSimulator.jsx'
+import LoadBalancerSimulator from '../../components/ui/LoadBalancerSimulator/LoadBalancerSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -56,10 +57,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '56',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '56',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '45',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '223',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '57',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '57',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '46',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '229',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -141,7 +142,8 @@ const IMPROVEMENTS_DATA = [
   { id: 53, num: '53', title: 'Auditor Cabeceras HTTP de Seguridad',   status: 'done', commit: 'a3055ce' },
   { id: 54, num: '54', title: 'Consultas SQL Seguras & Anti-SQLi',     status: 'done', commit: 'a1295c4' },
   { id: 55, num: '55', title: 'Simulador Caché Distribuida (LRU/TTL)', status: 'done', commit: 'b599712' },
-  { id: 56, num: '56', title: 'Inspector & Validador Tokens JWT',     status: 'done', commit: 'main' },
+  { id: 56, num: '56', title: 'Inspector & Validador Tokens JWT',     status: 'done', commit: '057fe68' },
+  { id: 57, num: '57', title: 'Balanceador de Carga & Alta Disponibilidad', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -268,6 +270,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Memoria Caché Distribuida (Mejora 55) ── */}
         <CacheSimulator />
+
+        {/* ── Simulador de Balanceo de Carga y Alta Disponibilidad (Mejora 57) ── */}
+        <LoadBalancerSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
