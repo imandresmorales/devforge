@@ -23,6 +23,7 @@ import LoadBalancerSimulator from '../../components/ui/LoadBalancerSimulator/Loa
 import EventBusSimulator from '../../components/ui/EventBusSimulator/EventBusSimulator.jsx'
 import ACIDSimulator from '../../components/ui/ACIDSimulator/ACIDSimulator.jsx'
 import RaftSimulator from '../../components/ui/RaftSimulator/RaftSimulator.jsx'
+import VectorDbSimulator from '../../components/ui/VectorDbSimulator/VectorDbSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -60,10 +61,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '66',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '66',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '55',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '286',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '67',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '67',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '56',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '293',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -155,7 +156,8 @@ const IMPROVEMENTS_DATA = [
   { id: 63, num: '63', title: 'Simulador Consenso Distribuido Raft',   status: 'done', commit: 'e84e9c9' },
   { id: 64, num: '64', title: 'Auditor de Seguridad CORS (OWASP)',    status: 'done', commit: '1c5d1f8' },
   { id: 65, num: '65', title: 'Simulador Pruebas Cero Conocimiento ZKP', status: 'done', commit: '150d04e' },
-  { id: 66, num: '66', title: 'Cifrado Extremo a Extremo E2EE (Web Crypto)', status: 'done', commit: 'main' },
+  { id: 66, num: '66', title: 'Cifrado Extremo a Extremo E2EE (Web Crypto)', status: 'done', commit: '9e71892' },
+  { id: 67, num: '67', title: 'Base de Datos Vectorial k-NN & Embeddings', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -294,6 +296,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Consenso Distribuido Raft (Mejora 63) ── */}
         <RaftSimulator />
+
+        {/* ── Base de Datos Vectorial k-NN & Embeddings (Mejora 67) ── */}
+        <VectorDbSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
