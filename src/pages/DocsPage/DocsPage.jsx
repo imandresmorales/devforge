@@ -15,6 +15,7 @@ import PasswordCryptoExplorer from '../../components/ui/PasswordCryptoExplorer/P
 import AccessControlEngine from '../../components/ui/AccessControlEngine/AccessControlEngine.jsx'
 import PKIExplorer from '../../components/ui/PKIExplorer/PKIExplorer.jsx'
 import CORSAuditor from '../../components/ui/CORSAuditor/CORSAuditor.jsx'
+import ZKPSimulator from '../../components/ui/ZKPSimulator/ZKPSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -179,6 +180,9 @@ function DocsPage() {
 
         {/* Auditor de Seguridad CORS y Escáner de Misconfigurations — Mejora 64 */}
         <CORSAuditor />
+
+        {/* Simulador de Pruebas de Cero Conocimiento ZKP & Protocolo Schnorr — Mejora 65 */}
+        <ZKPSimulator />
 
       </div>
     </main>

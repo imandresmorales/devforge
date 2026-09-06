@@ -1,0 +1,255 @@
+/* ─── ZKPSimulator Styles (Mejora 65) ─────────────────────────── */
+
+.zkp-simulator {
+  margin-top: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.zkp-simulator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.zkp-simulator__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-2);
+}
+
+.zkp-simulator__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+.zkp-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  background: var(--color-bg-tertiary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+/* ── Secret Bar ── */
+.zkp-secret-bar {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.zkp-secret-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 240px;
+}
+
+.zkp-field-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.zkp-input {
+  font-family: var(--font-mono);
+  background: var(--color-bg-primary);
+}
+
+.zkp-buttons-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ── Actors Grid ── */
+.zkp-actors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 768px) {
+  .zkp-actors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.zkp-actor-card {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.zkp-actor-card--prover {
+  border-top: 4px solid hsl(239, 84%, 64%);
+}
+
+.zkp-actor-card--attacker {
+  border-top: 4px solid hsl(0, 72%, 51%);
+}
+
+.zkp-actor-card--verifier {
+  border-top: 4px solid hsl(142, 71%, 45%);
+}
+
+.zkp-actor-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.zkp-actor-avatar {
+  font-size: 28px;
+}
+
+.zkp-actor-name {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.zkp-actor-role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.zkp-values-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.zkp-value-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.zkp-val-name {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.zkp-val-data {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+
+.zkp-val-secret {
+  color: hsl(38, 92%, 55%);
+  font-weight: var(--font-bold);
+}
+
+.zkp-val-highlight {
+  color: hsl(239, 84%, 67%);
+  font-weight: var(--font-bold);
+}
+
+.zkp-verdict-badge {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.zkp-verdict-badge--valid {
+  background: hsla(142, 71%, 45%, 0.2);
+  color: hsl(142, 71%, 45%);
+  border: 1px solid hsl(142, 71%, 45%);
+}
+
+.zkp-verdict-badge--invalid {
+  background: hsla(0, 72%, 51%, 0.2);
+  color: hsl(0, 72%, 60%);
+  border: 1px solid hsl(0, 72%, 51%);
+}
+
+/* ── Steps Panel ── */
+.zkp-steps-panel {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.zkp-steps-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.zkp-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .zkp-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.zkp-step-item {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.zkp-step-desc {
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.zkp-step-eq {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-brand-500);
+  word-break: break-all;
+}

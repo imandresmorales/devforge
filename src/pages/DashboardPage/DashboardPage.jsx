@@ -60,10 +60,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '64',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '64',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '53',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '276',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '65',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '65',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '54',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '282',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -153,7 +153,8 @@ const IMPROVEMENTS_DATA = [
   { id: 61, num: '61', title: 'Control de Acceso Granular RBAC & ABAC', status: 'done', commit: '8ae0ebc' },
   { id: 62, num: '62', title: 'Inspector Certificados X.509 y PKI',    status: 'done', commit: 'a5185a2' },
   { id: 63, num: '63', title: 'Simulador Consenso Distribuido Raft',   status: 'done', commit: 'e84e9c9' },
-  { id: 64, num: '64', title: 'Auditor de Seguridad CORS (OWASP)',    status: 'done', commit: 'main' },
+  { id: 64, num: '64', title: 'Auditor de Seguridad CORS (OWASP)',    status: 'done', commit: '1c5d1f8' },
+  { id: 65, num: '65', title: 'Simulador Pruebas Cero Conocimiento ZKP', status: 'done', commit: 'main' },
 ]
 
 /**
