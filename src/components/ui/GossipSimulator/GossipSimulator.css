@@ -1,0 +1,240 @@
+/* ─── GossipSimulator Styles (Mejora 69) ───────────────────────── */
+
+.gossip-simulator {
+  margin-top: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.gossip-simulator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.gossip-simulator__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-2);
+}
+
+.gossip-simulator__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+.gossip-header-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ── Nodes Grid ── */
+.gossip-nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.gossip-node-card {
+  background: var(--color-bg-tertiary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gossip-node-card:hover {
+  border-color: var(--color-brand-500);
+  transform: translateY(-2px);
+}
+
+.gossip-node-card--selected {
+  border-color: var(--color-brand-500);
+  box-shadow: 0 0 14px hsla(239, 84%, 64%, 0.3);
+}
+
+.gossip-node-card--offline {
+  opacity: 0.55;
+  filter: grayscale(0.8);
+}
+
+.gossip-node-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gossip-node-id {
+  font-family: var(--font-mono);
+  font-weight: var(--font-bold);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+}
+
+.gossip-state-badge {
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.gossip-state-badge--alive {
+  background: hsla(142, 71%, 45%, 0.2);
+  color: hsl(142, 71%, 45%);
+  border: 1px solid hsl(142, 71%, 45%);
+}
+
+.gossip-state-badge--suspect {
+  background: hsla(38, 92%, 50%, 0.2);
+  color: hsl(38, 92%, 55%);
+  border: 1px solid hsl(38, 92%, 50%);
+}
+
+.gossip-state-badge--dead {
+  background: hsla(0, 72%, 51%, 0.2);
+  color: hsl(0, 72%, 60%);
+  border: 1px solid hsl(0, 72%, 51%);
+}
+
+.gossip-node-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-xs);
+  background: var(--color-bg-primary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.gossip-meta-label {
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.gossip-meta-val {
+  font-family: var(--font-mono);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.gossip-text-online {
+  color: hsl(142, 71%, 45%);
+}
+
+.gossip-text-offline {
+  color: hsl(0, 72%, 60%);
+}
+
+.gossip-node-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* ── Details Layout ── */
+.gossip-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 900px) {
+  .gossip-details-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gossip-table-panel,
+.gossip-events-panel {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.gossip-panel-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.gossip-members-table-wrapper {
+  overflow-x: auto;
+}
+
+.gossip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+}
+
+.gossip-table th,
+.gossip-table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gossip-table th {
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+}
+
+.gossip-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.gossip-event-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 4px 8px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.gossip-event-type {
+  font-weight: var(--font-bold);
+  color: var(--color-brand-500);
+  min-width: 150px;
+}
+
+.gossip-event-route {
+  color: var(--color-text-muted);
+  min-width: 120px;
+}
+
+.gossip-event-details {
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
