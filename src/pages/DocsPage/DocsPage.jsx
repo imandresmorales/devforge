@@ -16,6 +16,7 @@ import AccessControlEngine from '../../components/ui/AccessControlEngine/AccessC
 import PKIExplorer from '../../components/ui/PKIExplorer/PKIExplorer.jsx'
 import CORSAuditor from '../../components/ui/CORSAuditor/CORSAuditor.jsx'
 import ZKPSimulator from '../../components/ui/ZKPSimulator/ZKPSimulator.jsx'
+import E2EEExplorer from '../../components/ui/E2EEExplorer/E2EEExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -183,6 +184,9 @@ function DocsPage() {
 
         {/* Simulador de Pruebas de Cero Conocimiento ZKP & Protocolo Schnorr — Mejora 65 */}
         <ZKPSimulator />
+
+        {/* Motor de Cifrado Extremo a Extremo E2EE (RSA-OAEP + AES-GCM) — Mejora 66 */}
+        <E2EEExplorer />
 
       </div>
     </main>

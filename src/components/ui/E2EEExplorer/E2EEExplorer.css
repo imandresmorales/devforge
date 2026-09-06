@@ -1,0 +1,217 @@
+/* ─── E2EEExplorer Styles (Mejora 66) ─────────────────────────── */
+
+.e2ee-explorer {
+  margin-top: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.e2ee-explorer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.e2ee-explorer__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-2);
+}
+
+.e2ee-explorer__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+.e2ee-banner {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.e2ee-banner--info {
+  background: hsla(239, 84%, 67%, 0.15);
+  border: 1px solid hsl(239, 84%, 67%);
+  color: hsl(239, 84%, 70%);
+}
+
+.e2ee-banner--error {
+  background: hsla(0, 72%, 51%, 0.15);
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 60%);
+}
+
+/* ── Workflow Grid ── */
+.e2ee-workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 960px) {
+  .e2ee-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.e2ee-card {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.e2ee-card--sender {
+  border-top: 4px solid hsl(239, 84%, 64%);
+}
+
+.e2ee-card--network {
+  border-top: 4px solid hsl(38, 92%, 50%);
+}
+
+.e2ee-card--recipient {
+  border-top: 4px solid hsl(142, 71%, 45%);
+}
+
+.e2ee-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.e2ee-card__avatar {
+  font-size: 28px;
+}
+
+.e2ee-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.e2ee-card__caption {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.e2ee-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.e2ee-field-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.e2ee-textarea {
+  font-size: var(--text-xs);
+  background: var(--color-bg-primary);
+  resize: vertical;
+}
+
+.e2ee-action-btn {
+  margin-top: auto;
+}
+
+.e2ee-empty-state {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--space-4) 0;
+}
+
+/* ── Packet Inspector ── */
+.e2ee-packet-inspector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.e2ee-packet-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.e2ee-packet-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.e2ee-packet-code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--color-bg-primary);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  word-break: break-all;
+  max-height: 60px;
+  overflow-y: auto;
+}
+
+.e2ee-packet-code--tampered {
+  border: 1px solid hsl(0, 72%, 51%);
+  color: hsl(0, 72%, 60%);
+  background: hsla(0, 72%, 51%, 0.1);
+}
+
+.e2ee-network-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* ── Bob Card ── */
+.e2ee-bob-keys {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: var(--color-bg-primary);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.e2ee-decrypted-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.e2ee-decrypted-content {
+  background: var(--color-bg-primary);
+  border: 1px solid hsl(142, 71%, 45%);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.e2ee-decrypted-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+  line-height: 1.4;
+}
