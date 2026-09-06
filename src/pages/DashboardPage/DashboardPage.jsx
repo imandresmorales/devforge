@@ -61,10 +61,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '67',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '67',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '56',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '293',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '68',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '68',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '57',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '299',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -157,7 +157,8 @@ const IMPROVEMENTS_DATA = [
   { id: 64, num: '64', title: 'Auditor de Seguridad CORS (OWASP)',    status: 'done', commit: '1c5d1f8' },
   { id: 65, num: '65', title: 'Simulador Pruebas Cero Conocimiento ZKP', status: 'done', commit: '150d04e' },
   { id: 66, num: '66', title: 'Cifrado Extremo a Extremo E2EE (Web Crypto)', status: 'done', commit: '9e71892' },
-  { id: 67, num: '67', title: 'Base de Datos Vectorial k-NN & Embeddings', status: 'done', commit: 'main' },
+  { id: 67, num: '67', title: 'Base de Datos Vectorial k-NN & Embeddings', status: 'done', commit: '669ed9f' },
+  { id: 68, num: '68', title: 'Analizador Prototype Pollution (Anti-Pollution)', status: 'done', commit: 'main' },
 ]
 
 /**
