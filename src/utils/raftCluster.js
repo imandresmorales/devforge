@@ -147,10 +147,11 @@ export class RaftClusterSimulator {
       const lastLog = candidate.log[candidate.log.length - 1] || { term: 0, index: 0 }
       const peerLastLog = peer.log[peer.log.length - 1] || { term: 0, index: 0 }
 
-      // Reglas de votación Raft
+      // Reglas de votación Raft (RFC 7540 / In Search of an Understandable Consensus Algorithm)
+      const isNewTerm = candidate.currentTerm > peer.currentTerm
       const canVote =
-        (peer.votedFor === null || peer.votedFor === candidate.id) &&
-        (peer.currentTerm <= candidate.currentTerm) &&
+        (isNewTerm || peer.votedFor === null || peer.votedFor === candidate.id) &&
+        (candidate.currentTerm >= peer.currentTerm) &&
         (lastLog.term > peerLastLog.term || (lastLog.term === peerLastLog.term && lastLog.index >= peerLastLog.index))
 
       if (canVote) {
@@ -247,8 +248,9 @@ export class RaftClusterSimulator {
     let leader = null
     for (const node of this.nodes.values()) {
       if (node.role === NODE_ROLES.LEADER && node.isAlive) {
-        leader = node
-        break
+        if (!leader || node.currentTerm > leader.currentTerm) {
+          leader = node
+        }
       }
     }
 

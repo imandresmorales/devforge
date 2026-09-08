@@ -57,15 +57,16 @@ describe('Base de Datos Vectorial y Búsqueda Semántica (vectorDbEngine.js)', (
     })
 
     it('permite insertar, buscar por similitud k-NN y eliminar vectores', () => {
-      db.insert('custom-1', [1, 0, 0, 0], { title: 'Test Custom', category: 'Custom' })
+      const vec = [1, 0, 0, 0, 0, 0, 0, 0]
+      db.insert('custom-1', vec, { title: 'Test Custom', category: 'Custom' })
 
-      const results = db.query([1, 0, 0, 0], { topK: 1, metric: 'cosine' })
+      const results = db.query(vec, { topK: 1, metric: 'cosine' })
       expect(results.length).toBe(1)
       expect(results[0].id).toBe('custom-1')
       expect(results[0].similarityPercent).toBe(100)
 
       db.delete('custom-1')
-      const afterDelete = db.query([1, 0, 0, 0], { topK: 1 })
+      const afterDelete = db.query(vec, { topK: 1 })
       expect(afterDelete.some((r) => r.id === 'custom-1')).toBe(false)
     })
 

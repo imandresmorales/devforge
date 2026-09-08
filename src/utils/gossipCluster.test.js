@@ -69,8 +69,7 @@ describe('Protocolo Gossip y Detección de Fallos SWIM (gossipCluster.js)', () =
     expect(n4.state).toBe(MEMBER_STATES.DEAD)
     expect(n4.isOnline).toBe(false)
 
-    const snapshot = cluster.getSnapshot()
-    snapshot.nodes.forEach((node) => {
+    cluster.nodes.forEach((node) => {
       const n4Record = node.membershipTable.get('N4')
       expect(n4Record.state).toBe(MEMBER_STATES.DEAD)
     })

@@ -58,13 +58,12 @@ export class GossipNode {
       return true
     }
 
-    if (incarnation === current.incarnation) {
       if (current.state === MEMBER_STATES.ALIVE && state === MEMBER_STATES.SUSPECT) {
         current.state = MEMBER_STATES.SUSPECT
         current.lastUpdated = Date.now()
         return true
       }
-      if (current.state === MEMBER_STATES.SUSPECT && state === MEMBER_STATES.DEAD) {
+      if (state === MEMBER_STATES.DEAD) {
         current.state = MEMBER_STATES.DEAD
         current.lastUpdated = Date.now()
         return true

@@ -25,6 +25,7 @@ import ACIDSimulator from '../../components/ui/ACIDSimulator/ACIDSimulator.jsx'
 import RaftSimulator from '../../components/ui/RaftSimulator/RaftSimulator.jsx'
 import VectorDbSimulator from '../../components/ui/VectorDbSimulator/VectorDbSimulator.jsx'
 import GossipSimulator from '../../components/ui/GossipSimulator/GossipSimulator.jsx'
+import CRDTSimulator from '../../components/ui/CRDTSimulator/CRDTSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -57,15 +58,15 @@ const WEEKLY_COMMITS = [
   { label: 'S5', value: 6 },
   { label: 'S6', value: 10 },
   { label: 'S7', value: 9 },
-  { label: 'S8', value: 28 },
+  { label: 'S8', value: 29 },
 ]
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '69',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '69',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '58',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '304',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '70',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '70',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '59',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '313',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -160,7 +161,8 @@ const IMPROVEMENTS_DATA = [
   { id: 66, num: '66', title: 'Cifrado Extremo a Extremo E2EE (Web Crypto)', status: 'done', commit: '9e71892' },
   { id: 67, num: '67', title: 'Base de Datos Vectorial k-NN & Embeddings', status: 'done', commit: '669ed9f' },
   { id: 68, num: '68', title: 'Analizador Prototype Pollution (Anti-Pollution)', status: 'done', commit: '3f55d0b' },
-  { id: 69, num: '69', title: 'Simulador Protocolo Gossip & SWIM P2P', status: 'done', commit: 'main' },
+  { id: 69, num: '69', title: 'Simulador Protocolo Gossip & SWIM P2P', status: 'done', commit: '7f844df' },
+  { id: 70, num: '70', title: 'Simulador de CRDTs & Edición Colaborativa', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -305,6 +307,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Protocolo Gossip & SWIM P2P (Mejora 69) ── */}
         <GossipSimulator />
+
+        {/* ── Simulador de CRDTs & Edición Colaborativa (Mejora 70) ── */}
+        <CRDTSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
