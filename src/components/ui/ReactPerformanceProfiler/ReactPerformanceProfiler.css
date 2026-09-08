@@ -1,0 +1,256 @@
+/* ==========================================================================
+   React Performance Profiler Styles (Mejora 73)
+   ========================================================================== */
+
+.react-profiler {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.react-profiler__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.react-profiler__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0.5rem 0;
+}
+
+.react-profiler__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary, #94a3b8);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.profiler-score-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.profiler-score-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+  text-transform: uppercase;
+}
+
+.profiler-score-val {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.profiler-badge {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.profiler-badge--a+ {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+.profiler-badge--b {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+.profiler-badge--c,
+.profiler-badge--d {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.profiler-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profiler-metric-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profiler-metric-title {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+  text-transform: uppercase;
+}
+
+.profiler-metric-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.profiler-text-danger {
+  color: #f87171;
+}
+
+.profiler-text-success {
+  color: #6ee7b7;
+}
+
+.profiler-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.profiler-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profiler-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profiler-panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0;
+}
+
+.profiler-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profiler-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.profiler-btn-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profiler-widgets-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.profiler-widget-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.profiler-leak-alert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 0.85rem;
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+.profiler-leak-item {
+  margin-top: 0.35rem;
+}
+
+.profiler-leak-item p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.profiler-logs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.profiler-log-item {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+}
+
+.profiler-log-item--wasted {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.profiler-log-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.profiler-phase-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  font-family: monospace;
+}
+
+.profiler-duration-tag {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #38bdf8;
+  margin-left: auto;
+}
+
+.profiler-wasted-warning {
+  font-size: 0.78rem;
+  color: #f87171;
+  margin-top: 0.35rem;
+}

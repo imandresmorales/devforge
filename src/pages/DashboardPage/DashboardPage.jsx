@@ -64,10 +64,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '72',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '72',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '61',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '326',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '73',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '73',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '62',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '332',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -165,7 +165,8 @@ const IMPROVEMENTS_DATA = [
   { id: 69, num: '69', title: 'Simulador Protocolo Gossip & SWIM P2P', status: 'done', commit: '7f844df' },
   { id: 70, num: '70', title: 'Simulador de CRDTs & Edición Colaborativa', status: 'done', commit: '4e79feb' },
   { id: 71, num: '71', title: 'Auditor de Seguridad CSRF & Cookies SameSite', status: 'done', commit: '15e8268' },
-  { id: 72, num: '72', title: 'Simulador de Pipeline CI/CD con SAST (DevSecOps)', status: 'done', commit: 'main' },
+  { id: 72, num: '72', title: 'Simulador de Pipeline CI/CD con SAST (DevSecOps)', status: 'done', commit: 'ba5f858' },
+  { id: 73, num: '73', title: 'Monitor y Profiler de Rendimiento React (Memory Leaks)', status: 'done', commit: 'main' },
 ]
 
 /**

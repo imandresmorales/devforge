@@ -19,6 +19,7 @@ import ZKPSimulator from '../../components/ui/ZKPSimulator/ZKPSimulator.jsx'
 import E2EEExplorer from '../../components/ui/E2EEExplorer/E2EEExplorer.jsx'
 import PrototypePollutionAnalyzer from '../../components/ui/PrototypePollutionAnalyzer/PrototypePollutionAnalyzer.jsx'
 import CSRFAuditor from '../../components/ui/CSRFAuditor/CSRFAuditor.jsx'
+import ReactPerformanceProfiler from '../../components/ui/ReactPerformanceProfiler/ReactPerformanceProfiler.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -195,6 +196,9 @@ function DocsPage() {
 
         {/* Auditor de Seguridad CSRF y Cookies SameSite — Mejora 71 */}
         <CSRFAuditor />
+
+        {/* Monitor y Profiler de Rendimiento React & Memory Leaks — Mejora 73 */}
+        <ReactPerformanceProfiler />
 
       </div>
     </main>
