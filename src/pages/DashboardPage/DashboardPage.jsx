@@ -63,10 +63,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '70',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '70',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '59',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '313',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '71',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '71',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '60',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '320',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -162,7 +162,8 @@ const IMPROVEMENTS_DATA = [
   { id: 67, num: '67', title: 'Base de Datos Vectorial k-NN & Embeddings', status: 'done', commit: '669ed9f' },
   { id: 68, num: '68', title: 'Analizador Prototype Pollution (Anti-Pollution)', status: 'done', commit: '3f55d0b' },
   { id: 69, num: '69', title: 'Simulador Protocolo Gossip & SWIM P2P', status: 'done', commit: '7f844df' },
-  { id: 70, num: '70', title: 'Simulador de CRDTs & Edición Colaborativa', status: 'done', commit: 'main' },
+  { id: 70, num: '70', title: 'Simulador de CRDTs & Edición Colaborativa', status: 'done', commit: '4e79feb' },
+  { id: 71, num: '71', title: 'Auditor de Seguridad CSRF & Cookies SameSite', status: 'done', commit: 'main' },
 ]
 
 /**

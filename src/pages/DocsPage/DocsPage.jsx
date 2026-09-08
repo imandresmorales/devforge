@@ -18,6 +18,7 @@ import CORSAuditor from '../../components/ui/CORSAuditor/CORSAuditor.jsx'
 import ZKPSimulator from '../../components/ui/ZKPSimulator/ZKPSimulator.jsx'
 import E2EEExplorer from '../../components/ui/E2EEExplorer/E2EEExplorer.jsx'
 import PrototypePollutionAnalyzer from '../../components/ui/PrototypePollutionAnalyzer/PrototypePollutionAnalyzer.jsx'
+import CSRFAuditor from '../../components/ui/CSRFAuditor/CSRFAuditor.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -191,6 +192,9 @@ function DocsPage() {
 
         {/* Analizador y Mitigador de Prototype Pollution y Deserialización — Mejora 68 */}
         <PrototypePollutionAnalyzer />
+
+        {/* Auditor de Seguridad CSRF y Cookies SameSite — Mejora 71 */}
+        <CSRFAuditor />
 
       </div>
     </main>
