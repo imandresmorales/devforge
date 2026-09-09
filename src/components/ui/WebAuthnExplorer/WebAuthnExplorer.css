@@ -1,0 +1,275 @@
+/* ==========================================================================
+   WebAuthn Explorer Styles (Mejora 75)
+   ========================================================================== */
+
+.webauthn-explorer {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.webauthn-explorer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.webauthn-explorer__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0.5rem 0;
+}
+
+.webauthn-explorer__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary, #94a3b8);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.webauthn-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.35rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #334155);
+}
+
+.webauthn-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary, #94a3b8);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.webauthn-tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.webauthn-tab-btn--active {
+  background: var(--color-brand, #6366f1);
+  color: #ffffff;
+}
+
+.webauthn-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.webauthn-panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0;
+}
+
+.webauthn-panel-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #94a3b8);
+  margin: 0;
+}
+
+.webauthn-passkeys-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.webauthn-passkey-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.webauthn-passkey-icon {
+  font-size: 2rem;
+}
+
+.webauthn-passkey-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.webauthn-passkey-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+}
+
+.webauthn-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.webauthn-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.webauthn-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.webauthn-input {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.88rem;
+}
+
+.webauthn-device-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.webauthn-device-btn {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-primary, #f8fafc);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.webauthn-device-btn:hover {
+  border-color: var(--color-brand, #6366f1);
+}
+
+.webauthn-device-btn--selected {
+  border-color: var(--color-brand, #6366f1);
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.webauthn-dev-icon {
+  font-size: 1.5rem;
+}
+
+.webauthn-dev-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.webauthn-register-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.webauthn-table-wrapper {
+  overflow-x: auto;
+}
+
+.webauthn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.webauthn-table th {
+  text-align: left;
+  padding: 0.6rem;
+  color: var(--color-text-secondary, #94a3b8);
+  border-bottom: 1px solid var(--color-border, #334155);
+}
+
+.webauthn-table td {
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.webauthn-status-box {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.webauthn-status-box--prompting_biometrics {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.webauthn-status-box--success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.webauthn-status-box--error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.webauthn-status-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+}
+
+.webauthn-status-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.webauthn-footer-props {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border, #334155);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.webauthn-prop-item {
+  font-size: 0.82rem;
+}
+
+.webauthn-prop-tag {
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.webauthn-prop-item p {
+  margin: 0.25rem 0 0 0;
+  color: var(--color-text-secondary, #94a3b8);
+  line-height: 1.4;
+}

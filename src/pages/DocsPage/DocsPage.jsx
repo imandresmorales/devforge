@@ -20,6 +20,7 @@ import E2EEExplorer from '../../components/ui/E2EEExplorer/E2EEExplorer.jsx'
 import PrototypePollutionAnalyzer from '../../components/ui/PrototypePollutionAnalyzer/PrototypePollutionAnalyzer.jsx'
 import CSRFAuditor from '../../components/ui/CSRFAuditor/CSRFAuditor.jsx'
 import ReactPerformanceProfiler from '../../components/ui/ReactPerformanceProfiler/ReactPerformanceProfiler.jsx'
+import WebAuthnExplorer from '../../components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -199,6 +200,9 @@ function DocsPage() {
 
         {/* Monitor y Profiler de Rendimiento React & Memory Leaks — Mejora 73 */}
         <ReactPerformanceProfiler />
+
+        {/* Motor de Autenticación Biométrica WebAuthn & FIDO2 Passkeys — Mejora 75 */}
+        <WebAuthnExplorer />
 
       </div>
     </main>

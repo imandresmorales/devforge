@@ -65,10 +65,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '74',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '74',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '63',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '338',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '75',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '75',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '64',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '344',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -168,7 +168,8 @@ const IMPROVEMENTS_DATA = [
   { id: 71, num: '71', title: 'Auditor de Seguridad CSRF & Cookies SameSite', status: 'done', commit: '15e8268' },
   { id: 72, num: '72', title: 'Simulador de Pipeline CI/CD con SAST (DevSecOps)', status: 'done', commit: 'ba5f858' },
   { id: 73, num: '73', title: 'Monitor y Profiler de Rendimiento React (Memory Leaks)', status: 'done', commit: '5715a9d' },
-  { id: 74, num: '74', title: 'Simulador de Sharding y Hash Consistente', status: 'done', commit: 'main' },
+  { id: 74, num: '74', title: 'Simulador de Sharding y Hash Consistente', status: 'done', commit: '43b8e41' },
+  { id: 75, num: '75', title: 'Motor de Autenticación Biométrica WebAuthn & FIDO2', status: 'done', commit: 'main' },
 ]
 
 /**
