@@ -1,6 +1,6 @@
-# Walkthrough — DevForge: Implementación de Mejoras 70 a 73
+# Walkthrough — DevForge: Implementación de Mejoras 74 y 75
 
-Se han completado y sincronizado en GitHub las 4 mejoras solicitadas con sus respectivos commits individuales y atómicos, siguiendo los más altos estándares de ingeniería de software, seguridad de la información (OWASP Top 10, CWE, NIST, RFCs) y arquitectura React.
+Se han implementado y sincronizado en GitHub las 2 mejoras solicitadas con sus respectivos commits individuales y atómicos, siguiendo las mejores prácticas de ingeniería de software, arquitectura de sistemas distribuidos y seguridad criptográfica de la información.
 
 ---
 
@@ -8,45 +8,34 @@ Se han completado y sincronizado en GitHub las 4 mejoras solicitadas con sus res
 
 | # | Commit | Módulo / Mejora | Archivos Clave |
 |---|---|---|---|
-| **70** | `4e79feb` | **Simulador de CRDTs (Conflict-free Replicated Data Types)** | [`crdtEngine.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/crdtEngine.js), [`crdtEngine.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/crdtEngine.test.js), [`CRDTSimulator.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/CRDTSimulator/CRDTSimulator.jsx) |
-| **71** | `15e8268` | **Auditor de Seguridad CSRF & Cookies SameSite** | [`csrfAuditor.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/csrfAuditor.js), [`csrfAuditor.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/csrfAuditor.test.js), [`CSRFAuditor.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/CSRFAuditor/CSRFAuditor.jsx) |
-| **72** | `ba5f858` | **Simulador de Pipeline CI/CD con SAST (DevSecOps)** | [`cicdPipeline.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/cicdPipeline.js), [`cicdPipeline.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/cicdPipeline.test.js), [`CICDPipelineSimulator.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/CICDPipelineSimulator/CICDPipelineSimulator.jsx) |
-| **73** | `5715a9d` | **Monitor y Profiler de Rendimiento React & Memory Leaks** | [`reactProfilerHelper.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/reactProfilerHelper.js), [`reactProfilerHelper.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/reactProfilerHelper.test.js), [`ReactPerformanceProfiler.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/ReactPerformanceProfiler/ReactPerformanceProfiler.jsx) |
+| **74** | `43b8e41` | **Simulador de Sharding y Hash Consistente** | [`consistentHashing.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/consistentHashing.js), [`consistentHashing.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/consistentHashing.test.js), [`ConsistentHashingSimulator.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/ConsistentHashingSimulator/ConsistentHashingSimulator.jsx) |
+| **75** | `973253d` | **Motor de Autenticación Biométrica WebAuthn & FIDO2 Passkeys** | [`webAuthnEngine.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/webAuthnEngine.js), [`webAuthnEngine.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/webAuthnEngine.test.js), [`WebAuthnExplorer.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx) |
 
 ---
 
 ## 🛠️ Detalles de Cada Mejora
 
-### 1. Mejora 70: Simulador de CRDTs & Edición Colaborativa (`4e79feb`)
-- **Estructuras Implementadas**:
-  - `PNCounter` (CvRDT): Contador positivo-negativo con vectores distribuidos y merge conmutativo `max(P1, P2) - max(N1, N2)`.
-  - `LWWElementSet`: Conjunto con resolución de conflictos de adición/eliminación por marcas de tiempo deterministas.
-  - `RGATextSequence`: Secuencia replicable de caracteres con identificadores lógicos `(nodeId:clock)` y anclas `afterId` con tombstones para preservar causalidad en concurrencia.
-- **UI Interactiva**: Editor colaborativo con soporte de simulación Offline y convergencia eventual fuerte (SEC).
+### 1. Mejora 74: Simulador de Sharding y Hash Consistente (`43b8e41`)
+- **Algoritmos y Estructuras**:
+  - `ConsistentHashRing`: Anillo circular de 32 bits con mapeo angular $0^\circ \text{ a } 360^\circ$.
+  - Soporte de Nodos Virtuales (`vnodes`) para distribución balanceada de datos y eliminación de hotspots.
+  - Asignación de claves en sentido horario ($O(\log N)$ con búsqueda binaria).
+  - Factor de replicación física múltiple para alta disponibilidad (estilo Amazon Dynamo / Cassandra).
+  - Simulador de impacto de migración: demostración interactiva de que al añadir un nodo solo se mueve aproximadamente $\frac{1}{N+1}$ de las claves (vs ~80% en `hash % N`).
+- **UI Interactiva**: Anillo SVG interactivo con nodos virtuales coloreados, selector de topología y trazador de claves montado en [`DashboardPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DashboardPage/DashboardPage.jsx).
 
-### 2. Mejora 71: Auditor de Seguridad CSRF & Cookies SameSite (`15e8268`)
-- **Mecanismos de Defensa**:
-  - `CsrfTokenManager`: Synchronizer Token Pattern (STP) con TTL y claves criptográficas aleatorias por sesión.
-  - `auditCookieSecurity`: Auditor de políticas de cookies con calificación (A+ a F), validación estricta de directivas `SameSite=Strict/Lax/None`, `HttpOnly` y `Secure`.
-  - `auditIncomingRequest`: Firewall de peticiones HTTP que intercepta métodos mutantes (`POST`, `PUT`, `DELETE`) sin token o con orígenes no confiables (`Sec-Fetch-Site: cross-site`).
-- **UI Interactiva**: Simulador de ataques cross-origin y auditor de cookies en [`DocsPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DocsPage/DocsPage.jsx).
-
-### 3. Mejora 72: Simulador de Pipeline CI/CD con SAST DevSecOps (`ba5f858`)
-- **Etapas DevSecOps**:
-  - Checkout & Linting ➔ SAST Security Scan (CWE-798 Hardcoded Secrets, CWE-95 Insecure Eval, CWE-79 innerHTML XSS, CWE-89 SQLi, CWE-328 Weak Crypto) ➔ Unit Tests & Coverage Gate ➔ SCA Dependency Audit ➔ Production Deploy.
-  - Política **Break-the-Build**: aborto inmediato de compilación ante hallazgos críticos de seguridad.
-- **UI Interactiva**: Stepper con estados visuales, presets de código vulnerable/seguro y terminal con logs en tiempo real montada en [`DashboardPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DashboardPage/DashboardPage.jsx).
-
-### 4. Mejora 73: Monitor y Profiler de Rendimiento React & Memory Leaks (`5715a9d`)
-- **Capacidades de Telemetría**:
-  - `shallowCompareProps`: Detección de inestabilidad de props (objetos/arrays recreados o lambdas anónimas).
-  - `ReactProfilerEngine`: Medición de tiempos de montaje y actualización con cálculo de Wasted Renders y score de eficiencia.
-  - `MemoryLeakTracker`: Detección de temporizadores (`setInterval`), sockets y listeners huérfanos sin cleanup en `useEffect`.
-- **UI Interactiva**: HUD de métricas, simulador de re-renders inestables vs optimizados y desmontaje con alerta de fugas de memoria en [`DocsPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DocsPage/DocsPage.jsx).
+### 2. Mejora 75: Motor de Autenticación Biométrica WebAuthn & FIDO2 (`973253d`)
+- **Criptografía y Estándares W3C/FIDO2**:
+  - `WebAuthnRPServer`: Implementación completa de Relying Party Server para ceremonias de registro y autenticación.
+  - Generación de desafíos criptográficos (Challenge) con 32 bytes de entropía en Base64URL.
+  - Generación de pares de claves asimétricas ECDSA P-256 (`ES256`) y soporte para Resident Keys (Passkeys descubribles).
+  - Protección contra ataques de repetición (*Replay Attacks*) mediante validación de `Signature Counter` monótono incremental en hardware.
+  - Simulación de autenticadores de plataforma y roaming: Apple Touch ID / Face ID, Windows Hello (TPM 2.0) y llaves YubiKey 5 NFC.
+- **UI Interactiva**: Bóveda de Passkeys de hardware, asistente de registro biométrico y Login Passwordless con 1 clic montado en [`DocsPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DocsPage/DocsPage.jsx).
 
 ---
 
 ## 📈 Estado Actual del Proyecto
-- **Progreso General:** 73 / 100 mejoras implementadas (73%).
-- **Métricas:** 73 commits atómicos, 62 componentes UI, 332 tests automatizados.
+- **Progreso General:** 75 / 100 mejoras implementadas (75%).
+- **Métricas:** 75 commits atómicos, 64 componentes UI, 344 tests automatizados.
 - **GitHub Sync:** Rama `main` 100% sincronizada con `origin/main`.

@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Kafka Broker Simulator Styles (Mejora 76)
+   ========================================================================== */
+
+.kafka-simulator {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.kafka-simulator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.kafka-simulator__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0.5rem 0;
+}
+
+.kafka-simulator__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary, #94a3b8);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.kafka-stat-badge {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.kafka-lag--warn {
+  color: #f87171;
+}
+
+.kafka-lag--clean {
+  color: #6ee7b7;
+}
+
+.kafka-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.kafka-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kafka-panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0;
+}
+
+.kafka-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kafka-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.kafka-preset-keys {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.kafka-input,
+.kafka-textarea {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.88rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.kafka-input:focus,
+.kafka-textarea:focus {
+  outline: none;
+  border-color: var(--color-brand, #6366f1);
+}
+
+.kafka-produce-btn {
+  margin-top: 0.25rem;
+}
+
+.kafka-produce-success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #6ee7b7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kafka-partitions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.kafka-partition-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.85rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kafka-partition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.kafka-part-tag {
+  font-weight: 700;
+  color: #818cf8;
+}
+
+.kafka-part-meta {
+  color: var(--color-text-secondary, #94a3b8);
+}
+
+.kafka-offsets-stream {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.kafka-offset-box {
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-family: monospace;
+  font-size: 0.72rem;
+  min-width: 55px;
+  border: 1px solid;
+}
+
+.kafka-offset-box--committed {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+}
+
+.kafka-offset-box--uncommitted {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fcd34d;
+}
+
+.kafka-offset-num {
+  font-weight: bold;
+}
+
+.kafka-offset-key {
+  font-size: 0.65rem;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kafka-empty-hint {
+  color: var(--color-text-secondary, #64748b);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.kafka-consumers-section {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kafka-consumers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.kafka-consumer-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kafka-consumer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.kafka-consumer-icon {
+  margin-right: 0.35rem;
+}
+
+.kafka-assigned-parts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kafka-meta-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.kafka-badges-row {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.kafka-poll-btn {
+  margin-top: auto;
+}
+
+.kafka-consumed-feed {
+  border-top: 1px solid var(--color-border, #334155);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kafka-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.kafka-log-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-primary, #cbd5e1);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.kafka-log-time {
+  color: #64748b;
+}

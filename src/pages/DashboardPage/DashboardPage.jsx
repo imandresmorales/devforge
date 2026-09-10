@@ -28,6 +28,7 @@ import GossipSimulator from '../../components/ui/GossipSimulator/GossipSimulator
 import CRDTSimulator from '../../components/ui/CRDTSimulator/CRDTSimulator.jsx'
 import CICDPipelineSimulator from '../../components/ui/CICDPipelineSimulator/CICDPipelineSimulator.jsx'
 import ConsistentHashingSimulator from '../../components/ui/ConsistentHashingSimulator/ConsistentHashingSimulator.jsx'
+import KafkaBrokerSimulator from '../../components/ui/KafkaBrokerSimulator/KafkaBrokerSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -60,15 +61,15 @@ const WEEKLY_COMMITS = [
   { label: 'S5', value: 6 },
   { label: 'S6', value: 10 },
   { label: 'S7', value: 9 },
-  { label: 'S8', value: 31 },
+  { label: 'S8', value: 32 },
 ]
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '75',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '75',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '64',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '344',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '76',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '76',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '65',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '350',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -169,7 +170,8 @@ const IMPROVEMENTS_DATA = [
   { id: 72, num: '72', title: 'Simulador de Pipeline CI/CD con SAST (DevSecOps)', status: 'done', commit: 'ba5f858' },
   { id: 73, num: '73', title: 'Monitor y Profiler de Rendimiento React (Memory Leaks)', status: 'done', commit: '5715a9d' },
   { id: 74, num: '74', title: 'Simulador de Sharding y Hash Consistente', status: 'done', commit: '43b8e41' },
-  { id: 75, num: '75', title: 'Motor de Autenticación Biométrica WebAuthn & FIDO2', status: 'done', commit: 'main' },
+  { id: 75, num: '75', title: 'Motor de Autenticación Biométrica WebAuthn & FIDO2', status: 'done', commit: '973253d' },
+  { id: 76, num: '76', title: 'Simulador de Message Broker Kafka & Consumer Groups', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -323,6 +325,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Sharding y Hash Consistente (Mejora 74) ── */}
         <ConsistentHashingSimulator />
+
+        {/* ── Simulador de Message Broker Kafka & Consumer Groups (Mejora 76) ── */}
+        <KafkaBrokerSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
