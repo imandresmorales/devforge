@@ -21,6 +21,7 @@ import PrototypePollutionAnalyzer from '../../components/ui/PrototypePollutionAn
 import CSRFAuditor from '../../components/ui/CSRFAuditor/CSRFAuditor.jsx'
 import ReactPerformanceProfiler from '../../components/ui/ReactPerformanceProfiler/ReactPerformanceProfiler.jsx'
 import WebAuthnExplorer from '../../components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx'
+import SSRFDefender from '../../components/ui/SSRFDefender/SSRFDefender.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -203,6 +204,9 @@ function DocsPage() {
 
         {/* Motor de Autenticación Biométrica WebAuthn & FIDO2 Passkeys — Mejora 75 */}
         <WebAuthnExplorer />
+
+        {/* Analizador y Firewall Anti-SSRF — Mejora 77 */}
+        <SSRFDefender />
 
       </div>
     </main>
