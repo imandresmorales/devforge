@@ -23,6 +23,7 @@ import ReactPerformanceProfiler from '../../components/ui/ReactPerformanceProfil
 import WebAuthnExplorer from '../../components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx'
 import SSRFDefender from '../../components/ui/SSRFDefender/SSRFDefender.jsx'
 import MerkleTreeSimulator from '../../components/ui/MerkleTreeSimulator/MerkleTreeSimulator.jsx'
+import InvertedIndexSearch from '../../components/ui/InvertedIndexSearch/InvertedIndexSearch.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -211,6 +212,9 @@ function DocsPage() {
 
         {/* Simulador de Árboles de Merkle & Pruebas Criptográficas — Mejora 78 */}
         <MerkleTreeSimulator />
+
+        {/* Motor de Búsqueda de Texto Completo e Índice Invertido BM25 — Mejora 80 */}
+        <InvertedIndexSearch />
 
       </div>
     </main>

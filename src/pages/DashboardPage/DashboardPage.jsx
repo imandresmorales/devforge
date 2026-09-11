@@ -67,10 +67,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '79',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '79',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '68',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '370',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '80',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '80',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '69',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '376',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -175,7 +175,8 @@ const IMPROVEMENTS_DATA = [
   { id: 76, num: '76', title: 'Simulador de Message Broker Kafka & Consumer Groups', status: 'done', commit: '936a21e' },
   { id: 77, num: '77', title: 'Analizador y Sanitizador Anti-SSRF', status: 'done', commit: 'aeb1f9f' },
   { id: 78, num: '78', title: 'Simulador de Árboles de Merkle (Merkle Proofs)', status: 'done', commit: '6c942d4' },
-  { id: 79, num: '79', title: 'Motor de Feature Flags y Despliegue Progresivo Canary (Rollout Engine)', status: 'done', commit: 'main' },
+  { id: 79, num: '79', title: 'Motor de Feature Flags y Despliegue Progresivo Canary (Rollout Engine)', status: 'done', commit: 'd7b2139' },
+  { id: 80, num: '80', title: 'Motor de Búsqueda de Texto Completo con Índice Invertido y Ranking BM25', status: 'done', commit: '54543d8' },
 ]
 
 /**
