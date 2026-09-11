@@ -1,0 +1,276 @@
+/**
+ * @fileoverview Estilos para el Simulador de Resiliencia y Retry Pattern (Mejora 81).
+ */
+
+.retry-resilience-simulator {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-xl, 16px);
+  padding: var(--space-6, 24px);
+  margin-bottom: var(--space-8, 32px);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 20px);
+}
+
+.rrs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4, 16px);
+}
+
+.rrs-title {
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--color-text, #f8fafc);
+  margin-top: var(--space-1, 4px);
+  margin-bottom: var(--space-1, 4px);
+}
+
+.rrs-desc {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #94a3b8);
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* ── Config Grid ── */
+.rrs-config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4, 16px);
+}
+
+.rrs-config-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.rrs-config-label {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+  text-transform: uppercase;
+}
+
+.rrs-btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rrs-config-hint {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.4;
+}
+
+.rrs-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.rrs-slider-row strong {
+  color: var(--color-brand-500, #38bdf8);
+}
+
+.rrs-slider {
+  accent-color: var(--color-brand-500, #38bdf8);
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ── Thundering Herd Visualization ── */
+.rrs-herd-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.rrs-herd-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rrs-meta-title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text, #f8fafc);
+}
+
+.rrs-clients-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rrs-client-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+}
+
+.rrs-client-name {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #94a3b8);
+  min-width: 65px;
+}
+
+.rrs-timeline {
+  position: relative;
+  flex: 1;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rrs-retry-point {
+  position: absolute;
+  top: 3px;
+  transform: translateX(-50%);
+  background: var(--color-brand-500, #38bdf8);
+  color: #0f172a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ── Simulator Box ── */
+.rrs-simulator-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+.rrs-sim-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  flex-wrap: wrap;
+}
+
+.rrs-sim-head h4 {
+  font-size: var(--text-base, 1rem);
+  color: var(--color-text, #f8fafc);
+  margin: 0;
+}
+
+.rrs-sim-desc {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+  margin: 2px 0 0 0;
+}
+
+.rrs-scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3, 12px);
+}
+
+.rrs-scenario-card {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 12px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rrs-scenario-card:hover {
+  border-color: var(--color-brand-500, #38bdf8);
+}
+
+.rrs-scenario-card--active {
+  border-color: var(--color-brand-500, #38bdf8);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.rrs-scenario-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.rrs-scenario-name {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  color: var(--color-text, #f8fafc);
+}
+
+.rrs-scenario-desc {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #94a3b8);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── Console Log ── */
+.rrs-log-container {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4, 16px);
+}
+
+.rrs-log-title {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+  margin: 0 0 var(--space-2, 8px) 0;
+  text-transform: uppercase;
+}
+
+.rrs-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.rrs-log-entry {
+  display: flex;
+  gap: var(--space-2, 8px);
+  line-height: 1.4;
+}
+
+.rrs-log-entry--retry {
+  color: #fbbf24;
+}
+
+.rrs-log-entry--success {
+  color: #4ade80;
+}
+
+.rrs-log-entry--failed {
+  color: #f87171;
+}
+
+.rrs-log-time {
+  color: var(--color-text-muted, #64748b);
+}
