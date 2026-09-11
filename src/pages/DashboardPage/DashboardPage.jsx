@@ -29,6 +29,7 @@ import CRDTSimulator from '../../components/ui/CRDTSimulator/CRDTSimulator.jsx'
 import CICDPipelineSimulator from '../../components/ui/CICDPipelineSimulator/CICDPipelineSimulator.jsx'
 import ConsistentHashingSimulator from '../../components/ui/ConsistentHashingSimulator/ConsistentHashingSimulator.jsx'
 import KafkaBrokerSimulator from '../../components/ui/KafkaBrokerSimulator/KafkaBrokerSimulator.jsx'
+import FeatureFlagsExplorer from '../../components/ui/FeatureFlagsExplorer/FeatureFlagsExplorer.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -66,10 +67,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '78',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '78',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '67',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '364',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '79',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '79',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '68',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '370',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -173,7 +174,8 @@ const IMPROVEMENTS_DATA = [
   { id: 75, num: '75', title: 'Motor de Autenticación Biométrica WebAuthn & FIDO2', status: 'done', commit: '973253d' },
   { id: 76, num: '76', title: 'Simulador de Message Broker Kafka & Consumer Groups', status: 'done', commit: '936a21e' },
   { id: 77, num: '77', title: 'Analizador y Sanitizador Anti-SSRF', status: 'done', commit: 'aeb1f9f' },
-  { id: 78, num: '78', title: 'Simulador de Árboles de Merkle (Merkle Proofs)', status: 'done', commit: 'main' },
+  { id: 78, num: '78', title: 'Simulador de Árboles de Merkle (Merkle Proofs)', status: 'done', commit: '6c942d4' },
+  { id: 79, num: '79', title: 'Motor de Feature Flags y Despliegue Progresivo Canary (Rollout Engine)', status: 'done', commit: 'main' },
 ]
 
 /**
@@ -330,6 +332,9 @@ function DashboardPage() {
 
         {/* ── Simulador de Message Broker Kafka & Consumer Groups (Mejora 76) ── */}
         <KafkaBrokerSimulator />
+
+        {/* ── Motor de Feature Flags & Despliegue Canary (Mejora 79) ── */}
+        <FeatureFlagsExplorer />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal

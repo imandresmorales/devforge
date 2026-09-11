@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Feature Flags Explorer Styles (Mejora 79)
+   ========================================================================== */
+
+.feature-flags-explorer {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.feature-flags-explorer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.feature-flags-explorer__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0.5rem 0;
+}
+
+.feature-flags-explorer__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary, #94a3b8);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ff-persona-selector {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ff-persona-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ff-persona-buttons {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.ff-context-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ff-meta-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary, #94a3b8);
+  text-transform: uppercase;
+}
+
+.ff-context-tags {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+  flex-wrap: wrap;
+}
+
+.ff-flags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.ff-flag-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.ff-flag-card--active {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.ff-flag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.ff-flag-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0;
+}
+
+.ff-flag-key {
+  font-size: 0.75rem;
+  color: var(--color-brand, #818cf8);
+}
+
+.ff-flag-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #94a3b8);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ff-rollout-control {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ff-rollout-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-primary, #cbd5e1);
+}
+
+.ff-slider {
+  width: 100%;
+  accent-color: var(--color-brand, #6366f1);
+  cursor: pointer;
+}
+
+.ff-rules-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ff-rules-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.ff-evaluation-box {
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  border: 1px solid;
+}
+
+.ff-evaluation-box--enabled {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.ff-evaluation-box--disabled {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.ff-eval-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ff-eval-badge {
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.ff-evaluation-box--enabled .ff-eval-badge {
+  color: #6ee7b7;
+}
+
+.ff-evaluation-box--disabled .ff-eval-badge {
+  color: #f87171;
+}
+
+.ff-eval-reason {
+  color: var(--color-text-secondary, #94a3b8);
+  font-size: 0.75rem;
+}
