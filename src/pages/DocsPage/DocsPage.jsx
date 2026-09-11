@@ -22,6 +22,7 @@ import CSRFAuditor from '../../components/ui/CSRFAuditor/CSRFAuditor.jsx'
 import ReactPerformanceProfiler from '../../components/ui/ReactPerformanceProfiler/ReactPerformanceProfiler.jsx'
 import WebAuthnExplorer from '../../components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx'
 import SSRFDefender from '../../components/ui/SSRFDefender/SSRFDefender.jsx'
+import MerkleTreeSimulator from '../../components/ui/MerkleTreeSimulator/MerkleTreeSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -207,6 +208,9 @@ function DocsPage() {
 
         {/* Analizador y Firewall Anti-SSRF — Mejora 77 */}
         <SSRFDefender />
+
+        {/* Simulador de Árboles de Merkle & Pruebas Criptográficas — Mejora 78 */}
+        <MerkleTreeSimulator />
 
       </div>
     </main>

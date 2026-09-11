@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Merkle Tree Simulator Styles (Mejora 78)
+   ========================================================================== */
+
+.merkle-simulator {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.merkle-simulator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.merkle-simulator__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0.5rem 0;
+}
+
+.merkle-simulator__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary, #94a3b8);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.merkle-root-banner {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.merkle-root-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.merkle-root-code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #38bdf8;
+  word-break: break-all;
+}
+
+.merkle-root-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #f8fafc);
+}
+
+.merkle-tree-container {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.merkle-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0 0 1rem 0;
+}
+
+.merkle-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.merkle-layer-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.merkle-layer-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #94a3b8);
+  font-weight: 700;
+  min-width: 100px;
+  text-transform: uppercase;
+}
+
+.merkle-layer-nodes {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.merkle-node-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.merkle-node-card--root {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.merkle-node-card--selected {
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.merkle-node-hash {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+.merkle-leaf-preview {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.merkle-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.merkle-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.merkle-panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #f8fafc);
+  margin: 0;
+}
+
+.merkle-panel-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary, #94a3b8);
+  margin: 0;
+}
+
+.merkle-selected-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.85rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.merkle-meta-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #94a3b8);
+  text-transform: uppercase;
+}
+
+.merkle-leaf-content {
+  font-size: 0.95rem;
+  color: var(--color-text-primary, #f8fafc);
+  font-weight: 600;
+}
+
+.merkle-hash-small {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  word-break: break-all;
+}
+
+.merkle-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.merkle-add-form {
+  border-top: 1px solid var(--color-border, #334155);
+  padding-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.merkle-add-form label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.merkle-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.merkle-input {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.merkle-input:focus {
+  outline: none;
+  border-color: var(--color-brand, #6366f1);
+}
+
+.merkle-proof-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.merkle-proof-step {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #334155);
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.merkle-sibling-hash {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  word-break: break-all;
+}
+
+.merkle-verification-result {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.merkle-verification-result--valid {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.merkle-verification-result--invalid {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.merkle-result-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+}
+
+.merkle-result-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin: 0;
+}

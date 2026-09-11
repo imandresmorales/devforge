@@ -1,6 +1,6 @@
-# Walkthrough — DevForge: Implementación de Mejoras 74 y 75
+# Walkthrough — DevForge: Implementación de Mejoras 76 y 77
 
-Se han implementado y sincronizado en GitHub las 2 mejoras solicitadas con sus respectivos commits individuales y atómicos, siguiendo las mejores prácticas de ingeniería de software, arquitectura de sistemas distribuidos y seguridad criptográfica de la información.
+Se han implementado y sincronizado en GitHub las 2 mejoras solicitadas con sus respectivos commits individuales y atómicos, siguiendo las mejores prácticas de ingeniería de software, arquitectura de sistemas distribuidos y seguridad en redes y servicios web (OWASP Top 10).
 
 ---
 
@@ -8,34 +8,31 @@ Se han implementado y sincronizado en GitHub las 2 mejoras solicitadas con sus r
 
 | # | Commit | Módulo / Mejora | Archivos Clave |
 |---|---|---|---|
-| **74** | `43b8e41` | **Simulador de Sharding y Hash Consistente** | [`consistentHashing.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/consistentHashing.js), [`consistentHashing.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/consistentHashing.test.js), [`ConsistentHashingSimulator.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/ConsistentHashingSimulator/ConsistentHashingSimulator.jsx) |
-| **75** | `973253d` | **Motor de Autenticación Biométrica WebAuthn & FIDO2 Passkeys** | [`webAuthnEngine.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/webAuthnEngine.js), [`webAuthnEngine.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/webAuthnEngine.test.js), [`WebAuthnExplorer.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/WebAuthnExplorer/WebAuthnExplorer.jsx) |
+| **76** | `936a21e` | **Simulador de Message Broker Kafka & Consumer Groups** | [`kafkaBroker.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/kafkaBroker.js), [`kafkaBroker.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/kafkaBroker.test.js), [`KafkaBrokerSimulator.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/KafkaBrokerSimulator/KafkaBrokerSimulator.jsx) |
+| **77** | `aeb1f9f` | **Analizador y Sanitizador Anti-SSRF** | [`ssrfDefender.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/ssrfDefender.js), [`ssrfDefender.test.js`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/utils/ssrfDefender.test.js), [`SSRFDefender.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/components/ui/SSRFDefender/SSRFDefender.jsx) |
 
 ---
 
 ## 🛠️ Detalles de Cada Mejora
 
-### 1. Mejora 74: Simulador de Sharding y Hash Consistente (`43b8e41`)
-- **Algoritmos y Estructuras**:
-  - `ConsistentHashRing`: Anillo circular de 32 bits con mapeo angular $0^\circ \text{ a } 360^\circ$.
-  - Soporte de Nodos Virtuales (`vnodes`) para distribución balanceada de datos y eliminación de hotspots.
-  - Asignación de claves en sentido horario ($O(\log N)$ con búsqueda binaria).
-  - Factor de replicación física múltiple para alta disponibilidad (estilo Amazon Dynamo / Cassandra).
-  - Simulador de impacto de migración: demostración interactiva de que al añadir un nodo solo se mueve aproximadamente $\frac{1}{N+1}$ de las claves (vs ~80% en `hash % N`).
-- **UI Interactiva**: Anillo SVG interactivo con nodos virtuales coloreados, selector de topología y trazador de claves montado en [`DashboardPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DashboardPage/DashboardPage.jsx).
+### 1. Mejora 76: Simulador de Message Broker Kafka & Consumer Groups (`936a21e`)
+- **Arquitectura de Streaming y Commit Log**:
+  - `KafkaPartition`: Log de confirmación secuencial inmutable con punteros de offset monótonos y cálculo de High Watermark.
+  - `KafkaTopic`: Tópicos particionados con asignación determinista mediante hashing de clave (`hashKey(key) % partitionCount`) para orden estricto por entidad y round-robin para claves nulas.
+  - `KafkaClusterBroker`: Soporte para Consumer Groups con rebalanceo automático de particiones entre trabajadores activos y cálculo de Lag de consumo en tiempo real (`HighWatermark - CommittedOffset`).
+- **UI Interactiva**: Consola de publicación de eventos, visualizador gráfico de particiones con stream de offsets y panel de Consumer Groups montado en [`DashboardPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DashboardPage/DashboardPage.jsx).
 
-### 2. Mejora 75: Motor de Autenticación Biométrica WebAuthn & FIDO2 (`973253d`)
-- **Criptografía y Estándares W3C/FIDO2**:
-  - `WebAuthnRPServer`: Implementación completa de Relying Party Server para ceremonias de registro y autenticación.
-  - Generación de desafíos criptográficos (Challenge) con 32 bytes de entropía en Base64URL.
-  - Generación de pares de claves asimétricas ECDSA P-256 (`ES256`) y soporte para Resident Keys (Passkeys descubribles).
-  - Protección contra ataques de repetición (*Replay Attacks*) mediante validación de `Signature Counter` monótono incremental en hardware.
-  - Simulación de autenticadores de plataforma y roaming: Apple Touch ID / Face ID, Windows Hello (TPM 2.0) y llaves YubiKey 5 NFC.
-- **UI Interactiva**: Bóveda de Passkeys de hardware, asistente de registro biométrico y Login Passwordless con 1 clic montado en [`DocsPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DocsPage/DocsPage.jsx).
+### 2. Mejora 77: Analizador y Sanitizador Anti-SSRF (`aeb1f9f`)
+- **Firewall y Reglas de Seguridad OWASP (CWE-918)**:
+  - Lista blanca estricta de esquemas permitidos (`http:`, `https:`), bloqueando esquemas peligrosos como `file:`, `gopher:`, `dict:`, `ftp:`.
+  - Normalización de direcciones IP ofuscadas en notación decimal entera (ej. `2130706433`), hexadecimal (`0x7f000001`), octal (`0177.0.0.1`) e IPv6 loopback (`::1`).
+  - Bloqueo estricto de rangos privados y reservados (RFC 1918 `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, RFC 5735 Loopback `127.0.0.0/8`, RFC 3927 Link-Local `169.254.0.0/16`, CGNAT `100.64.0.0/10`).
+  - Blindaje específico contra extracción de credenciales IAM de Cloud Metadata endpoints (AWS IMDS `169.254.169.254`, GCP `metadata.google.internal`).
+- **UI Interactiva**: Selector de vectores de ataque reales, desglose del parser de IPs y diagnóstico de veredicto firewall en [`DocsPage.jsx`](file:///C:/Users/Alex/.gemini/antigravity-ide/scratch/devforge/src/pages/DocsPage/DocsPage.jsx).
 
 ---
 
 ## 📈 Estado Actual del Proyecto
-- **Progreso General:** 75 / 100 mejoras implementadas (75%).
-- **Métricas:** 75 commits atómicos, 64 componentes UI, 344 tests automatizados.
+- **Progreso General:** 77 / 100 mejoras implementadas (77%).
+- **Métricas:** 77 commits atómicos, 66 componentes UI, 358 tests automatizados.
 - **GitHub Sync:** Rama `main` 100% sincronizada con `origin/main`.
