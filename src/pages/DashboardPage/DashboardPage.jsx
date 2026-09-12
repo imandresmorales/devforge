@@ -70,10 +70,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '86',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '86',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '75',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '415',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '87',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '87',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '76',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '427',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -185,7 +185,8 @@ const IMPROVEMENTS_DATA = [
   { id: 83, num: '83', title: 'Monitor y Auditor de Fugas de Información PII y DLP (Data Loss Prevention)', status: 'done', commit: '088c98e' },
   { id: 84, num: '84', title: 'Simulador de Red de Distribución de Contenidos (CDN Edge Caching & Anycast Routing)', status: 'done', commit: '5bc44b6' },
   { id: 85, num: '85', title: 'Motor de Verificación Formal de Contratos y Validación de Schemas JSON/Zod', status: 'done', commit: '219c372' },
-  { id: 86, num: '86', title: 'Simulador de Protocolo P2P WebRTC & DataChannels (ICE, STUN/TURN y SDP)', status: 'done', commit: 'f13451a' },
+  { id: 86, num: '86', title: 'Simulador de Protocolo P2P WebRTC & DataChannels (ICE, STUN/TURN y SDP)', status: 'done', commit: 'e038326' },
+  { id: 87, num: '87', title: 'Motor de Auditoría y Comparador Criptográfico en Tiempo Constante Anti Timing Attacks', status: 'done', commit: '14b28a1' },
 ]
 
 /**

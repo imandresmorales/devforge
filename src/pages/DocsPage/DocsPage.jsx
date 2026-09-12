@@ -27,6 +27,7 @@ import InvertedIndexSearch from '../../components/ui/InvertedIndexSearch/Inverte
 import DLPScanner from '../../components/ui/DLPScanner/DLPScanner.jsx'
 import CDNSimulator from '../../components/ui/CDNSimulator/CDNSimulator.jsx'
 import WebRTCSimulator from '../../components/ui/WebRTCSimulator/WebRTCSimulator.jsx'
+import TimingAttackAuditor from '../../components/ui/TimingAttackAuditor/TimingAttackAuditor.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -227,6 +228,9 @@ function DocsPage() {
 
         {/* Simulador de Protocolo P2P WebRTC & DataChannels — Mejora 86 */}
         <WebRTCSimulator />
+
+        {/* Motor de Auditoría y Comparador Criptográfico en Tiempo Constante — Mejora 87 */}
+        <TimingAttackAuditor />
 
       </div>
     </main>

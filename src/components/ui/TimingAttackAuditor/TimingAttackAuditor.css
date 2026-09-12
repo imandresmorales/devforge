@@ -1,0 +1,240 @@
+/* ── TimingAttackAuditor.css ── */
+.timing-auditor {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.timing-auditor__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.timing-auditor__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.timing-auditor__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.timing-auditor__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Evaluator Inputs ── */
+.timing-auditor__inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .timing-auditor__inputs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timing-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+}
+
+.timing-input-group label {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.timing-input-group input {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 6px);
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  color: #fff;
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.timing-input-group input:focus {
+  outline: none;
+  border-color: var(--color-brand-400, #818cf8);
+}
+
+/* ── Comparison Cards ── */
+.timing-auditor__comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .timing-auditor__comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timing-card {
+  background: var(--color-bg-tertiary, #181825);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+}
+
+.timing-card--vuln {
+  border-left: 4px solid #ef4444;
+}
+
+.timing-card--secure {
+  border-left: 4px solid #10b981;
+}
+
+.timing-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3, 0.75rem);
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  padding-bottom: var(--space-2, 0.5rem);
+}
+
+.timing-card__title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+}
+
+.timing-card__stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.timing-card__stat-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.timing-card__stat-val {
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+}
+
+/* ── Benchmark / Attack Section ── */
+.timing-benchmark {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.timing-benchmark__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.timing-btn {
+  padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: var(--color-brand-600, #4f46e5);
+  color: #fff;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.timing-btn:hover:not(:disabled) {
+  background: var(--color-brand-500, #6366f1);
+  transform: translateY(-1px);
+}
+
+/* ── Chart Container ── */
+.timing-chart-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.timing-chart-svg {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+/* ── Code tabs ── */
+.timing-code-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  overflow: hidden;
+}
+
+.timing-code-box__tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  overflow-x: auto;
+}
+
+.timing-code-box__tab {
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  font-size: var(--text-xs, 0.75rem);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #94a3b8);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.timing-code-box__tab--active {
+  color: var(--color-brand-400, #818cf8);
+  border-bottom-color: var(--color-brand-400, #818cf8);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.timing-code-box__content {
+  padding: var(--space-3, 0.75rem);
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  margin: 0;
+}
