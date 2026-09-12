@@ -32,6 +32,7 @@ import KafkaBrokerSimulator from '../../components/ui/KafkaBrokerSimulator/Kafka
 import FeatureFlagsExplorer from '../../components/ui/FeatureFlagsExplorer/FeatureFlagsExplorer.jsx'
 import RetryResilienceSimulator from '../../components/ui/RetryResilienceSimulator/RetryResilienceSimulator.jsx'
 import TransactionalOutboxSimulator from '../../components/ui/TransactionalOutboxSimulator/TransactionalOutboxSimulator.jsx'
+import SchemaValidatorExplorer from '../../components/ui/SchemaValidatorExplorer/SchemaValidatorExplorer.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -69,10 +70,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '84',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '84',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '73',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '400',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '85',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '85',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '74',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '406',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -182,7 +183,8 @@ const IMPROVEMENTS_DATA = [
   { id: 81, num: '81', title: 'Motor de Resiliencia con Retry Pattern, Exponential Backoff y Jitter', status: 'done', commit: '111024d' },
   { id: 82, num: '82', title: 'Simulador del Patrón Outbox Transaccional y Sincronización Event-Driven', status: 'done', commit: '8b8b173' },
   { id: 83, num: '83', title: 'Monitor y Auditor de Fugas de Información PII y DLP (Data Loss Prevention)', status: 'done', commit: '088c98e' },
-  { id: 84, num: '84', title: 'Simulador de Red de Distribución de Contenidos (CDN Edge Caching & Anycast Routing)', status: 'done', commit: '0b22a17' },
+  { id: 84, num: '84', title: 'Simulador de Red de Distribución de Contenidos (CDN Edge Caching & Anycast Routing)', status: 'done', commit: '5bc44b6' },
+  { id: 85, num: '85', title: 'Motor de Verificación Formal de Contratos y Validación de Schemas JSON/Zod', status: 'done', commit: '08e0c2d' },
 ]
 
 /**
@@ -348,6 +350,9 @@ function DashboardPage() {
 
         {/* ── Simulador del Patrón Outbox Transaccional (Mejora 82) ── */}
         <TransactionalOutboxSimulator />
+
+        {/* ── Motor de Verificación de Contratos y Schemas (Mejora 85) ── */}
+        <SchemaValidatorExplorer />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
