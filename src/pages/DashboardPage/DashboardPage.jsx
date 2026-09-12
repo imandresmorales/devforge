@@ -31,6 +31,7 @@ import ConsistentHashingSimulator from '../../components/ui/ConsistentHashingSim
 import KafkaBrokerSimulator from '../../components/ui/KafkaBrokerSimulator/KafkaBrokerSimulator.jsx'
 import FeatureFlagsExplorer from '../../components/ui/FeatureFlagsExplorer/FeatureFlagsExplorer.jsx'
 import RetryResilienceSimulator from '../../components/ui/RetryResilienceSimulator/RetryResilienceSimulator.jsx'
+import TransactionalOutboxSimulator from '../../components/ui/TransactionalOutboxSimulator/TransactionalOutboxSimulator.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -68,10 +69,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '81',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '81',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '70',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '382',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '82',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '82',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '71',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '388',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -178,7 +179,8 @@ const IMPROVEMENTS_DATA = [
   { id: 78, num: '78', title: 'Simulador de Árboles de Merkle (Merkle Proofs)', status: 'done', commit: '6c942d4' },
   { id: 79, num: '79', title: 'Motor de Feature Flags y Despliegue Progresivo Canary (Rollout Engine)', status: 'done', commit: 'd7b2139' },
   { id: 80, num: '80', title: 'Motor de Búsqueda de Texto Completo con Índice Invertido y Ranking BM25', status: 'done', commit: '54543d8' },
-  { id: 81, num: '81', title: 'Motor de Resiliencia con Retry Pattern, Exponential Backoff y Jitter', status: 'done', commit: 'dd34eb0' },
+  { id: 81, num: '81', title: 'Motor de Resiliencia con Retry Pattern, Exponential Backoff y Jitter', status: 'done', commit: '111024d' },
+  { id: 82, num: '82', title: 'Simulador del Patrón Outbox Transaccional y Sincronización Event-Driven', status: 'done', commit: '0c2790b' },
 ]
 
 /**
@@ -341,6 +343,9 @@ function DashboardPage() {
 
         {/* ── Motor de Resiliencia con Retry Pattern & Jitter (Mejora 81) ── */}
         <RetryResilienceSimulator />
+
+        {/* ── Simulador del Patrón Outbox Transaccional (Mejora 82) ── */}
+        <TransactionalOutboxSimulator />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
