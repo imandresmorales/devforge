@@ -153,7 +153,7 @@ export const DLP_RULES = [
     mask: (match, strategy) => {
       const clean = match.replace(/[\s.-]/g, '').toUpperCase()
       if (strategy === MASK_STRATEGIES.REDACT) return '[REDACTED_DNI]'
-      return `***${clean.slice(-4)}`
+      return `***${clean.slice(-5)}`
     },
   },
   // 8. US Social Security Number (SSN)

@@ -26,6 +26,7 @@ import MerkleTreeSimulator from '../../components/ui/MerkleTreeSimulator/MerkleT
 import InvertedIndexSearch from '../../components/ui/InvertedIndexSearch/InvertedIndexSearch.jsx'
 import DLPScanner from '../../components/ui/DLPScanner/DLPScanner.jsx'
 import CDNSimulator from '../../components/ui/CDNSimulator/CDNSimulator.jsx'
+import WebRTCSimulator from '../../components/ui/WebRTCSimulator/WebRTCSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -223,6 +224,9 @@ function DocsPage() {
 
         {/* Simulador de CDN Edge Caching y Anycast Routing — Mejora 84 */}
         <CDNSimulator />
+
+        {/* Simulador de Protocolo P2P WebRTC & DataChannels — Mejora 86 */}
+        <WebRTCSimulator />
 
       </div>
     </main>

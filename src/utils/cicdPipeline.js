@@ -53,7 +53,7 @@ export const SAST_RULES = [
     id: 'SEC-003',
     name: 'Raw DOM innerHTML XSS Vulnerability',
     severity: 'HIGH',
-    regex: /\.innerHTML\s*=\s*[^"'\n]*(\+|`|\$)/i,
+    regex: /\.innerHTML\s*=/i,
     cwe: 'CWE-79',
     message: 'Asignación no sanitizada a innerHTML vulnerable a Cross-Site Scripting (XSS).',
   },

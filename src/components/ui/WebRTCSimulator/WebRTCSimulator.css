@@ -1,0 +1,259 @@
+/* ── WebRTCSimulator.css ── */
+.webrtc-sim {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.webrtc-sim__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.webrtc-sim__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.webrtc-sim__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.webrtc-sim__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Peers Grid ── */
+.webrtc-sim__peers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .webrtc-sim__peers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.webrtc-peer-card {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.webrtc-peer-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  padding-bottom: var(--space-2, 0.5rem);
+}
+
+.webrtc-peer-card__title {
+  font-size: var(--text-base, 1rem);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-brand-400, #818cf8);
+}
+
+.webrtc-peer-card__badges {
+  display: flex;
+  gap: var(--space-2, 0.5rem);
+  flex-wrap: wrap;
+}
+
+.webrtc-peer-card__stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.webrtc-peer-card__stat-val {
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+}
+
+/* ── Stepper Controls ── */
+.webrtc-sim__controls {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.webrtc-sim__steps-track {
+  display: flex;
+  gap: var(--space-2, 0.5rem);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.webrtc-btn {
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.webrtc-btn--primary {
+  background: var(--color-brand-600, #4f46e5);
+  color: #fff;
+}
+
+.webrtc-btn--primary:hover:not(:disabled) {
+  background: var(--color-brand-500, #6366f1);
+  transform: translateY(-1px);
+}
+
+.webrtc-btn--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary, #fff);
+  border-color: var(--color-border, rgba(255, 255, 255, 0.15));
+}
+
+.webrtc-btn--secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.webrtc-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── DataChannel Live Console ── */
+.webrtc-datachannel-box {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.webrtc-datachannel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.webrtc-datachannel__messages {
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm, 6px);
+  padding: var(--space-3, 0.75rem);
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.webrtc-msg-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2, 0.5rem);
+}
+
+.webrtc-msg-item--a {
+  color: #38bdf8;
+}
+
+.webrtc-msg-item--b {
+  color: #a78bfa;
+}
+
+.webrtc-datachannel__input-row {
+  display: flex;
+  gap: var(--space-2, 0.5rem);
+}
+
+.webrtc-datachannel__input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 6px);
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  color: #fff;
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.webrtc-datachannel__input:focus {
+  outline: none;
+  border-color: var(--color-brand-400, #818cf8);
+}
+
+/* ── Inspector & Details ── */
+.webrtc-inspector {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  overflow: hidden;
+}
+
+.webrtc-inspector__tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+}
+
+.webrtc-inspector__tab {
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  font-size: var(--text-xs, 0.75rem);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #94a3b8);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.webrtc-inspector__tab--active {
+  color: var(--color-brand-400, #818cf8);
+  border-bottom-color: var(--color-brand-400, #818cf8);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.webrtc-inspector__content {
+  padding: var(--space-3, 0.75rem);
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #a5b4fc;
+  white-space: pre-wrap;
+  margin: 0;
+}
