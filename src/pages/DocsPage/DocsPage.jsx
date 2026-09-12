@@ -25,6 +25,7 @@ import SSRFDefender from '../../components/ui/SSRFDefender/SSRFDefender.jsx'
 import MerkleTreeSimulator from '../../components/ui/MerkleTreeSimulator/MerkleTreeSimulator.jsx'
 import InvertedIndexSearch from '../../components/ui/InvertedIndexSearch/InvertedIndexSearch.jsx'
 import DLPScanner from '../../components/ui/DLPScanner/DLPScanner.jsx'
+import CDNSimulator from '../../components/ui/CDNSimulator/CDNSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -219,6 +220,9 @@ function DocsPage() {
 
         {/* Monitor y Auditor de Fugas de Información PII & DLP — Mejora 83 */}
         <DLPScanner />
+
+        {/* Simulador de CDN Edge Caching y Anycast Routing — Mejora 84 */}
+        <CDNSimulator />
 
       </div>
     </main>
