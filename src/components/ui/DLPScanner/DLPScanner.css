@@ -1,0 +1,236 @@
+/**
+ * @fileoverview Estilos para el Componente Monitor DLP (Mejora 83).
+ */
+
+.dlp-scanner {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-xl, 16px);
+  padding: var(--space-6, 24px);
+  margin-bottom: var(--space-8, 32px);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5, 20px);
+}
+
+.dlp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+.dlp-title {
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  color: var(--color-text, #f8fafc);
+  margin-top: var(--space-1, 4px);
+  margin-bottom: var(--space-1, 4px);
+}
+
+.dlp-desc {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #94a3b8);
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* ── Compliance Score Card ── */
+.dlp-compliance-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  min-width: 240px;
+}
+
+.dlp-compliance-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.dlp-risk-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dlp-risk-label {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.dlp-risk-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dlp-risk-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* ── Presets & Strategy ── */
+.dlp-presets-row, .dlp-strategy-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  flex-wrap: wrap;
+}
+
+.dlp-presets-label, .dlp-strategy-label {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.dlp-preset-buttons, .dlp-strategy-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── Comparison Grid ── */
+.dlp-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4, 16px);
+}
+
+.dlp-panel {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.dlp-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.dlp-panel-title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text, #f8fafc);
+}
+
+.dlp-textarea {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 12px);
+  color: var(--color-text, #f8fafc);
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+  outline: none;
+  resize: vertical;
+}
+
+.dlp-textarea:focus {
+  border-color: var(--color-brand-500, #38bdf8);
+}
+
+.dlp-sanitized-output {
+  margin: 0;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 12px);
+  color: #4ade80;
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 140px;
+}
+
+/* ── Findings Section ── */
+.dlp-findings-section {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.dlp-findings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+}
+
+.dlp-findings-header h4 {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text, #f8fafc);
+  margin: 0;
+}
+
+.dlp-severity-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.dlp-empty-findings {
+  padding: var(--space-4, 16px);
+  color: #4ade80;
+  font-size: var(--text-xs, 0.75rem);
+  text-align: center;
+}
+
+.dlp-findings-table-wrap {
+  overflow-x: auto;
+}
+
+.dlp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs, 0.75rem);
+  text-align: left;
+}
+
+.dlp-table th, .dlp-table td {
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dlp-table th {
+  color: var(--color-text-muted, #94a3b8);
+  font-weight: 600;
+}
+
+.dlp-raw-val {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.dlp-masked-val {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

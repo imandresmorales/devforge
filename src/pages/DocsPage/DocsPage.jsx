@@ -24,6 +24,7 @@ import WebAuthnExplorer from '../../components/ui/WebAuthnExplorer/WebAuthnExplo
 import SSRFDefender from '../../components/ui/SSRFDefender/SSRFDefender.jsx'
 import MerkleTreeSimulator from '../../components/ui/MerkleTreeSimulator/MerkleTreeSimulator.jsx'
 import InvertedIndexSearch from '../../components/ui/InvertedIndexSearch/InvertedIndexSearch.jsx'
+import DLPScanner from '../../components/ui/DLPScanner/DLPScanner.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -215,6 +216,9 @@ function DocsPage() {
 
         {/* Motor de Búsqueda de Texto Completo e Índice Invertido BM25 — Mejora 80 */}
         <InvertedIndexSearch />
+
+        {/* Monitor y Auditor de Fugas de Información PII & DLP — Mejora 83 */}
+        <DLPScanner />
 
       </div>
     </main>
