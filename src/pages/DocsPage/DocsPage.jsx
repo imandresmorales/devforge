@@ -29,6 +29,7 @@ import CDNSimulator from '../../components/ui/CDNSimulator/CDNSimulator.jsx'
 import WebRTCSimulator from '../../components/ui/WebRTCSimulator/WebRTCSimulator.jsx'
 import TimingAttackAuditor from '../../components/ui/TimingAttackAuditor/TimingAttackAuditor.jsx'
 import SBOMScannerExplorer from '../../components/ui/SBOMScannerExplorer/SBOMScannerExplorer.jsx'
+import ContainerOrchestrationSimulator from '../../components/ui/ContainerOrchestrationSimulator/ContainerOrchestrationSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -235,6 +236,9 @@ function DocsPage() {
 
         {/* Escáner de Dependencias & Generador SBOM — Mejora 89 */}
         <SBOMScannerExplorer />
+
+        {/* Simulador de Orquestación de Contenedores y Health Checks — Mejora 91 */}
+        <ContainerOrchestrationSimulator />
 
       </div>
     </main>
