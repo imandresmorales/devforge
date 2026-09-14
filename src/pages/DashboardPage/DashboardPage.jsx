@@ -33,6 +33,7 @@ import FeatureFlagsExplorer from '../../components/ui/FeatureFlagsExplorer/Featu
 import RetryResilienceSimulator from '../../components/ui/RetryResilienceSimulator/RetryResilienceSimulator.jsx'
 import TransactionalOutboxSimulator from '../../components/ui/TransactionalOutboxSimulator/TransactionalOutboxSimulator.jsx'
 import SchemaValidatorExplorer from '../../components/ui/SchemaValidatorExplorer/SchemaValidatorExplorer.jsx'
+import VirtualListExplorer from '../../components/ui/VirtualListExplorer/VirtualListExplorer.jsx'
 import ReportModal from '../../components/ui/ReportModal/ReportModal.jsx'
 import './DashboardPage.css'
 
@@ -70,10 +71,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '87',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '87',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '76',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '427',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '88',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '88',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '77',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '432',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -186,7 +187,8 @@ const IMPROVEMENTS_DATA = [
   { id: 84, num: '84', title: 'Simulador de Red de Distribución de Contenidos (CDN Edge Caching & Anycast Routing)', status: 'done', commit: '5bc44b6' },
   { id: 85, num: '85', title: 'Motor de Verificación Formal de Contratos y Validación de Schemas JSON/Zod', status: 'done', commit: '219c372' },
   { id: 86, num: '86', title: 'Simulador de Protocolo P2P WebRTC & DataChannels (ICE, STUN/TURN y SDP)', status: 'done', commit: 'e038326' },
-  { id: 87, num: '87', title: 'Motor de Auditoría y Comparador Criptográfico en Tiempo Constante Anti Timing Attacks', status: 'done', commit: '14b28a1' },
+  { id: 87, num: '87', title: 'Motor de Auditoría y Comparador Criptográfico en Tiempo Constante Anti Timing Attacks', status: 'done', commit: 'ae3dd19' },
+  { id: 88, num: '88', title: 'Simulador de Virtualización de Listas Grandes y Windowing (100k+ Filas)', status: 'done', commit: 'ce68bdb' },
 ]
 
 /**
@@ -355,6 +357,9 @@ function DashboardPage() {
 
         {/* ── Motor de Verificación de Contratos y Schemas (Mejora 85) ── */}
         <SchemaValidatorExplorer />
+
+        {/* ── Simulador de Virtualización de Listas Grandes (Mejora 88) ── */}
+        <VirtualListExplorer />
 
         {/* ── Modal de Reporte y Certificado de Auditoría (Mejora 38) ── */}
         <ReportModal
