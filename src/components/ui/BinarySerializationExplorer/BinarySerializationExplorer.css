@@ -1,0 +1,169 @@
+/* ── BinarySerializationExplorer.css ── */
+.bin-explorer {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.bin-explorer__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.bin-explorer__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.bin-explorer__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.bin-explorer__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Template Bar ── */
+.bin-template-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.bin-select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 4px);
+  padding: 6px 12px;
+  color: #fff;
+  font-size: var(--text-xs, 0.75rem);
+  font-family: inherit;
+}
+
+/* ── Format Grid ── */
+.bin-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 900px) {
+  .bin-format-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bin-format-card {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.bin-format-card--json { border-top: 4px solid #94a3b8; }
+.bin-format-card--msgpack { border-top: 4px solid #38bdf8; }
+.bin-format-card--protobuf { border-top: 4px solid #10b981; }
+
+.bin-format-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bin-format-card__title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.bin-format-card__size {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  color: #fff;
+}
+
+.bin-format-card__hex {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-sm, 4px);
+  padding: var(--space-2, 0.5rem);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  color: #a78bfa;
+  max-height: 80px;
+  overflow-y: auto;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+/* ── Savings Chart Visualizer ── */
+.bin-chart-card {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.bin-bar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.bin-bar-label {
+  width: 110px;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  color: var(--color-text-secondary, #cbd5e1);
+}
+
+.bin-bar-track {
+  flex: 1;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bin-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.bin-bar-val {
+  width: 70px;
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+  text-align: right;
+  font-weight: 700;
+}
