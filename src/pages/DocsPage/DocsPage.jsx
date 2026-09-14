@@ -28,6 +28,7 @@ import DLPScanner from '../../components/ui/DLPScanner/DLPScanner.jsx'
 import CDNSimulator from '../../components/ui/CDNSimulator/CDNSimulator.jsx'
 import WebRTCSimulator from '../../components/ui/WebRTCSimulator/WebRTCSimulator.jsx'
 import TimingAttackAuditor from '../../components/ui/TimingAttackAuditor/TimingAttackAuditor.jsx'
+import SBOMScannerExplorer from '../../components/ui/SBOMScannerExplorer/SBOMScannerExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -231,6 +232,9 @@ function DocsPage() {
 
         {/* Motor de Auditoría y Comparador Criptográfico en Tiempo Constante — Mejora 87 */}
         <TimingAttackAuditor />
+
+        {/* Escáner de Dependencias & Generador SBOM — Mejora 89 */}
+        <SBOMScannerExplorer />
 
       </div>
     </main>

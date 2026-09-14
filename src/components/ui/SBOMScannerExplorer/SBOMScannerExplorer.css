@@ -1,0 +1,192 @@
+/* ── SBOMScannerExplorer.css ── */
+.sbom-explorer {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.sbom-explorer__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.sbom-explorer__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.sbom-explorer__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.sbom-explorer__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Project Switcher ── */
+.sbom-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.sbom-select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 4px);
+  padding: 6px 12px;
+  color: #fff;
+  font-size: var(--text-xs, 0.75rem);
+  font-family: inherit;
+}
+
+/* ── Score & Stats ── */
+.sbom-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.sbom-stat-card {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem);
+  text-align: center;
+}
+
+.sbom-stat-card__val {
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+}
+
+.sbom-stat-card__label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #94a3b8);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Tabs & Content ── */
+.sbom-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-bottom: none;
+  overflow-x: auto;
+}
+
+.sbom-tab {
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  font-size: var(--text-xs, 0.75rem);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #94a3b8);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sbom-tab--active {
+  color: var(--color-brand-400, #818cf8);
+  border-bottom-color: var(--color-brand-400, #818cf8);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sbom-tab-body {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: 0 0 var(--radius-md, 8px) var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+}
+
+/* ── Vulnerability Cards ── */
+.sbom-vuln-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.sbom-vuln-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem);
+}
+
+.sbom-vuln-card--CRITICAL { border-left: 4px solid #ef4444; }
+.sbom-vuln-card--HIGH { border-left: 4px solid #f97316; }
+.sbom-vuln-card--MEDIUM { border-left: 4px solid #eab308; }
+.sbom-vuln-card--LOW { border-left: 4px solid #3b82f6; }
+
+.sbom-vuln-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.sbom-vuln-title {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.sbom-vuln-desc {
+  font-size: 0.72rem;
+  color: var(--color-text-muted, #94a3b8);
+  margin: 0 0 var(--space-2, 0.5rem) 0;
+  line-height: 1.4;
+}
+
+.sbom-vuln-remediation {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: #34d399;
+}
+
+.sbom-code-box {
+  max-height: 250px;
+  overflow-y: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #a5b4fc;
+  background: rgba(0, 0, 0, 0.3);
+  padding: var(--space-3, 0.75rem);
+  border-radius: var(--radius-sm, 6px);
+  margin: 0;
+  white-space: pre-wrap;
+}
