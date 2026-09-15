@@ -33,6 +33,7 @@ import ContainerOrchestrationSimulator from '../../components/ui/ContainerOrches
 import SecondOrderSQLiExplorer from '../../components/ui/SecondOrderSQLiExplorer/SecondOrderSQLiExplorer.jsx'
 import OpenTelemetryExplorer from '../../components/ui/OpenTelemetryExplorer/OpenTelemetryExplorer.jsx'
 import PBFTExplorer from '../../components/ui/PBFTExplorer/PBFTExplorer.jsx'
+import HomomorphicCryptoExplorer from '../../components/ui/HomomorphicCryptoExplorer/HomomorphicCryptoExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -251,6 +252,9 @@ function DocsPage() {
 
         {/* Simulador de Algoritmos de Consenso Byzantine Fault Tolerance — Mejora 94 */}
         <PBFTExplorer />
+
+        {/* Motor de Criptografía Homomórfica y Cómputo Seguro — Mejora 95 */}
+        <HomomorphicCryptoExplorer />
 
       </div>
     </main>
