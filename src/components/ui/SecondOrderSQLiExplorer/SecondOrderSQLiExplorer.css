@@ -1,0 +1,163 @@
+/* ── SecondOrderSQLiExplorer.css ── */
+.sqli-explorer {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.sqli-explorer__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.sqli-explorer__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.sqli-explorer__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.sqli-explorer__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Attack Steps Container ── */
+.sqli-steps-box {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.sqli-step-title {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-brand-400, #818cf8);
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.sqli-input-row {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.sqli-input {
+  flex: 1;
+  min-width: 220px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 4px);
+  padding: 6px 12px;
+  color: #fff;
+  font-family: var(--font-mono, monospace);
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.sqli-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm, 4px);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.sqli-btn--primary {
+  background: var(--color-brand-600, #4f46e5);
+  color: #fff;
+}
+
+.sqli-btn--primary:hover {
+  background: var(--color-brand-500, #6366f1);
+}
+
+.sqli-btn--danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.sqli-btn--danger:hover {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* ── Side-by-Side Comparison ── */
+.sqli-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .sqli-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sqli-card {
+  background: var(--color-bg-tertiary, #181825);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+}
+
+.sqli-card--vuln { border-left: 4px solid #ef4444; }
+.sqli-card--secure { border-left: 4px solid #10b981; }
+
+.sqli-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3, 0.75rem);
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  padding-bottom: var(--space-2, 0.5rem);
+}
+
+.sqli-sql-block {
+  background: rgba(0, 0, 0, 0.35);
+  padding: var(--space-2, 0.5rem);
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: #38bdf8;
+  margin-bottom: var(--space-3, 0.75rem);
+  word-break: break-all;
+}
+
+.sqli-rows-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-sm, 4px);
+  padding: var(--space-2, 0.5rem);
+  max-height: 140px;
+  overflow-y: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  color: #e2e8f0;
+}

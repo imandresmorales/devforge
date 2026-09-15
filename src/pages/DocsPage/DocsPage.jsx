@@ -30,6 +30,7 @@ import WebRTCSimulator from '../../components/ui/WebRTCSimulator/WebRTCSimulator
 import TimingAttackAuditor from '../../components/ui/TimingAttackAuditor/TimingAttackAuditor.jsx'
 import SBOMScannerExplorer from '../../components/ui/SBOMScannerExplorer/SBOMScannerExplorer.jsx'
 import ContainerOrchestrationSimulator from '../../components/ui/ContainerOrchestrationSimulator/ContainerOrchestrationSimulator.jsx'
+import SecondOrderSQLiExplorer from '../../components/ui/SecondOrderSQLiExplorer/SecondOrderSQLiExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -239,6 +240,9 @@ function DocsPage() {
 
         {/* Simulador de Orquestación de Contenedores y Health Checks — Mejora 91 */}
         <ContainerOrchestrationSimulator />
+
+        {/* Auditor de Inyección SQL de Segundo Orden — Mejora 92 */}
+        <SecondOrderSQLiExplorer />
 
       </div>
     </main>
