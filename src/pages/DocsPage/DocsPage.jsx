@@ -35,6 +35,7 @@ import OpenTelemetryExplorer from '../../components/ui/OpenTelemetryExplorer/Ope
 import PBFTExplorer from '../../components/ui/PBFTExplorer/PBFTExplorer.jsx'
 import HomomorphicCryptoExplorer from '../../components/ui/HomomorphicCryptoExplorer/HomomorphicCryptoExplorer.jsx'
 import NeuralNetworkExplorer from '../../components/ui/NeuralNetworkExplorer/NeuralNetworkExplorer.jsx'
+import OAuthPKCEExplorer from '../../components/ui/OAuthPKCEExplorer/OAuthPKCEExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -259,6 +260,9 @@ function DocsPage() {
 
         {/* Simulador de Red Neuronal en Navegador — Mejora 96 */}
         <NeuralNetworkExplorer />
+
+        {/* Auditor de Seguridad OAuth 2.0 con PKCE — Mejora 97 */}
+        <OAuthPKCEExplorer />
 
       </div>
     </main>
