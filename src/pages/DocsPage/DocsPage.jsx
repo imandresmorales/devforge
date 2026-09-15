@@ -34,6 +34,7 @@ import SecondOrderSQLiExplorer from '../../components/ui/SecondOrderSQLiExplorer
 import OpenTelemetryExplorer from '../../components/ui/OpenTelemetryExplorer/OpenTelemetryExplorer.jsx'
 import PBFTExplorer from '../../components/ui/PBFTExplorer/PBFTExplorer.jsx'
 import HomomorphicCryptoExplorer from '../../components/ui/HomomorphicCryptoExplorer/HomomorphicCryptoExplorer.jsx'
+import NeuralNetworkExplorer from '../../components/ui/NeuralNetworkExplorer/NeuralNetworkExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -255,6 +256,9 @@ function DocsPage() {
 
         {/* Motor de Criptografía Homomórfica y Cómputo Seguro — Mejora 95 */}
         <HomomorphicCryptoExplorer />
+
+        {/* Simulador de Red Neuronal en Navegador — Mejora 96 */}
+        <NeuralNetworkExplorer />
 
       </div>
     </main>

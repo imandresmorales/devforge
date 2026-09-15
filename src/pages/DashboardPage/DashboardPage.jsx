@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '95',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '95',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '84',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '467',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '96',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '96',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '85',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '472',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -196,7 +196,8 @@ const IMPROVEMENTS_DATA = [
   { id: 92, num: '92', title: 'Auditor de Inyección SQL de Segundo Orden (CWE-89 Stored SQLi Defender)', status: 'done', commit: '1460123' },
   { id: 93, num: '93', title: 'Motor de Observabilidad OpenTelemetry y Trazabilidad Distribuida (W3C TraceContext)', status: 'done', commit: '7cc4548' },
   { id: 94, num: '94', title: 'Simulador de Algoritmos de Consenso Byzantine Fault Tolerance (PBFT / Castro-Liskov)', status: 'done', commit: '9f39bde' },
-  { id: 95, num: '95', title: 'Motor de Criptografía Homomórfica y Cómputo Seguro sobre Datos Cifrados (Paillier)', status: 'done', commit: '4695e75' },
+  { id: 95, num: '95', title: 'Motor de Criptografía Homomórfica y Cómputo Seguro sobre Datos Cifrados (Paillier)', status: 'done', commit: 'ffc3f4e' },
+  { id: 96, num: '96', title: 'Simulador de Red Neuronal en Navegador (Backpropagation & Decision Boundary)', status: 'done', commit: '3515967' },
 ]
 
 /**
