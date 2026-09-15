@@ -32,6 +32,7 @@ import SBOMScannerExplorer from '../../components/ui/SBOMScannerExplorer/SBOMSca
 import ContainerOrchestrationSimulator from '../../components/ui/ContainerOrchestrationSimulator/ContainerOrchestrationSimulator.jsx'
 import SecondOrderSQLiExplorer from '../../components/ui/SecondOrderSQLiExplorer/SecondOrderSQLiExplorer.jsx'
 import OpenTelemetryExplorer from '../../components/ui/OpenTelemetryExplorer/OpenTelemetryExplorer.jsx'
+import PBFTExplorer from '../../components/ui/PBFTExplorer/PBFTExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -247,6 +248,9 @@ function DocsPage() {
 
         {/* Motor de Observabilidad OpenTelemetry y Trazabilidad Distribuida — Mejora 93 */}
         <OpenTelemetryExplorer />
+
+        {/* Simulador de Algoritmos de Consenso Byzantine Fault Tolerance — Mejora 94 */}
+        <PBFTExplorer />
 
       </div>
     </main>

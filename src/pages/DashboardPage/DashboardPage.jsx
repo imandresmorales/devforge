@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '93',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '93',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '82',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '457',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '94',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '94',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '83',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '462',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -194,7 +194,8 @@ const IMPROVEMENTS_DATA = [
   { id: 90, num: '90', title: 'Motor de Compresión de Datos y Serialización Binaria (Protobuf / MessagePack)', status: 'done', commit: 'd780db2' },
   { id: 91, num: '91', title: 'Simulador de Orquestación de Contenedores y Health Checks (Kubernetes)', status: 'done', commit: '8237cda' },
   { id: 92, num: '92', title: 'Auditor de Inyección SQL de Segundo Orden (CWE-89 Stored SQLi Defender)', status: 'done', commit: '1460123' },
-  { id: 93, num: '93', title: 'Motor de Observabilidad OpenTelemetry y Trazabilidad Distribuida (W3C TraceContext)', status: 'done', commit: '3a09c9c' },
+  { id: 93, num: '93', title: 'Motor de Observabilidad OpenTelemetry y Trazabilidad Distribuida (W3C TraceContext)', status: 'done', commit: '7cc4548' },
+  { id: 94, num: '94', title: 'Simulador de Algoritmos de Consenso Byzantine Fault Tolerance (PBFT / Castro-Liskov)', status: 'done', commit: 'ed2bec9' },
 ]
 
 /**
