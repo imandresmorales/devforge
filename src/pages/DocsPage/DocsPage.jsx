@@ -31,6 +31,7 @@ import TimingAttackAuditor from '../../components/ui/TimingAttackAuditor/TimingA
 import SBOMScannerExplorer from '../../components/ui/SBOMScannerExplorer/SBOMScannerExplorer.jsx'
 import ContainerOrchestrationSimulator from '../../components/ui/ContainerOrchestrationSimulator/ContainerOrchestrationSimulator.jsx'
 import SecondOrderSQLiExplorer from '../../components/ui/SecondOrderSQLiExplorer/SecondOrderSQLiExplorer.jsx'
+import OpenTelemetryExplorer from '../../components/ui/OpenTelemetryExplorer/OpenTelemetryExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -243,6 +244,9 @@ function DocsPage() {
 
         {/* Auditor de Inyección SQL de Segundo Orden — Mejora 92 */}
         <SecondOrderSQLiExplorer />
+
+        {/* Motor de Observabilidad OpenTelemetry y Trazabilidad Distribuida — Mejora 93 */}
+        <OpenTelemetryExplorer />
 
       </div>
     </main>

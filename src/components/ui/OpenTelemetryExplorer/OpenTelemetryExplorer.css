@@ -1,0 +1,168 @@
+/* ── OpenTelemetryExplorer.css ── */
+.otel-explorer {
+  background: var(--color-bg-secondary, #1e1e2e);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 1.5rem);
+  margin-top: var(--space-8, 2rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.otel-explorer__header {
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.otel-explorer__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.otel-explorer__title {
+  margin: 0;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: var(--color-text-primary, #fff);
+}
+
+.otel-explorer__desc {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Control Bar ── */
+.otel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.otel-btn {
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.otel-btn--primary {
+  background: var(--color-brand-600, #4f46e5);
+  color: #fff;
+}
+
+.otel-btn--primary:hover {
+  background: var(--color-brand-500, #6366f1);
+}
+
+/* ── W3C Traceparent Header Card ── */
+.otel-w3c-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-6, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+}
+
+/* ── Waterfall View (Gantt Chart) ── */
+.otel-waterfall {
+  background: var(--color-bg-tertiary, #181825);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 1rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.otel-waterfall__row {
+  display: grid;
+  grid-template-columns: 240px 1fr 70px;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+  padding: var(--space-2, 0.5rem) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.otel-waterfall__row:hover,
+.otel-waterfall__row--selected {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.otel-waterfall__span-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.otel-service-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+}
+
+.otel-waterfall__track {
+  height: 18px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.otel-waterfall__bar {
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  min-width: 6px;
+  transition: all 0.3s ease;
+}
+
+/* ── Span Inspector ── */
+.otel-inspector {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 0.75rem);
+}
+
+.otel-inspector__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2, 0.5rem);
+  font-size: 0.72rem;
+  font-family: var(--font-mono, monospace);
+  margin-bottom: var(--space-3, 0.75rem);
+}
