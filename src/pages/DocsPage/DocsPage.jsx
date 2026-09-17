@@ -37,6 +37,7 @@ import HomomorphicCryptoExplorer from '../../components/ui/HomomorphicCryptoExpl
 import NeuralNetworkExplorer from '../../components/ui/NeuralNetworkExplorer/NeuralNetworkExplorer.jsx'
 import OAuthPKCEExplorer from '../../components/ui/OAuthPKCEExplorer/OAuthPKCEExplorer.jsx'
 import ChaosSimulator from '../../components/ui/ChaosSimulator/ChaosSimulator.jsx'
+import ComplianceAuditor from '../../components/ui/ComplianceAuditor/ComplianceAuditor.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -267,6 +268,9 @@ function DocsPage() {
 
         {/* Simulador de Chaos Engineering y Resiliencia Distribuida — Mejora 98 */}
         <ChaosSimulator />
+
+        {/* Motor de Informes de Conformidad ISO 27001 & SOC 2 Type II — Mejora 99 */}
+        <ComplianceAuditor />
 
       </div>
     </main>
