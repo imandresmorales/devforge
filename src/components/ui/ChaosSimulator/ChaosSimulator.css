@@ -1,0 +1,330 @@
+.chaos-sim {
+  background: var(--color-bg-secondary, #131722);
+  border: 1px solid var(--color-border, #2a2e39);
+  border-radius: var(--radius-xl, 16px);
+  padding: var(--space-6, 24px);
+  margin-top: var(--space-8, 32px);
+  color: var(--color-text-primary, #f0f2f5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.chaos-header {
+  margin-bottom: var(--space-6, 24px);
+}
+
+.chaos-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chaos-badge-tag {
+  color: #ef4444;
+}
+
+.chaos-header__title {
+  font-size: var(--text-2xl, 24px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.chaos-header__desc {
+  font-size: var(--text-sm, 14px);
+  color: var(--color-text-secondary, #94a3b8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.chaos-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .chaos-controls-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chaos-card {
+  background: var(--color-bg-tertiary, #1a1f2c);
+  border: 1px solid var(--color-border, #2a2e39);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chaos-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.chaos-select {
+  width: 100%;
+  background: #0f131c;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #f8fafc;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+.chaos-select:focus {
+  border-color: #ef4444;
+}
+
+.chaos-exp-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 8px 0 0 0;
+}
+
+.chaos-toggle-row {
+  margin-bottom: 12px;
+}
+
+.chaos-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.chaos-actions-row {
+  display: flex;
+  gap: 10px;
+}
+
+.chaos-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.chaos-btn--primary {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.chaos-btn--primary:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.chaos-btn--secondary {
+  background: #242b3b;
+  color: #cbd5e1;
+  border: 1px solid #3b455b;
+}
+
+.chaos-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chaos-topology-panel {
+  background: var(--color-bg-tertiary, #1a1f2c);
+  border: 1px solid var(--color-border, #2a2e39);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.chaos-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0 0 16px 0;
+}
+
+.chaos-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.chaos-service-card {
+  background: #0f131c;
+  border: 1.5px solid #2d3748;
+  border-radius: 10px;
+  padding: 14px;
+  transition: all 0.2s;
+}
+
+.chaos-service-card--healthy {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.chaos-service-card--degraded {
+  border-color: rgba(234, 179, 8, 0.6);
+  background: rgba(234, 179, 8, 0.05);
+}
+
+.chaos-service-card--critical {
+  border-color: rgba(239, 68, 68, 0.7);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.chaos-service-card--mitigated {
+  border-color: rgba(56, 189, 248, 0.6);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.chaos-srv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chaos-srv-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.chaos-srv-region {
+  font-size: 10px;
+  color: #64748b;
+  font-family: var(--font-mono, monospace);
+}
+
+.chaos-srv-metrics {
+  font-size: 11px;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.chaos-srv-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.chaos-srv-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.chaos-service-card--degraded .chaos-srv-dot {
+  background: #eab308;
+}
+
+.chaos-service-card--critical .chaos-srv-dot {
+  background: #ef4444;
+}
+
+.chaos-service-card--mitigated .chaos-srv-dot {
+  background: #38bdf8;
+}
+
+.chaos-metrics-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .chaos-metrics-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chaos-metric-tile {
+  background: var(--color-bg-tertiary, #1a1f2c);
+  border: 1px solid var(--color-border, #2a2e39);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chaos-tile-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.chaos-tile-value {
+  font-size: 20px;
+  font-family: var(--font-mono, monospace);
+}
+
+.chaos-tile-value.green { color: #22c55e; }
+.chaos-tile-value.red { color: #ef4444; }
+.chaos-tile-value.yellow { color: #eab308; }
+.chaos-tile-value.cyan { color: #38bdf8; }
+
+.chaos-audit-card {
+  background: #0b0e14;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.chaos-audit-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.chaos-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+}
+
+.chaos-log-item {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #1a202c;
+  padding: 4px 0;
+}
+
+.chaos-log-event {
+  color: #f87171;
+  min-width: 170px;
+  font-weight: 700;
+}
+
+.chaos-log-msg {
+  color: #cbd5e1;
+}

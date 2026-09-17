@@ -36,6 +36,7 @@ import PBFTExplorer from '../../components/ui/PBFTExplorer/PBFTExplorer.jsx'
 import HomomorphicCryptoExplorer from '../../components/ui/HomomorphicCryptoExplorer/HomomorphicCryptoExplorer.jsx'
 import NeuralNetworkExplorer from '../../components/ui/NeuralNetworkExplorer/NeuralNetworkExplorer.jsx'
 import OAuthPKCEExplorer from '../../components/ui/OAuthPKCEExplorer/OAuthPKCEExplorer.jsx'
+import ChaosSimulator from '../../components/ui/ChaosSimulator/ChaosSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -263,6 +264,9 @@ function DocsPage() {
 
         {/* Auditor de Seguridad OAuth 2.0 con PKCE — Mejora 97 */}
         <OAuthPKCEExplorer />
+
+        {/* Simulador de Chaos Engineering y Resiliencia Distribuida — Mejora 98 */}
+        <ChaosSimulator />
 
       </div>
     </main>
