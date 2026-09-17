@@ -39,6 +39,7 @@ import OAuthPKCEExplorer from '../../components/ui/OAuthPKCEExplorer/OAuthPKCEEx
 import ChaosSimulator from '../../components/ui/ChaosSimulator/ChaosSimulator.jsx'
 import ComplianceAuditor from '../../components/ui/ComplianceAuditor/ComplianceAuditor.jsx'
 import GoldMasterCeremony from '../../components/ui/GoldMasterCeremony/GoldMasterCeremony.jsx'
+import GlobalMeshTelemetry from '../../components/ui/GlobalMeshTelemetry/GlobalMeshTelemetry.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -275,6 +276,9 @@ function DocsPage() {
 
         {/* Ceremonia y Certificación Gold Master DevForge 1.0 — Mejora 100 */}
         <GoldMasterCeremony />
+
+        {/* Centro de Comando Service Mesh & Telemetría Global — Mejora 101 */}
+        <GlobalMeshTelemetry />
 
       </div>
     </main>
