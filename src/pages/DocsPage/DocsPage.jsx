@@ -38,6 +38,7 @@ import NeuralNetworkExplorer from '../../components/ui/NeuralNetworkExplorer/Neu
 import OAuthPKCEExplorer from '../../components/ui/OAuthPKCEExplorer/OAuthPKCEExplorer.jsx'
 import ChaosSimulator from '../../components/ui/ChaosSimulator/ChaosSimulator.jsx'
 import ComplianceAuditor from '../../components/ui/ComplianceAuditor/ComplianceAuditor.jsx'
+import GoldMasterCeremony from '../../components/ui/GoldMasterCeremony/GoldMasterCeremony.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -271,6 +272,9 @@ function DocsPage() {
 
         {/* Motor de Informes de Conformidad ISO 27001 & SOC 2 Type II — Mejora 99 */}
         <ComplianceAuditor />
+
+        {/* Ceremonia y Certificación Gold Master DevForge 1.0 — Mejora 100 */}
+        <GoldMasterCeremony />
 
       </div>
     </main>

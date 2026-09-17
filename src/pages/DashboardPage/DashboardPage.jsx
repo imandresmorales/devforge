@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '99',   unit: 'de 100', icon: '✅', color: 'hsl(142, 71%, 45%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '99',   unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '88',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '485',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '100',  unit: 'de 100', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '100',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '89',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '489',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -200,7 +200,8 @@ const IMPROVEMENTS_DATA = [
   { id: 96, num: '96', title: 'Simulador de Red Neuronal en Navegador (Backpropagation & Decision Boundary)', status: 'done', commit: '44df9ce' },
   { id: 97, num: '97', title: 'Auditor de Seguridad en Flujos OAuth 2.0 con PKCE (RFC 7636)', status: 'done', commit: '03696bb' },
   { id: 98, num: '98', title: 'Simulador de Chaos Engineering y Resiliencia ante Fallos Distribuidos (Chaos Monkey)', status: 'done', commit: '8d5aa5a' },
-  { id: 99, num: '99', title: 'Motor de Informes de Conformidad ISO 27001 & SOC 2 Type II (Security Posture)', status: 'done', commit: 'd8981cc' },
+  { id: 99, num: '99', title: 'Motor de Informes de Conformidad ISO 27001 & SOC 2 Type II (Security Posture)', status: 'done', commit: '6880afb' },
+  { id: 100, num: '100', title: 'Ceremonia Final de Lanzamiento DevForge 1.0 (Gold Master Edition & Gran Certificación)', status: 'done', commit: '230a35e' },
 ]
 
 /**

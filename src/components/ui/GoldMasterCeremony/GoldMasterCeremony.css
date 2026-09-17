@@ -1,0 +1,325 @@
+.gm-ceremony {
+  background: radial-gradient(circle at 50% 0%, #1c1a0e 0%, #11141d 80%);
+  border: 2px solid #eab308;
+  border-radius: var(--radius-xl, 16px);
+  padding: var(--space-6, 24px);
+  margin-top: var(--space-8, 32px);
+  color: var(--color-text-primary, #f0f2f5);
+  box-shadow: 0 10px 40px rgba(234, 179, 8, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.gm-header {
+  margin-bottom: var(--space-6, 24px);
+  text-align: center;
+}
+
+.gm-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  color: #fef08a;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 0 16px rgba(234, 179, 8, 0.3);
+}
+
+.gm-badge-tag {
+  color: #facc15;
+}
+
+.gm-header__title {
+  font-size: var(--text-3xl, 28px);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 60%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+}
+
+.gm-header__desc {
+  font-size: var(--text-base, 15px);
+  color: var(--color-text-secondary, #cbd5e1);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gm-controls-card {
+  background: #0f131c;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gm-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.gm-name-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .gm-name-input-group {
+    flex-direction: column;
+  }
+}
+
+.gm-input {
+  flex: 1;
+  background: #090c12;
+  border: 1px solid #3b455b;
+  border-radius: 8px;
+  color: #f8fafc;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+}
+
+.gm-input:focus {
+  border-color: #eab308;
+}
+
+.gm-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.gm-btn--update {
+  background: linear-gradient(135deg, #eab308, #ca8a04);
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+}
+
+.gm-btn--print {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.gm-btn--print:hover {
+  background: #334155;
+}
+
+/* Diploma Styles */
+.gm-diploma-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gm-diploma-frame {
+  background: linear-gradient(135deg, #1e1b10 0%, #151821 100%);
+  border: 3px solid #ca8a04;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.gm-diploma-border {
+  border: 2px dashed rgba(234, 179, 8, 0.4);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.gm-diploma-inner {
+  position: relative;
+  text-align: center;
+}
+
+.gm-diploma-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-size: 70px;
+  font-weight: 900;
+  color: rgba(234, 179, 8, 0.04);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.gm-logo-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #eab308;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.gm-diploma-main-title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #f8fafc;
+  margin: 0 0 4px 0;
+}
+
+.gm-diploma-subtitle {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.gm-certifies-text {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0 0 8px 0;
+  font-style: italic;
+}
+
+.gm-recipient-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #facc15;
+  margin: 0 0 12px 0;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(234, 179, 8, 0.4);
+}
+
+.gm-achievement-desc {
+  font-size: 13px;
+  color: #cbd5e1;
+  max-width: 650px;
+  margin: 0 auto 24px auto;
+  line-height: 1.6;
+}
+
+.gm-pillars-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.gm-pillar-chip {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gm-diploma-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(234, 179, 8, 0.2);
+  padding-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .gm-diploma-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.gm-footer-col {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gm-footer-col--right {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .gm-footer-col, .gm-footer-col--right {
+    text-align: center;
+  }
+}
+
+.gm-col-label {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.gm-code-val {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #38bdf8;
+}
+
+.gm-col-sub {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.gm-gold-seal {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #facc15 0%, #b45309 100%);
+  padding: 3px;
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gm-seal-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  line-height: 1;
+}
+
+.gm-seal-inner span {
+  font-size: 6px;
+}
+
+.gm-seal-inner strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.gm-seal-inner small {
+  font-size: 7px;
+  font-weight: 800;
+}
