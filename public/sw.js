@@ -155,3 +155,17 @@ self.addEventListener('sync', (event) => {
   }
 })
 
+/**
+ * 6. Evento de Periodic Background Sync (Mejora 104): actualizar prefetch de documentación técnica en segundo plano.
+ */
+self.addEventListener('periodicsync', (event) => {
+  if (event.tag === 'devforge-periodic-prefetch') {
+    event.waitUntil(
+      caches.open(CACHE_NAME).then((cache) => {
+        return cache.addAll(['/docs', '/pricing', '/about', '/manifest.json'])
+      })
+    )
+  }
+})
+
+

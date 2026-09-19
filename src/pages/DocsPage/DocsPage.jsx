@@ -42,6 +42,7 @@ import GoldMasterCeremony from '../../components/ui/GoldMasterCeremony/GoldMaste
 import GlobalMeshTelemetry from '../../components/ui/GlobalMeshTelemetry/GlobalMeshTelemetry.jsx'
 import PwaCacheManager from '../../components/ui/PwaCacheManager/PwaCacheManager.jsx'
 import OfflineSyncManager from '../../components/ui/OfflineSyncManager/OfflineSyncManager.jsx'
+import PeriodicSyncSimulator from '../../components/ui/PeriodicSyncSimulator/PeriodicSyncSimulator.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -287,6 +288,9 @@ function DocsPage() {
 
         {/* Gestor de Background Sync API & Mutaciones Offline — Mejora 103 */}
         <OfflineSyncManager />
+
+        {/* Periodic Background Sync & Prefetching Inteligente — Mejora 104 */}
+        <PeriodicSyncSimulator />
 
       </div>
     </main>

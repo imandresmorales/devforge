@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '103',  unit: 'de 100 (103%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '103',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '92',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '500',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '104',  unit: 'de 100 (104%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '104',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '93',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '504',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -204,7 +204,8 @@ const IMPROVEMENTS_DATA = [
   { id: 100, num: '100', title: 'Ceremonia Final de Lanzamiento DevForge 1.0 (Gold Master Edition & Gran Certificación)', status: 'done', commit: 'a0bb723' },
   { id: 101, num: '101', title: 'Centro de Comando Service Mesh & Telemetría Global de Red (Zero-Trust mTLS)', status: 'done', commit: 'a74836e' },
   { id: 102, num: '102', title: 'Estrategias de Caché Avanzadas PWA (Stale-While-Revalidate, TTL & LRU)', status: 'done', commit: '1973fbc' },
-  { id: 103, num: '103', title: 'Cola de Background Sync API & Mutaciones Offline con Integridad Anti-Tampering', status: 'done', commit: '97801f3' },
+  { id: 103, num: '103', title: 'Cola de Background Sync API & Mutaciones Offline con Integridad Anti-Tampering', status: 'done', commit: '15392ae' },
+  { id: 104, num: '104', title: 'Periodic Background Sync & Prefetching Especulativo Adaptativo', status: 'done', commit: '8777e2e' },
 ]
 
 /**
