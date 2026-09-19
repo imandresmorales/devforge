@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '107',  unit: 'de 100 (107%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '107',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '96',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '514',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '108',  unit: 'de 100 (108%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '108',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '97',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '519',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -208,7 +208,8 @@ const IMPROVEMENTS_DATA = [
   { id: 104, num: '104', title: 'Periodic Background Sync & Prefetching Especulativo Adaptativo', status: 'done', commit: '995f890' },
   { id: 105, num: '105', title: 'PWA Web App Manifest Avanzado (Shortcuts, Protocol Handlers & File Handling)', status: 'done', commit: 'dce66ea' },
   { id: 106, num: '106', title: 'Banner Accesible de Conectividad en Tiempo Real & Calidad de Red', status: 'done', commit: 'a6a14c9' },
-  { id: 107, num: '107', title: 'PWA Badging API & Notificaciones Push Interactivas con Botones de Acción', status: 'done', commit: '2c4d087' },
+  { id: 107, num: '107', title: 'PWA Badging API & Notificaciones Push Interactivas con Botones de Acción', status: 'done', commit: '64e04d3' },
+  { id: 108, num: '108', title: 'Gestor Dinámico de Meta Tags SEO, OpenGraph, Twitter Cards & Canonical URLs', status: 'done', commit: '4381ca3' },
 ]
 
 /**
