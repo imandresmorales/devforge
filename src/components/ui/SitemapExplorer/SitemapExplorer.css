@@ -1,0 +1,187 @@
+.sitemap-explorer-card {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 24px);
+  margin-bottom: var(--space-6, 24px);
+  color: var(--color-text, #f8fafc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sitemap-explorer-card__header {
+  margin-bottom: var(--space-4, 16px);
+}
+
+.sitemap-explorer-card__badge {
+  display: inline-block;
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: var(--space-2, 8px);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.sitemap-explorer-card__title {
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  margin: 0 0 var(--space-1, 4px) 0;
+}
+
+.sitemap-explorer-card__subtitle {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #94a3b8);
+  margin: 0;
+}
+
+.sitemap-explorer-feedback {
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border-radius: var(--radius-md, 8px);
+  font-size: var(--text-sm, 0.875rem);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.sitemap-explorer-feedback--success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.sitemap-explorer-feedback--error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.sitemap-explorer-feedback--info {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.sitemap-explorer-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.sitemap-explorer-stat {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-3, 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sitemap-explorer-stat__label {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.sitemap-explorer-stat__value {
+  font-size: var(--text-base, 1rem);
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.sitemap-explorer-form {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 16px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.sitemap-explorer-form__row {
+  display: flex;
+  gap: var(--space-3, 12px);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3, 12px);
+}
+
+.sitemap-explorer-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sitemap-explorer-form__group label {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.sitemap-explorer-input,
+.sitemap-explorer-select {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.sitemap-explorer-form__actions {
+  display: flex;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+.sitemap-explorer-btn {
+  padding: 8px 16px;
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  border: none;
+}
+
+.sitemap-explorer-btn--primary {
+  background: #0284c7;
+  color: white;
+}
+
+.sitemap-explorer-btn--download {
+  background: #10b981;
+  color: white;
+}
+
+.sitemap-explorer-table-wrapper {
+  overflow-x: auto;
+}
+
+.sitemap-explorer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.sitemap-explorer-table th,
+.sitemap-explorer-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.sitemap-explorer-table th {
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.sitemap-prio-badge {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.sitemap-delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

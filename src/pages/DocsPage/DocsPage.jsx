@@ -47,6 +47,7 @@ import ProtocolHandlerTester from '../../components/ui/ProtocolHandlerTester/Pro
 import PwaBadgingManager from '../../components/ui/PwaBadgingManager/PwaBadgingManager.jsx'
 import SEOMetaInspector from '../../components/ui/SEOMetaInspector/SEOMetaInspector.jsx'
 import SchemaJsonLdViewer from '../../components/ui/SchemaJsonLdViewer/SchemaJsonLdViewer.jsx'
+import SitemapExplorer from '../../components/ui/SitemapExplorer/SitemapExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -307,6 +308,9 @@ function DocsPage() {
 
         {/* Inyector de Datos Estructurados JSON-LD (Schema.org) — Mejora 109 */}
         <SchemaJsonLdViewer />
+
+        {/* Generador y Validador Dinámico de Sitemap.xml — Mejora 110 */}
+        <SitemapExplorer />
 
       </div>
     </main>
