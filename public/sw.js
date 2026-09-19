@@ -10,7 +10,7 @@
  * - Soporte para actualización en caliente mediante el mensaje 'SKIP_WAITING'.
  */
 
-const CACHE_NAME = 'devforge-v1'
+const CACHE_NAME = 'devforge-v2-cache-strategies'
 
 /**
  * Recursos esenciales para pre-cachear durante la instalación del Service Worker.

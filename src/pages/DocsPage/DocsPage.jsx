@@ -40,6 +40,7 @@ import ChaosSimulator from '../../components/ui/ChaosSimulator/ChaosSimulator.js
 import ComplianceAuditor from '../../components/ui/ComplianceAuditor/ComplianceAuditor.jsx'
 import GoldMasterCeremony from '../../components/ui/GoldMasterCeremony/GoldMasterCeremony.jsx'
 import GlobalMeshTelemetry from '../../components/ui/GlobalMeshTelemetry/GlobalMeshTelemetry.jsx'
+import PwaCacheManager from '../../components/ui/PwaCacheManager/PwaCacheManager.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -279,6 +280,9 @@ function DocsPage() {
 
         {/* Centro de Comando Service Mesh & Telemetría Global — Mejora 101 */}
         <GlobalMeshTelemetry />
+
+        {/* Gestor de Estrategias de Caché PWA (TTL & LRU) — Mejora 102 */}
+        <PwaCacheManager />
 
       </div>
     </main>
