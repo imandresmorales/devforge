@@ -46,6 +46,7 @@ import PeriodicSyncSimulator from '../../components/ui/PeriodicSyncSimulator/Per
 import ProtocolHandlerTester from '../../components/ui/ProtocolHandlerTester/ProtocolHandlerTester.jsx'
 import PwaBadgingManager from '../../components/ui/PwaBadgingManager/PwaBadgingManager.jsx'
 import SEOMetaInspector from '../../components/ui/SEOMetaInspector/SEOMetaInspector.jsx'
+import SchemaJsonLdViewer from '../../components/ui/SchemaJsonLdViewer/SchemaJsonLdViewer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -303,6 +304,9 @@ function DocsPage() {
 
         {/* Gestor Dinámico de Meta Tags SEO & Social Graph — Mejora 108 */}
         <SEOMetaInspector />
+
+        {/* Inyector de Datos Estructurados JSON-LD (Schema.org) — Mejora 109 */}
+        <SchemaJsonLdViewer />
 
       </div>
     </main>
