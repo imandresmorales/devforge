@@ -43,6 +43,7 @@ import GlobalMeshTelemetry from '../../components/ui/GlobalMeshTelemetry/GlobalM
 import PwaCacheManager from '../../components/ui/PwaCacheManager/PwaCacheManager.jsx'
 import OfflineSyncManager from '../../components/ui/OfflineSyncManager/OfflineSyncManager.jsx'
 import PeriodicSyncSimulator from '../../components/ui/PeriodicSyncSimulator/PeriodicSyncSimulator.jsx'
+import ProtocolHandlerTester from '../../components/ui/ProtocolHandlerTester/ProtocolHandlerTester.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -291,6 +292,9 @@ function DocsPage() {
 
         {/* Periodic Background Sync & Prefetching Inteligente — Mejora 104 */}
         <PeriodicSyncSimulator />
+
+        {/* Probador de Protocol Handlers & Manifest PWA — Mejora 105 */}
+        <ProtocolHandlerTester />
 
       </div>
     </main>

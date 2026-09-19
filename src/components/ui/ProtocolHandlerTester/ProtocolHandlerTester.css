@@ -1,0 +1,198 @@
+.protocol-tester-card {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-6, 24px);
+  margin-bottom: var(--space-6, 24px);
+  color: var(--color-text, #f8fafc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.protocol-tester-card__header {
+  margin-bottom: var(--space-4, 16px);
+}
+
+.protocol-tester-card__badge {
+  display: inline-block;
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: var(--space-2, 8px);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.protocol-tester-card__title {
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 700;
+  margin: 0 0 var(--space-1, 4px) 0;
+}
+
+.protocol-tester-card__subtitle {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #94a3b8);
+  margin: 0;
+}
+
+.protocol-tester-card__subtitle code {
+  font-family: var(--font-mono, monospace);
+  color: #f472b6;
+}
+
+.protocol-tester-manifest-audit {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 16px);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.protocol-tester-manifest-audit__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm, 0.875rem);
+  margin-bottom: var(--space-3, 12px);
+}
+
+.protocol-tester-manifest-audit__score {
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: 700;
+  color: #34d399;
+}
+
+.protocol-tester-features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+}
+
+.protocol-tester-feature-tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.protocol-tester-form {
+  margin-bottom: var(--space-3, 12px);
+}
+
+.protocol-tester-form label {
+  display: block;
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+  margin-bottom: 4px;
+}
+
+.protocol-tester-form__row {
+  display: flex;
+  gap: var(--space-2, 8px);
+}
+
+.protocol-tester-input {
+  flex: 1;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--text-sm, 0.875rem);
+  font-family: var(--font-mono, monospace);
+}
+
+.protocol-tester-input:focus {
+  outline: none;
+  border-color: #ec4899;
+}
+
+.protocol-tester-btn {
+  padding: 8px 16px;
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  border: none;
+}
+
+.protocol-tester-btn--primary {
+  background: #db2777;
+  color: white;
+}
+
+.protocol-tester-presets {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4, 16px);
+}
+
+.protocol-tester-presets__label {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.protocol-tester-preset-btn {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.protocol-tester-preset-btn:hover {
+  border-color: #ec4899;
+}
+
+.protocol-tester-result {
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.protocol-tester-result--valid {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.protocol-tester-result--invalid {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.protocol-tester-result__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2, 8px);
+}
+
+.protocol-tester-result__details p {
+  margin: 4px 0;
+}
+
+.protocol-tester-result__details code {
+  font-family: var(--font-mono, monospace);
+  color: #34d399;
+}
+
+.protocol-tester-code {
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  color: #818cf8;
+  margin-top: 6px;
+}
+
+.protocol-tester-result__error {
+  color: #f87171;
+}

@@ -1,14 +1,15 @@
 {
   "name": "DevForge — Plataforma para Desarrolladores",
   "short_name": "DevForge",
-  "description": "Plataforma educativa interactiva con 100 mejoras continuas para dominar el stack moderno de desarrollo web.",
+  "description": "Plataforma educativa interactiva con mejoras continuas para dominar el stack moderno de desarrollo web y ciberseguridad.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#0f172a",
   "theme_color": "#4f46e5",
-  "categories": ["education", "developer", "productivity"],
+  "categories": ["education", "developer", "productivity", "security"],
   "icons": [
     {
       "src": "/icons/icon-192.svg",
@@ -22,5 +23,59 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Documentación Técnica",
+      "short_name": "Docs",
+      "description": "Explora los módulos interactivos de DevForge",
+      "url": "/docs",
+      "icons": [{ "src": "/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Panel Dashboard",
+      "short_name": "Dashboard",
+      "description": "Monitorea estadísticas y progreso del roadmap",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Planes y Precios",
+      "short_name": "Planes",
+      "description": "Accede a las suscripciones y beneficios Pro",
+      "url": "/pricing",
+      "icons": [{ "src": "/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Perfil de Usuario",
+      "short_name": "Perfil",
+      "description": "Gestiona credenciales, 2FA y configuraciones",
+      "url": "/profile",
+      "icons": [{ "src": "/icons/icon-192.svg", "sizes": "192x192" }]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+devforge",
+      "url": "/docs?uri=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/docs",
+      "accept": {
+        "text/json": [".json"],
+        "application/x-devforge": [".forge"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/contact",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
