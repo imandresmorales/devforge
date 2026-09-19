@@ -139,3 +139,19 @@ self.addEventListener('message', (event) => {
     self.skipWaiting()
   }
 })
+
+/**
+ * 5. Evento de Background Sync (Mejora 103): procesar mutaciones encoladas cuando la red se restablece.
+ */
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'devforge-sync-mutations') {
+    event.waitUntil(
+      self.clients.matchAll().then((clients) => {
+        clients.forEach((client) => {
+          client.postMessage({ type: 'DEVFORGE_TRIGGER_BACKGROUND_SYNC' })
+        })
+      })
+    )
+  }
+})
+

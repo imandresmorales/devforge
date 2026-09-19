@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '102',  unit: 'de 100 (102%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '102',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '91',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '496',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '103',  unit: 'de 100 (103%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '103',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '92',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '500',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -203,7 +203,8 @@ const IMPROVEMENTS_DATA = [
   { id: 99, num: '99', title: 'Motor de Informes de Conformidad ISO 27001 & SOC 2 Type II (Security Posture)', status: 'done', commit: '6880afb' },
   { id: 100, num: '100', title: 'Ceremonia Final de Lanzamiento DevForge 1.0 (Gold Master Edition & Gran Certificación)', status: 'done', commit: 'a0bb723' },
   { id: 101, num: '101', title: 'Centro de Comando Service Mesh & Telemetría Global de Red (Zero-Trust mTLS)', status: 'done', commit: 'a74836e' },
-  { id: 102, num: '102', title: 'Estrategias de Caché Avanzadas PWA (Stale-While-Revalidate, TTL & LRU)', status: 'done', commit: 'ad0004f' },
+  { id: 102, num: '102', title: 'Estrategias de Caché Avanzadas PWA (Stale-While-Revalidate, TTL & LRU)', status: 'done', commit: '1973fbc' },
+  { id: 103, num: '103', title: 'Cola de Background Sync API & Mutaciones Offline con Integridad Anti-Tampering', status: 'done', commit: '97801f3' },
 ]
 
 /**

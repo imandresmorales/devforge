@@ -41,6 +41,7 @@ import ComplianceAuditor from '../../components/ui/ComplianceAuditor/ComplianceA
 import GoldMasterCeremony from '../../components/ui/GoldMasterCeremony/GoldMasterCeremony.jsx'
 import GlobalMeshTelemetry from '../../components/ui/GlobalMeshTelemetry/GlobalMeshTelemetry.jsx'
 import PwaCacheManager from '../../components/ui/PwaCacheManager/PwaCacheManager.jsx'
+import OfflineSyncManager from '../../components/ui/OfflineSyncManager/OfflineSyncManager.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -283,6 +284,9 @@ function DocsPage() {
 
         {/* Gestor de Estrategias de Caché PWA (TTL & LRU) — Mejora 102 */}
         <PwaCacheManager />
+
+        {/* Gestor de Background Sync API & Mutaciones Offline — Mejora 103 */}
+        <OfflineSyncManager />
 
       </div>
     </main>
