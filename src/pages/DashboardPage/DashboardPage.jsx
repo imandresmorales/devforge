@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '112',  unit: 'de 100 (112%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '112',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '101',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '535',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '113',  unit: 'de 100 (113%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '113',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '102',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '542',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -213,7 +213,8 @@ const IMPROVEMENTS_DATA = [
   { id: 109, num: '109', title: 'Inyector de Datos Estructurados JSON-LD Schema.org (Google Rich Results)', status: 'done', commit: '4cffc74' },
   { id: 110, num: '110', title: 'Generador y Validador Dinámico de Sitemap.xml en Tiempo de Ejecución', status: 'done', commit: 'a03585f' },
   { id: 111, num: '111', title: 'Gestor Dinámico de Directivas Robots.txt con Aislamiento de Rutas Privadas', status: 'done', commit: '9159519' },
-  { id: 112, num: '112', title: 'Monitor y Auditor de Salud SEO en Vivo (Google Search Readiness)', status: 'done', commit: '4f44ebc' },
+  { id: 112, num: '112', title: 'Monitor y Auditor de Salud SEO en Vivo (Google Search Readiness)', status: 'done', commit: 'a4e8440' },
+  { id: 113, num: '113', title: 'Gestor de Enfoque y Navegación por Teclado Accesible WCAG AAA', status: 'done', commit: '8de2eb5' },
 ]
 
 /**

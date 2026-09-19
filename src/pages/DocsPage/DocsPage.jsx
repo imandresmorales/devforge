@@ -50,6 +50,7 @@ import SchemaJsonLdViewer from '../../components/ui/SchemaJsonLdViewer/SchemaJso
 import SitemapExplorer from '../../components/ui/SitemapExplorer/SitemapExplorer.jsx'
 import RobotsTxtManager from '../../components/ui/RobotsTxtManager/RobotsTxtManager.jsx'
 import SEOAuditorLive from '../../components/ui/SEOAuditorLive/SEOAuditorLive.jsx'
+import FocusTrapExplorer from '../../components/ui/FocusTrapExplorer/FocusTrapExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -319,6 +320,9 @@ function DocsPage() {
 
         {/* Auditor de Salud SEO y Diagnóstico de Indexabilidad en Vivo — Mejora 112 */}
         <SEOAuditorLive />
+
+        {/* Gestor de Enfoque y Navegación por Teclado Accesible WCAG AAA — Mejora 113 */}
+        <FocusTrapExplorer />
 
       </div>
     </main>
