@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '110',  unit: 'de 100 (110%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '110',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '99',   unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '527',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '111',  unit: 'de 100 (111%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '111',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '100',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '531',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -211,7 +211,8 @@ const IMPROVEMENTS_DATA = [
   { id: 107, num: '107', title: 'PWA Badging API & Notificaciones Push Interactivas con Botones de Acción', status: 'done', commit: '64e04d3' },
   { id: 108, num: '108', title: 'Gestor Dinámico de Meta Tags SEO, OpenGraph, Twitter Cards & Canonical URLs', status: 'done', commit: 'f9b5452' },
   { id: 109, num: '109', title: 'Inyector de Datos Estructurados JSON-LD Schema.org (Google Rich Results)', status: 'done', commit: '4cffc74' },
-  { id: 110, num: '110', title: 'Generador y Validador Dinámico de Sitemap.xml en Tiempo de Ejecución', status: 'done', commit: 'bc72f27' },
+  { id: 110, num: '110', title: 'Generador y Validador Dinámico de Sitemap.xml en Tiempo de Ejecución', status: 'done', commit: 'a03585f' },
+  { id: 111, num: '111', title: 'Gestor Dinámico de Directivas Robots.txt con Aislamiento de Rutas Privadas', status: 'done', commit: '8cdca8c' },
 ]
 
 /**

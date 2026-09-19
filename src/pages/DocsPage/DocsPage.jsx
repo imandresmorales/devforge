@@ -48,6 +48,7 @@ import PwaBadgingManager from '../../components/ui/PwaBadgingManager/PwaBadgingM
 import SEOMetaInspector from '../../components/ui/SEOMetaInspector/SEOMetaInspector.jsx'
 import SchemaJsonLdViewer from '../../components/ui/SchemaJsonLdViewer/SchemaJsonLdViewer.jsx'
 import SitemapExplorer from '../../components/ui/SitemapExplorer/SitemapExplorer.jsx'
+import RobotsTxtManager from '../../components/ui/RobotsTxtManager/RobotsTxtManager.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -311,6 +312,9 @@ function DocsPage() {
 
         {/* Generador y Validador Dinámico de Sitemap.xml — Mejora 110 */}
         <SitemapExplorer />
+
+        {/* Gestor y Probador de Directivas Robots.txt — Mejora 111 */}
+        <RobotsTxtManager />
 
       </div>
     </main>

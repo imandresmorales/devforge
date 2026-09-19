@@ -1,0 +1,25 @@
+# ========================================================
+# DevForge Robots Exclusion Protocol (RFC 9309)
+# ========================================================
+
+User-agent: *
+Allow: /
+Allow: /docs
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /api/auth
+Disallow: /auth
+Disallow: /admin
+Disallow: /keys
+
+User-agent: GPTBot
+Allow: /docs
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /pricing
+Crawl-delay: 2
+
+Sitemap: https://devforge.internal/sitemap.xml
