@@ -34,6 +34,7 @@ import DataExporterModal from './components/ui/DataExporterModal/DataExporterMod
 import CryptoTokenModal from './components/ui/CryptoTokenModal/CryptoTokenModal.jsx'
 import TOTPModal from './components/ui/TOTPModal/TOTPModal.jsx'
 import PerformanceMonitor from './components/ui/PerformanceMonitor/PerformanceMonitor.jsx'
+import NetworkStatusBanner from './components/ui/NetworkStatusBanner/NetworkStatusBanner.jsx'
 import useZenMode from './hooks/useZenMode'
 import { ToastProvider } from './context/ToastContext'
 import './App.css'
@@ -197,6 +198,9 @@ function AppLayout({ theme, onToggleTheme }) {
 
       {/* Monitor de Rendimiento y Core Web Vitals en Vivo (Mejora 39) */}
       <PerformanceMonitor />
+
+      {/* Banner de Estado de Red y Sincronización PWA (Mejora 106) */}
+      <NetworkStatusBanner />
     </div>
   )
 }

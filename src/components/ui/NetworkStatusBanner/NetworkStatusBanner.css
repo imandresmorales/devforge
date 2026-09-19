@@ -1,0 +1,101 @@
+.network-status-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4, 16px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border-radius: var(--radius-lg, 12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: var(--text-xs, 0.75rem);
+  color: #f8fafc;
+  max-width: 440px;
+  animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.network-status-banner--online {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.network-status-banner--offline {
+  background: rgba(30, 27, 75, 0.95);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.network-status-banner__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.network-status-banner__icon {
+  font-size: 1rem;
+}
+
+.network-status-banner__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.network-status-banner__title {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.network-status-banner__desc {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.network-status-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.network-status-banner__btn {
+  background: #334155;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.network-status-banner__btn:disabled {
+  opacity: 0.5;
+}
+
+.network-status-banner__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #94a3b8);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.network-status-banner__close-btn:hover {
+  color: #f8fafc;
+}
