@@ -44,6 +44,7 @@ import PwaCacheManager from '../../components/ui/PwaCacheManager/PwaCacheManager
 import OfflineSyncManager from '../../components/ui/OfflineSyncManager/OfflineSyncManager.jsx'
 import PeriodicSyncSimulator from '../../components/ui/PeriodicSyncSimulator/PeriodicSyncSimulator.jsx'
 import ProtocolHandlerTester from '../../components/ui/ProtocolHandlerTester/ProtocolHandlerTester.jsx'
+import PwaBadgingManager from '../../components/ui/PwaBadgingManager/PwaBadgingManager.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -295,6 +296,9 @@ function DocsPage() {
 
         {/* Probador de Protocol Handlers & Manifest PWA — Mejora 105 */}
         <ProtocolHandlerTester />
+
+        {/* PWA Badging API & Notificaciones Push Interactivas — Mejora 107 */}
+        <PwaBadgingManager />
 
       </div>
     </main>
