@@ -49,6 +49,7 @@ import SEOMetaInspector from '../../components/ui/SEOMetaInspector/SEOMetaInspec
 import SchemaJsonLdViewer from '../../components/ui/SchemaJsonLdViewer/SchemaJsonLdViewer.jsx'
 import SitemapExplorer from '../../components/ui/SitemapExplorer/SitemapExplorer.jsx'
 import RobotsTxtManager from '../../components/ui/RobotsTxtManager/RobotsTxtManager.jsx'
+import SEOAuditorLive from '../../components/ui/SEOAuditorLive/SEOAuditorLive.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -315,6 +316,9 @@ function DocsPage() {
 
         {/* Gestor y Probador de Directivas Robots.txt — Mejora 111 */}
         <RobotsTxtManager />
+
+        {/* Auditor de Salud SEO y Diagnóstico de Indexabilidad en Vivo — Mejora 112 */}
+        <SEOAuditorLive />
 
       </div>
     </main>
