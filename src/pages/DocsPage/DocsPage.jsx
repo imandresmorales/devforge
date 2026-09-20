@@ -52,6 +52,7 @@ import RobotsTxtManager from '../../components/ui/RobotsTxtManager/RobotsTxtMana
 import SEOAuditorLive from '../../components/ui/SEOAuditorLive/SEOAuditorLive.jsx'
 import FocusTrapExplorer from '../../components/ui/FocusTrapExplorer/FocusTrapExplorer.jsx'
 import DaltonismContrastManager from '../../components/ui/DaltonismContrastManager/DaltonismContrastManager.jsx'
+import AriaAnnouncerExplorer from '../../components/ui/AriaAnnouncerExplorer/AriaAnnouncerExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -327,6 +328,9 @@ function DocsPage() {
 
         {/* Gestor de Contraste Dinámico y Filtros de Daltonismo — Mejora 114 */}
         <DaltonismContrastManager />
+
+        {/* Anunciador Universal de Regiones Vivas ARIA — Mejora 115 */}
+        <AriaAnnouncerExplorer />
 
       </div>
     </main>
