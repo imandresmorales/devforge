@@ -55,6 +55,7 @@ import DaltonismContrastManager from '../../components/ui/DaltonismContrastManag
 import AriaAnnouncerExplorer from '../../components/ui/AriaAnnouncerExplorer/AriaAnnouncerExplorer.jsx'
 import MotionPreferencesExplorer from '../../components/ui/MotionPreferencesExplorer/MotionPreferencesExplorer.jsx'
 import AltTextOcrExplorer from '../../components/ui/AltTextOcrExplorer/AltTextOcrExplorer.jsx'
+import AccessibilityAuditorLive from '../../components/ui/AccessibilityAuditorLive/AccessibilityAuditorLive.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -339,6 +340,9 @@ function DocsPage() {
 
         {/* Auditor y Generador de Textos Alternativos Semánticos — Mejora 117 */}
         <AltTextOcrExplorer />
+
+        {/* Auditor de Accesibilidad Automatizado en el DOM — Mejora 118 */}
+        <AccessibilityAuditorLive />
 
       </div>
     </main>

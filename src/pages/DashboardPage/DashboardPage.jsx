@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '117',  unit: 'de 100 (117%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '117',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '106',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '563',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '118',  unit: 'de 100 (118%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '118',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '107',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '567',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -218,7 +218,8 @@ const IMPROVEMENTS_DATA = [
   { id: 114, num: '114', title: 'Gestor de Contraste Dinámico y Filtros de Daltonismo WCAG AAA', status: 'done', commit: '5ffaf86' },
   { id: 115, num: '115', title: 'Anunciador Universal de Regiones Vivas ARIA (Screen Readers)', status: 'done', commit: 'ea066de' },
   { id: 116, num: '116', title: 'Lector y Gestor Reactivo de Movimiento Reducido (WCAG 2.1 AAA)', status: 'done', commit: '0e27edd' },
-  { id: 117, num: '117', title: 'Generador y Auditor de Textos Alternativos Semánticos (WCAG 1.1.1)', status: 'done', commit: '41acb54' },
+  { id: 117, num: '117', title: 'Generador y Auditor de Textos Alternativos Semánticos (WCAG 1.1.1)', status: 'done', commit: '4514569' },
+  { id: 118, num: '118', title: 'Auditor de Accesibilidad Automatizado en el DOM (WCAG 2.1/2.2 AAA)', status: 'done', commit: '6751d74' },
 ]
 
 /**
