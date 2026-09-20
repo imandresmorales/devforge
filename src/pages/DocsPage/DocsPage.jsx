@@ -51,6 +51,7 @@ import SitemapExplorer from '../../components/ui/SitemapExplorer/SitemapExplorer
 import RobotsTxtManager from '../../components/ui/RobotsTxtManager/RobotsTxtManager.jsx'
 import SEOAuditorLive from '../../components/ui/SEOAuditorLive/SEOAuditorLive.jsx'
 import FocusTrapExplorer from '../../components/ui/FocusTrapExplorer/FocusTrapExplorer.jsx'
+import DaltonismContrastManager from '../../components/ui/DaltonismContrastManager/DaltonismContrastManager.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -323,6 +324,9 @@ function DocsPage() {
 
         {/* Gestor de Enfoque y Navegación por Teclado Accesible WCAG AAA — Mejora 113 */}
         <FocusTrapExplorer />
+
+        {/* Gestor de Contraste Dinámico y Filtros de Daltonismo — Mejora 114 */}
+        <DaltonismContrastManager />
 
       </div>
     </main>
