@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '115',  unit: 'de 100 (115%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '115',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '104',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '554',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '116',  unit: 'de 100 (116%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '116',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '105',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '559',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -216,7 +216,8 @@ const IMPROVEMENTS_DATA = [
   { id: 112, num: '112', title: 'Monitor y Auditor de Salud SEO en Vivo (Google Search Readiness)', status: 'done', commit: 'a4e8440' },
   { id: 113, num: '113', title: 'Gestor de Enfoque y Navegación por Teclado Accesible WCAG AAA', status: 'done', commit: '163250f' },
   { id: 114, num: '114', title: 'Gestor de Contraste Dinámico y Filtros de Daltonismo WCAG AAA', status: 'done', commit: '5ffaf86' },
-  { id: 115, num: '115', title: 'Anunciador Universal de Regiones Vivas ARIA (Screen Readers)', status: 'done', commit: 'bd0bb35' },
+  { id: 115, num: '115', title: 'Anunciador Universal de Regiones Vivas ARIA (Screen Readers)', status: 'done', commit: 'ea066de' },
+  { id: 116, num: '116', title: 'Lector y Gestor Reactivo de Movimiento Reducido (WCAG 2.1 AAA)', status: 'done', commit: 'a39405d' },
 ]
 
 /**

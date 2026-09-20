@@ -53,6 +53,7 @@ import SEOAuditorLive from '../../components/ui/SEOAuditorLive/SEOAuditorLive.js
 import FocusTrapExplorer from '../../components/ui/FocusTrapExplorer/FocusTrapExplorer.jsx'
 import DaltonismContrastManager from '../../components/ui/DaltonismContrastManager/DaltonismContrastManager.jsx'
 import AriaAnnouncerExplorer from '../../components/ui/AriaAnnouncerExplorer/AriaAnnouncerExplorer.jsx'
+import MotionPreferencesExplorer from '../../components/ui/MotionPreferencesExplorer/MotionPreferencesExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -331,6 +332,9 @@ function DocsPage() {
 
         {/* Anunciador Universal de Regiones Vivas ARIA — Mejora 115 */}
         <AriaAnnouncerExplorer />
+
+        {/* Gestor Reactivo de Movimiento Reducido y Accesibilidad — Mejora 116 */}
+        <MotionPreferencesExplorer />
 
       </div>
     </main>
