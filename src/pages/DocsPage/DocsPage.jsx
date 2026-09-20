@@ -57,6 +57,7 @@ import MotionPreferencesExplorer from '../../components/ui/MotionPreferencesExpl
 import AltTextOcrExplorer from '../../components/ui/AltTextOcrExplorer/AltTextOcrExplorer.jsx'
 import AccessibilityAuditorLive from '../../components/ui/AccessibilityAuditorLive/AccessibilityAuditorLive.jsx'
 import RovingTabindexExplorer from '../../components/ui/RovingTabindexExplorer/RovingTabindexExplorer.jsx'
+import A11yTelemetryDashboard from '../../components/ui/A11yTelemetryDashboard/A11yTelemetryDashboard.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -347,6 +348,9 @@ function DocsPage() {
 
         {/* Navegación por Teclado Roving Tabindex — Mejora 119 */}
         <RovingTabindexExplorer />
+
+        {/* Centro de Comando y Telemetría de Accesibilidad WCAG AAA — Mejora 120 */}
+        <A11yTelemetryDashboard />
 
       </div>
     </main>

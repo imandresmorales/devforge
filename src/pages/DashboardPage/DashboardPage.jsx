@@ -72,10 +72,10 @@ const WEEKLY_COMMITS = [
 
 /* ─── Stats cards ───────────────────────────────────────────── */
 const STATS = [
-  { id: 'mejoras',     label: 'Mejoras implementadas', value: '119',  unit: 'de 100 (119%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
-  { id: 'commits',     label: 'Commits en GitHub',     value: '119',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
-  { id: 'componentes', label: 'Componentes UI',        value: '108',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
-  { id: 'cobertura',   label: 'Tests automatizados',   value: '573',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
+  { id: 'mejoras',     label: 'Mejoras implementadas', value: '120',  unit: 'de 100 (120%)', icon: '🏆', color: 'hsl(45, 93%, 47%)' },
+  { id: 'commits',     label: 'Commits en GitHub',     value: '120',  unit: 'commits', icon: '📦', color: 'hsl(239, 84%, 64%)' },
+  { id: 'componentes', label: 'Componentes UI',        value: '109',  unit: 'archivos', icon: '🧩', color: 'hsl(262, 80%, 65%)' },
+  { id: 'cobertura',   label: 'Tests automatizados',   value: '576',  unit: 'pasando', icon: '🧪', color: 'hsl(142, 71%, 45%)' },
 ]
 
 /* ─── Tabla de mejoras ──────────────────────────────────────── */
@@ -220,7 +220,8 @@ const IMPROVEMENTS_DATA = [
   { id: 116, num: '116', title: 'Lector y Gestor Reactivo de Movimiento Reducido (WCAG 2.1 AAA)', status: 'done', commit: '0e27edd' },
   { id: 117, num: '117', title: 'Generador y Auditor de Textos Alternativos Semánticos (WCAG 1.1.1)', status: 'done', commit: '4514569' },
   { id: 118, num: '118', title: 'Auditor de Accesibilidad Automatizado en el DOM (WCAG 2.1/2.2 AAA)', status: 'done', commit: '74e35fb' },
-  { id: 119, num: '119', title: 'Navegación por Teclado Roving Tabindex (WAI-ARIA APG)', status: 'done', commit: 'd8d8de5' },
+  { id: 119, num: '119', title: 'Navegación por Teclado Roving Tabindex (WAI-ARIA APG)', status: 'done', commit: 'dc0ccf5' },
+  { id: 120, num: '120', title: 'Centro de Comando y Telemetría de Accesibilidad WCAG 2.2 AAA', status: 'done', commit: '8ab4ea4' },
 ]
 
 /**
