@@ -1,0 +1,214 @@
+.alt-text-card {
+  background: var(--color-surface, #1e293b);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.alt-text-card__header {
+  margin-bottom: 1.25rem;
+}
+
+.alt-text-card__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.alt-text-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text, #f8fafc);
+  margin: 0 0 0.4rem 0;
+}
+
+.alt-text-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #94a3b8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.alt-text-editor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.alt-text-input-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alt-text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.alt-text-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.alt-text-input,
+.alt-text-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.alt-text-textarea {
+  resize: vertical;
+}
+
+.alt-text-options-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.alt-text-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #94a3b8);
+  cursor: pointer;
+}
+
+.alt-text-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.alt-text-btn--suggest {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.alt-text-btn--suggest:hover {
+  background: #2563eb;
+}
+
+.alt-text-diagnostics-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alt-text-score-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alt-text-score-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+}
+
+.alt-text-score-value {
+  font-size: 1.5rem;
+}
+
+.alt-text-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.alt-text-badge--perfect {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.alt-text-badge--good {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+.alt-text-badge--warning {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.alt-text-badge--error {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.alt-text-feedback-box {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--color-border, #334155);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+}
+
+.alt-text-feedback-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted, #94a3b8);
+  margin-bottom: 0.75rem;
+}
+
+.alt-text-success-msg {
+  font-size: 0.85rem;
+  color: #34d399;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.alt-text-issues-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alt-text-issue-item {
+  font-size: 0.8rem;
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border-left: 3px solid #ef4444;
+}

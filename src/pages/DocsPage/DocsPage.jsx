@@ -54,6 +54,7 @@ import FocusTrapExplorer from '../../components/ui/FocusTrapExplorer/FocusTrapEx
 import DaltonismContrastManager from '../../components/ui/DaltonismContrastManager/DaltonismContrastManager.jsx'
 import AriaAnnouncerExplorer from '../../components/ui/AriaAnnouncerExplorer/AriaAnnouncerExplorer.jsx'
 import MotionPreferencesExplorer from '../../components/ui/MotionPreferencesExplorer/MotionPreferencesExplorer.jsx'
+import AltTextOcrExplorer from '../../components/ui/AltTextOcrExplorer/AltTextOcrExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -335,6 +336,9 @@ function DocsPage() {
 
         {/* Gestor Reactivo de Movimiento Reducido y Accesibilidad — Mejora 116 */}
         <MotionPreferencesExplorer />
+
+        {/* Auditor y Generador de Textos Alternativos Semánticos — Mejora 117 */}
+        <AltTextOcrExplorer />
 
       </div>
     </main>
