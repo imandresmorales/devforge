@@ -56,6 +56,7 @@ import AriaAnnouncerExplorer from '../../components/ui/AriaAnnouncerExplorer/Ari
 import MotionPreferencesExplorer from '../../components/ui/MotionPreferencesExplorer/MotionPreferencesExplorer.jsx'
 import AltTextOcrExplorer from '../../components/ui/AltTextOcrExplorer/AltTextOcrExplorer.jsx'
 import AccessibilityAuditorLive from '../../components/ui/AccessibilityAuditorLive/AccessibilityAuditorLive.jsx'
+import RovingTabindexExplorer from '../../components/ui/RovingTabindexExplorer/RovingTabindexExplorer.jsx'
 
 /** Lista de mejoras completadas */
 const COMPLETED = [
@@ -343,6 +344,9 @@ function DocsPage() {
 
         {/* Auditor de Accesibilidad Automatizado en el DOM — Mejora 118 */}
         <AccessibilityAuditorLive />
+
+        {/* Navegación por Teclado Roving Tabindex — Mejora 119 */}
+        <RovingTabindexExplorer />
 
       </div>
     </main>
