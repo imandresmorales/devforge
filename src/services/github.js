@@ -6,14 +6,13 @@
  * - BASE_URL como constante: un único punto de cambio
  * - Rate limit awareness: parseamos los headers X-RateLimit-* y los retornamos
  *   para que la UI pueda informar al usuario si se acerca al límite
- * - Sin autenticación: la API pública de GitHub permite 60 req/hora sin token.
- *   Con VITE_GITHUB_TOKEN (si se define) mejora a 5000 req/hora.
+ * - Sin autenticación: la API pública de GitHub permite 60 req/hora por IP.
  * - Errores tipados: diferenciamos entre rate limit, no encontrado y error genérico
  *
  * SEGURIDAD:
- * - El token GitHub NUNCA se hardcodea. Se lee de la variable de entorno VITE_GITHUB_TOKEN.
- * - VITE_ prefix en Vite: la variable es pública (no usar para tokens de alta sensibilidad).
- *   En producción real, usar un backend proxy para proteger el token.
+ * - No se usa ningún token desde el navegador: toda variable VITE_* termina en el
+ *   código público del bundle. Para más cuota, el token debe vivir en un backend
+ *   (proxy) y nunca en el frontend.
  *
  * @module services/github
  */
@@ -22,19 +21,13 @@
 const GITHUB_API = 'https://api.github.com'
 
 /**
- * Construye los headers para la petición.
- * Si existe VITE_GITHUB_TOKEN en el entorno, lo incluye para aumentar el rate limit.
+ * Construye los headers para la petición (sin credenciales).
  * @returns {HeadersInit}
  */
 function buildHeaders() {
-  const headers = {
+  return {
     'Accept': 'application/vnd.github.v3+json',
   }
-  const token = import.meta.env.VITE_GITHUB_TOKEN
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`
-  }
-  return headers
 }
 
 /**

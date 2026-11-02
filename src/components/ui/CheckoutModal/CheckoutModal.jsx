@@ -272,7 +272,10 @@ function CheckoutModal({ isOpen, onClose, plan }) {
 
             <div className="checkout-security-badge" aria-label="Seguridad de la transacción">
               <span aria-hidden="true">🔒</span>
-              <span>Encriptación SSL de 256-bit y cumplimiento PCI-DSS simulado.</span>
+              <span>
+                Modo demostración: no se realiza ningún cobro ni se envían datos. No uses una
+                tarjeta real; prueba con 4242 4242 4242 4242.
+              </span>
             </div>
 
             <div className="checkout-actions">

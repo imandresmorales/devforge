@@ -139,7 +139,7 @@ class ErrorBoundary extends Component {
               🔄 Reintentar
             </button>
             <a
-              href="/"
+              href={import.meta.env.BASE_URL}
               className="btn-secondary"
               aria-label="Ir a la página de inicio"
             >
