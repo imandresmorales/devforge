@@ -22,4 +22,3 @@ Disallow: /profile
 Disallow: /pricing
 Crawl-delay: 2
 
-Sitemap: https://devforge.internal/sitemap.xml

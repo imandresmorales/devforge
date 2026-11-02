@@ -10,17 +10,18 @@
  * - Soporte para actualización en caliente mediante el mensaje 'SKIP_WAITING'.
  */
 
-const CACHE_NAME = 'devforge-v2-cache-strategies'
+const CACHE_NAME = 'devforge-v3-cache-strategies'
 
 /**
  * Recursos esenciales para pre-cachear durante la instalación del Service Worker.
  */
+// Rutas relativas al scope del SW: funcionan en la raíz (/) o en un subdirectorio (/devforge/)
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon-192.svg',
-  '/icons/icon-512.svg',
+  './',
+  'index.html',
+  'manifest.json',
+  'icons/icon-192.svg',
+  'icons/icon-512.svg',
 ]
 
 /**
@@ -69,8 +70,8 @@ self.addEventListener('fetch', (event) => {
   // SEGURIDAD: NO cachear llamadas directas a APIs dinámicas externas o endpoints de auth
   if (
     url.hostname === 'api.github.com' ||
-    url.pathname.startsWith('/api/auth') ||
-    url.pathname.startsWith('/auth')
+    url.pathname.includes('/api/auth') ||
+    url.pathname.includes('/auth/')
   ) {
     return
   }
@@ -93,7 +94,7 @@ self.addEventListener('fetch', (event) => {
           if (cachedResponse) return cachedResponse
 
           // Fallback final a la raíz del SPA
-          return (await caches.match('/index.html')) || (await caches.match('/'))
+          return (await caches.match('index.html')) || (await caches.match('./'))
         })
     )
     return

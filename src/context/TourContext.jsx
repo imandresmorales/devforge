@@ -44,7 +44,7 @@ const TOUR_STEPS = [
   },
   {
     id: 'step-pricing',
-    targetSelector: 'a[href="/pricing"]',
+    targetSelector: 'a[href$="/pricing"]',
     title: 'Planes & Pasarela Stripe 💳',
     content: 'Explora suscripciones y prueba la pasarela de pagos interactiva con validación de tarjetas en vivo.',
     placement: 'bottom',
