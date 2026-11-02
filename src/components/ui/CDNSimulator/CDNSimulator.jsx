@@ -172,7 +172,8 @@ export default function CDNSimulator() {
                 )}
               </div>
             </div>
-          ))}
+          )
+        })}
       </div>
 
       {/* ── Panel de Emisión de Peticiones ── */}
