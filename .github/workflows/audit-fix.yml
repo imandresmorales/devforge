@@ -1,0 +1,29 @@
+# Workflow temporal: actualiza package-lock.json con `npm audit fix`. Se elimina después de usarlo.
+name: Audit fix (temporal)
+
+on:
+  push:
+    branches: [mejoras]
+    paths: ['.github/workflows/audit-fix.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  audit-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm audit fix || true
+      - run: npm audit --omit=dev --audit-level=high || true
+      - name: Subir lockfile actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git diff --cached --quiet || git commit -m "chore(deps): npm audit fix"
+          git push
