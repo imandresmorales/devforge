@@ -27,6 +27,7 @@
 | Router | React Router 7 |
 | Estilos | CSS puro con design tokens (variables CSS) |
 | Internacionalización | i18next + react-i18next |
+| Seguridad | DOMPurify para sanitizar contenido HTML |
 | Testing | Vitest + React Testing Library (más de 100 archivos de prueba) |
 | Linting | oxlint |
 | CI/CD | GitHub Actions y GitHub Pages |

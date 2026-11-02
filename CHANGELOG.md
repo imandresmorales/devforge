@@ -19,6 +19,10 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ### Seguridad
 - Se elimina el soporte de `VITE_GITHUB_TOKEN`: cualquier token con prefijo `VITE_` queda expuesto en el bundle público.
+- Actualización de DOMPurify y React Router por vulnerabilidades conocidas (`npm audit` sin hallazgos en producción).
+
+### Corregido
+- Error de sintaxis JSX en el simulador de CDN y selectores CSS inválidos (`--a+`) que impedían el build de producción.
 
 ### Eliminado
 - Archivos de plantilla sin uso y notas internas de desarrollo (`walkthrough.md`).
